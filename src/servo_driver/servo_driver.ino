@@ -30,11 +30,14 @@ short calc_move(float open_rate){
   - maximalni delka requestu 100 znaku + 0 (ukoncovaci)
   - command -> prvnich 10 znaku | pole: + 0 ukoncovaci 
 
-  -> SET___MOVE <FLOAT-NUMBER> <COMMAND-TERMINATOR>
+  -> SETMOVE___ <FLOAT-NUMBER> <COMMAND-TERMINATOR>
+    - command: prvnich 10 znaku v requestu
+    - value:
 */
 
 #define max_request_length 101
 #define max_command_length 11
+#define open_rate_length 5
 #define request_terminator '\n'
 #define request_padding '_'
 
@@ -55,7 +58,18 @@ void print_buf(char *buf, int len){
 }
 
 
+void get_value(char *value, char *request){
+  for(int i = 0; i < open_rate_length; i++){
+    if(i + 11 < max_request_length){
+      value[i] = request[i + 11];
+    }
+    else{
+      value[i] = 0;
+    }
 
+    printf("%c ", value[i]);
+  }
+}
 void get_command(){
   int i = 0;
   memset(command, 0, sizeof(command));
@@ -72,7 +86,12 @@ void get_command(){
 void identify_request(){
   get_command();
 
-  print_buf(command, max_command_length);
+  if(!strcmp(command, "SETMOVE")){
+    char value[open_rate_length] = {0};
+    get_value(value, request);
+
+    printf("%s\n", value);
+  }
 }
 void read_serial(){
   while(Serial.available()){
@@ -97,13 +116,6 @@ void read_serial(){
 
 
 
-void setup(){
-  vent_servo_left.attach(VENT_SERVO_LEFT_PIN);
-  vent_servo_right.attach(VENT_SERVO_RIGHT_PIN);
-
-  Serial.begin(115200);
-}
-
 /*
 
   -> servo is lagged in vent_servo_pos by executive unit (EU)
@@ -114,7 +126,12 @@ void setup(){
 
 */
 
-int i = 0;
+void setup(){
+  vent_servo_left.attach(VENT_SERVO_LEFT_PIN);
+  vent_servo_right.attach(VENT_SERVO_RIGHT_PIN);
+
+  Serial.begin(115200);
+}
 
 void loop(){
   move_servo(vent_servo_pos);
