@@ -26,6 +26,14 @@ void print_buffer(char *buf, int len){
 
     printf("\n");
 }
+
+void remove_newline(char *buf, int len){
+    for(int i = 0; i < len; i++){
+        if(buf[i] == 10){
+            buf[i] = 0;
+        }
+    }
+}
 ///DEBUGING AREA - WONT BE INCLUDED - END
 
 
@@ -35,12 +43,24 @@ void null_buffer(char *buf, short buf_len){
         buf[i] = 0;
     }
 }
+bool string_equal(char *str_1, char *str_2){
+    int i = 0;
+
+    while(str_1[i] != 0 || str_2[i] != 0){
+        if(str_1[i] != str_2[i]){
+            return false;
+        }
+
+        i++;
+    }
+
+    return true;
+}
 
 short get_command(char *request, char *command){
     short i = 0;
     
-    while(request[i] != 0)
-    {
+    while(request[i] != 0){
         if(request[i] == ' '){
             return ++i;
         }
@@ -51,31 +71,75 @@ short get_command(char *request, char *command){
 
     return 0;
 }
-
-short parse_request(char *request, char *parameters){
-    char command[MAX_REQUEST_SIZE] = {0};
-    null_buffer(parameters, MAX_REQUEST_SIZE);
-
-    request[MAX_REQUEST_SIZE - 1] = 0;
-
-    short parameters_start_index = get_command(request, command);
-
-    printf("index: %c | cmd: %s\n", request[parameters_start_index], command);
-
-    return -1;
+short get_command_id(char *command){
+    if(string_equal(command, "SETMOVE")){
+        return 0;
+    }
+    else{
+        return -1;
+    }
 }
 
+
+/*
+    last char allways have to be 0
+    all chars in request have to be numbers, or '.' or ' '
+*/
+bool validate_request(char *request){
+    if(request[MAX_REQUEST_SIZE - 1] == 0){
+        short i = 0;
+        while(request[i] != 0){
+            if(request[i] < 48 || request[i] > 57){
+                if(request[i] != 32 && request[i] != 46){
+                    return false;
+                }
+            }
+
+            i++;
+        }
+
+        return true;
+    }
+
+    return false;
+}
+
+int parse_request(char *request){
+    if(validate_request(request)){
+        //good
+        printf("GOOD\n");
+        return 0;
+    }
+
+    printf("BAD\n");
+    return 1;
+}
+
+
+/*
+NOTES
+
+in serial communication read only for MAX_BUF_SIZE chars. last char will be 0 and request will be sended.
+
+*/
 
 
 ///DEBUGING AREA - WONT BE INCLUDED - START
 int main(){
-    char req[MAX_REQUEST_SIZE] = "SETMOVE 1.85 1.5";
-    char params[MAX_REQUEST_SIZE] = {0};
+    char req[MAX_REQUEST_SIZE] = {0};
 
-    print_buffer(req, MAX_REQUEST_SIZE);
-    print_buffer(params, MAX_REQUEST_SIZE);
+    while(1){
+        fgets(req, sizeof(req), stdin);
+        remove_newline(req, MAX_REQUEST_SIZE);
+        print_buffer(req, MAX_REQUEST_SIZE);
 
-    printf("get_command: %d\n", parse_request(req, params));
+        parse_request(req);
+
+        null_buffer(req, MAX_REQUEST_SIZE);
+    }
+    
+
+
 
     return 0;
 }
