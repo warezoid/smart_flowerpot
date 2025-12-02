@@ -82,11 +82,55 @@ short get_command_id(char *command){
 
 
 /*
+    request must be not null buffer (full of 0)
     last char allways have to be 0
     all chars in request have to be numbers, or '.' or ' '
+
+    multiple '.' or ' ' cant be direct next to eachother
+    command have to start with command id (number)
+
+    TO ADD: ' ' and '.' (and vice versa) cant be directly behind each other
 */
+bool validate_request_format(char *request){    
+    short i = 0;
+    short dot_streak = 0;
+    short space_streak = 0;
+
+    while(request[i] != 32 && request[i] != 0){
+        if(request[i] == 46){
+            return false;
+        }
+        
+        i++;
+    }
+    i = 0;
+
+    while(request[i] != 0){
+        if(i > 0){
+            if(request[i] == request[i - 1]){
+                if(request[i] == 32){
+                    if(++space_streak > 1){
+                        return false;
+                    }
+                }
+                else if(request[i] == 46){
+                    if(++dot_streak > 1){
+                        return false;
+                    }
+                }
+            }
+        }
+
+        i++;
+    }
+
+    if(i > 0){
+        return true;
+    }
+    return false;
+}
 bool validate_request(char *request){
-    if(request[MAX_REQUEST_SIZE - 1] == 0){
+    if(request[MAX_REQUEST_SIZE - 1] == 0 || request[0] == 0){
         short i = 0;
         while(request[i] != 0){
             if(request[i] < 48 || request[i] > 57){
@@ -98,15 +142,16 @@ bool validate_request(char *request){
             i++;
         }
 
-        return true;
+        return validate_request_format(request);
     }
 
     return false;
 }
 
+
+
 int parse_request(char *request){
     if(validate_request(request)){
-        //good
         printf("GOOD\n");
         return 0;
     }
@@ -117,9 +162,9 @@ int parse_request(char *request){
 
 
 /*
-NOTES
 
-in serial communication read only for MAX_BUF_SIZE chars. last char will be 0 and request will be sended.
+NOTES:
+    In serial communication read only for MAX_BUF_SIZE chars. last char will be 0 and request will be sended.
 
 */
 
@@ -128,18 +173,12 @@ in serial communication read only for MAX_BUF_SIZE chars. last char will be 0 an
 int main(){
     char req[MAX_REQUEST_SIZE] = {0};
 
-    while(1){
-        fgets(req, sizeof(req), stdin);
-        remove_newline(req, MAX_REQUEST_SIZE);
-        print_buffer(req, MAX_REQUEST_SIZE);
+    fgets(req, sizeof(req), stdin);
+    remove_newline(req, MAX_REQUEST_SIZE);
 
-        parse_request(req);
+    parse_request(req);
 
-        null_buffer(req, MAX_REQUEST_SIZE);
-    }
-    
-
-
+    null_buffer(req, MAX_REQUEST_SIZE);
 
     return 0;
 }
