@@ -16,6 +16,7 @@
 #include <time.h>
 
 #define MAX_REQUEST_SIZE 21
+#define MAX_COMMAND_SIZE 3
 #define SEPARATOR_CHAR ' '
 
 
@@ -39,11 +40,6 @@ void remove_newline(char *buf, int len){
 
 
 
-void null_buffer(char *buf, short buf_len){
-    for(int i = 0; i < buf_len; i++){
-        buf[i] = 0;
-    }
-}
 bool string_equal(char *str_1, char *str_2){
     int i = 0;
 
@@ -58,27 +54,39 @@ bool string_equal(char *str_1, char *str_2){
     return true;
 }
 
-short get_command(char *request, char *command){
-    short i = 0;
-    
-    while(request[i] != 0){
-        if(request[i] == ' '){
-            return ++i;
+
+
+void null_buffer(char *buf, short buf_len){
+    for(int i = 0; i < buf_len; i++){
+        buf[i] = 0;
+    }
+}
+
+int get_number(char *str){
+    int i = 0;
+    int res = 0;
+
+    while(str[i] != 0){
+        res = res * 10 + (str[i] - 48);
+        i++;
+    }
+
+    return res;
+}
+int get_command(char *request){
+    char command[MAX_REQUEST_SIZE] = {0};
+
+    int i = 0;
+    while(request[i] != 0 && request[i] != 32){
+        if(i > (MAX_COMMAND_SIZE - 1)){
+            return 0;
         }
 
         command[i] = request[i];
         i++;
     }
 
-    return 0;
-}
-short get_command_id(char *command){
-    if(string_equal(command, "SETMOVE")){
-        return 0;
-    }
-    else{
-        return -1;
-    }
+    return get_number(command);
 }
 
 
@@ -158,11 +166,17 @@ bool validate_request(char *request){
 
 int parse_request(char *request){
     if(validate_request(request)){
-        printf("GOOD\n");
+        switch(get_command(request)){
+            case 1:
+                //SETMOVE
+                break;
+            default:
+                return 1;
+        }
+
         return 0;
     }
 
-    printf("BAD\n");
     return 1;
 }
 
@@ -194,8 +208,7 @@ int main(){
 
     /*
         runtime:
-            15147 lines of stdin -> 0.03 sec -> 
-    
+            15147 lines of stdin -> 0.03 sec
     */
 
     return 0;
