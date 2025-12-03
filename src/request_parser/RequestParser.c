@@ -93,8 +93,7 @@ short get_command_id(char *command){
     number can have only 1 or 0 dots 
 */
 bool validate_request_format(char *request){
-    short i = 0;
-
+    int i = 0;
     while(request[i] != 32 && request[i] != 0){
         if(request[i] == 46){
             return false;
@@ -104,8 +103,8 @@ bool validate_request_format(char *request){
     }
     i = 0;
 
-    short special_streak = 0;
-    short dot_streak = 0;
+    int special_streak = 0;
+    int dot_streak = 0;
     while(request[i] != 0){
         if(request[i] == 32 || request[i] == 46){
             if(++special_streak > 1){
@@ -135,21 +134,21 @@ bool validate_request_format(char *request){
     return true;
 }
 bool validate_request(char *request){
-    if(request[0] != 32){
-        if(request[MAX_REQUEST_SIZE - 1] == 0 || request[0] == 0){
-            short i = 0;
-            while(request[i] != 0){
-                if(request[i] < 48 || request[i] > 57){
-                    if(request[i] != 32 && request[i] != 46){
-                        return false;
-                    }
-                }
+    request[MAX_REQUEST_SIZE - 1] = 0;
 
-                i++;
+    if(request[0] != 32 && request[0] != 0){
+        int i = 0;
+        while(request[i] != 0){
+            if(request[i] < 48 || request[i] > 57){
+                if(request[i] != 32 && request[i] != 46){
+                    return false;
+                }
             }
 
-            return validate_request_format(request);
+            i++;
         }
+
+        return validate_request_format(request);
     }
 
     return false;
