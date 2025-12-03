@@ -13,6 +13,7 @@
 
 #include <stdio.h>
 #include <stdbool.h>
+#include <time.h>
 
 #define MAX_REQUEST_SIZE 21
 #define SEPARATOR_CHAR ' '
@@ -24,7 +25,7 @@ void print_buffer(char *buf, int len){
         printf("%d ", buf[i]);
     }
 
-    printf("\n");
+    printf("\t\t");
 }
 
 void remove_newline(char *buf, int len){
@@ -82,19 +83,17 @@ short get_command_id(char *command){
 
 
 /*
-    request must be not null buffer (full of 0)
+    request must be not null buffer (full of 0) or start with ' ' or '.'
     last char allways have to be 0
     all chars in request have to be numbers, or '.' or ' '
 
     multiple '.' or ' ' cant be direct next to eachother
     command have to start with command id (number)
-
-    TO ADD: ' ' and '.' (and vice versa) cant be directly behind each other
+    ' ' and '.' (and vice versa) cant be directly behind each other
+    number can have only 1 or 0 dots 
 */
-bool validate_request_format(char *request){    
+bool validate_request_format(char *request){
     short i = 0;
-    short dot_streak = 0;
-    short space_streak = 0;
 
     while(request[i] != 32 && request[i] != 0){
         if(request[i] == 46){
@@ -105,44 +104,52 @@ bool validate_request_format(char *request){
     }
     i = 0;
 
+    short special_streak = 0;
+    short dot_streak = 0;
     while(request[i] != 0){
-        if(i > 0){
-            if(request[i] == request[i - 1]){
-                if(request[i] == 32){
-                    if(++space_streak > 1){
-                        return false;
-                    }
-                }
-                else if(request[i] == 46){
-                    if(++dot_streak > 1){
-                        return false;
-                    }
+        if(request[i] == 32 || request[i] == 46){
+            if(++special_streak > 1){
+                return false;
+            }
+            
+            if(request[i] == 46){
+                if(++dot_streak > 1){
+                    return false;
                 }
             }
+            else{
+                dot_streak = 0;
+            }
+        }
+        else{
+            special_streak = 0;
         }
 
         i++;
     }
 
-    if(i > 0){
-        return true;
+    if(request[i - 1] == 32 || request[i - 1] == 46){
+        return false;
     }
-    return false;
+
+    return true;
 }
 bool validate_request(char *request){
-    if(request[MAX_REQUEST_SIZE - 1] == 0 || request[0] == 0){
-        short i = 0;
-        while(request[i] != 0){
-            if(request[i] < 48 || request[i] > 57){
-                if(request[i] != 32 && request[i] != 46){
-                    return false;
+    if(request[0] != 32){
+        if(request[MAX_REQUEST_SIZE - 1] == 0 || request[0] == 0){
+            short i = 0;
+            while(request[i] != 0){
+                if(request[i] < 48 || request[i] > 57){
+                    if(request[i] != 32 && request[i] != 46){
+                        return false;
+                    }
                 }
+
+                i++;
             }
 
-            i++;
+            return validate_request_format(request);
         }
-
-        return validate_request_format(request);
     }
 
     return false;
@@ -171,14 +178,26 @@ NOTES:
 
 ///DEBUGING AREA - WONT BE INCLUDED - START
 int main(){
+    clock_t start_clk = clock();
+
     char req[MAX_REQUEST_SIZE] = {0};
 
-    fgets(req, sizeof(req), stdin);
-    remove_newline(req, MAX_REQUEST_SIZE);
+    while(fgets(req, sizeof(req), stdin)){
+        remove_newline(req, MAX_REQUEST_SIZE);
 
-    parse_request(req);
+        parse_request(req);
 
-    null_buffer(req, MAX_REQUEST_SIZE);
+        null_buffer(req, MAX_REQUEST_SIZE);
+    }
+
+    printf("Processor time used by program: %Lg sec.\n", \
+    (clock() - start_clk) / (long double) CLOCKS_PER_SEC);
+
+    /*
+        runtime:
+            15147 lines of stdin -> 0.03 sec -> 
+    
+    */
 
     return 0;
 }
