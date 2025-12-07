@@ -61,6 +61,17 @@ void null_buffer(char *buf, short buf_len){
         buf[i] = 0;
     }
 }
+int get_length(char *str){
+    int i = 0;
+    while(str[i] != 0){
+        if(i > (MAX_REQUEST_SIZE - 1)){
+            return -1;
+        }
+        i++;
+    }
+    
+    return i;
+}
 
 int get_number(char *str){
     int i = 0;
@@ -73,7 +84,7 @@ int get_number(char *str){
 
     return res;
 }
-int get_command(char *request){
+int get_command(char *request, int *start_index){
     char command[MAX_REQUEST_SIZE] = {0};
 
     int i = 0;
@@ -84,6 +95,11 @@ int get_command(char *request){
 
         command[i] = request[i];
         i++;
+    }
+
+    *start_index = 0;
+    if(request[i + 1] >= 48 && request[i + 1] <= 57){
+        *start_index = i + 1;
     }
 
     return get_number(command);
@@ -165,8 +181,10 @@ bool validate_request(char *request){
 
 
 int parse_request(char *request){
+    int params_start_index = 0;
+
     if(validate_request(request)){
-        switch(get_command(request)){
+        switch(get_command(request, &params_start_index)){
             case 1:
                 //SETMOVE
                 break;
