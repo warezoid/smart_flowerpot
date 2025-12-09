@@ -1,14 +1,14 @@
 /*
-    - get request string (from master unit by UART communication) and params array [param param1 param2 param3]
+    - get request string (from master unit by UART communication) and empty params array
     - get command id and fill params
     - return command id
+        - 0 -> unknown command or error
+        - 1 -> SETMOVE | params (1): vent_servo_pos
 
-    - assuming that request is in right format -> right length, not empty, correct spaces, ... 
+    - request size: 3 -> command size | 8 * 5 -> 5 params (each max 8 size) | 1 -> ending 0
 
-    - MAX request size -> 60 chars + ending char
-
-    - -1 -> Error | params are empty
-    - SETMOVE (open_rate - float number - x.xx) -> 0
+    NOTES:
+        In serial communication read only for MAX_BUF_SIZE chars. last char will be 0 and request will be sended.
 */
 
 #include <stdio.h>
@@ -16,8 +16,14 @@
 #include <stdbool.h>
 #include <time.h>
 
-#define MAX_REQUEST_SIZE 21
+#define MAX_REQUEST_SIZE 44
 #define MAX_COMMAND_SIZE 3
+#define MAX_PARAM_SIZE 8
+#define MAX_PARAM_COUNT 5
+
+
+
+
 
 ///DEBUGING AREA - WONT BE INCLUDED - START
 void print_buffer(char *buf, int len){
@@ -37,6 +43,10 @@ void remove_newline(char *buf, int len){
 }
 ///DEBUGING AREA - WONT BE INCLUDED - END
 
+
+
+
+
 void free_memory(int **memory){
     if(*memory != NULL){
         free(*memory);
@@ -53,8 +63,6 @@ bool allocate_memory(int **memory, int size){
 
     return true;
 }
-
-
 
 bool string_equal(char *str_1, char *str_2){
     int i = 0;
@@ -85,10 +93,19 @@ int get_length(char *str){
     
     return i;
 }
+bool include_char(char *buf, char ch){
+    int i = 0;
+    while(buf[i] != 0){
+        if(buf[i] == ch){
+            return true;
+        }
+        i++;
+    }
 
+    return false;
+}
 
-
-int get_number(char *str){
+int parse_int(char *str){
     int i = 0;
     int res = 0;
 
@@ -99,6 +116,7 @@ int get_number(char *str){
 
     return res;
 }
+
 int get_command(char *request, int *start_index){
     char command[MAX_REQUEST_SIZE] = {0};
 
@@ -117,7 +135,7 @@ int get_command(char *request, int *start_index){
         *start_index = i + 1;
     }
 
-    return get_number(command);
+    return parse_int(command);
 }
 
 void get_params(int **params_array, char *request, int params_start_index, int params_max_count){
@@ -135,10 +153,14 @@ void get_params(int **params_array, char *request, int params_start_index, int p
             j++;
         }
 
-        int param = get_number(temp_buf);
-        if(param > -1 ){
-
+        if(!include_char(temp_buf, '.')){
+            (*params_array)[i] = parse_int(temp_buf);
         }
+        else{
+            //here work with decimal numbers
+            (*params_array)[i] = 0;
+        }
+
         j++;
         i++;
     }
@@ -225,38 +247,39 @@ int parse_request(char *request, int **params_array){
             case 1:
                 if(params_start_index != 0){
                     if(allocate_memory(params_array, 1)){
-                        get_params(params_array, request, params_start_index, 3);
+                        get_params(params_array, request, params_start_index, 1);
                     }
                 }
                 return command_id;
             default:
-                return 1;
+                return 0;
         }
     }
 
-    return 1;
+    return 0;
 }
 
 
-/*
 
-NOTES:
-    In serial communication read only for MAX_BUF_SIZE chars. last char will be 0 and request will be sended.
-
-*/
 
 
 ///DEBUGING AREA - WONT BE INCLUDED - START
 int main(){
     clock_t start_clk = clock();
 
-    int *params_array = NULL;
-
+    
     char req[MAX_REQUEST_SIZE] = {0};
     while(fgets(req, sizeof(req), stdin)){
         remove_newline(req, MAX_REQUEST_SIZE);
-
+        
+        int *params_array = NULL;
+        
         parse_request(req, &params_array);
+        
+        if(params_array != NULL){
+            printf("%s: %d\n", req, params_array[0]);
+            free_memory(&params_array);
+        }
 
         null_buffer(req, MAX_REQUEST_SIZE);
     }
@@ -268,8 +291,7 @@ int main(){
         runtime:
             15147 lines of stdin -> 0.03 sec
     */
-    
-    free_memory(&params_array);
+
     return 0;
 }
 ///DEBUGING AREA - WONT BE INCLUDED - END
