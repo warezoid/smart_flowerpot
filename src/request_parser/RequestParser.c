@@ -12,13 +12,12 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdbool.h>
 #include <time.h>
 
 #define MAX_REQUEST_SIZE 21
 #define MAX_COMMAND_SIZE 3
-#define SEPARATOR_CHAR ' '
-
 
 ///DEBUGING AREA - WONT BE INCLUDED - START
 void print_buffer(char *buf, int len){
@@ -26,7 +25,7 @@ void print_buffer(char *buf, int len){
         printf("%d ", buf[i]);
     }
 
-    printf("\t\t");
+    printf("\n");
 }
 
 void remove_newline(char *buf, int len){
@@ -37,6 +36,23 @@ void remove_newline(char *buf, int len){
     }
 }
 ///DEBUGING AREA - WONT BE INCLUDED - END
+
+void free_memory(int **memory){
+    if(*memory != NULL){
+        free(*memory);
+        *memory = NULL;
+    }
+}
+bool allocate_memory(int **memory, int size){
+    free_memory(memory);
+
+    *memory = malloc(sizeof(int) * size);
+    if(*memory == NULL){
+        return false;
+    }
+
+    return true;
+}
 
 
 
@@ -53,10 +69,7 @@ bool string_equal(char *str_1, char *str_2){
 
     return true;
 }
-
-
-
-void null_buffer(char *buf, short buf_len){
+void null_buffer(char *buf, int buf_len){
     for(int i = 0; i < buf_len; i++){
         buf[i] = 0;
     }
@@ -72,6 +85,8 @@ int get_length(char *str){
     
     return i;
 }
+
+
 
 int get_number(char *str){
     int i = 0;
@@ -105,6 +120,29 @@ int get_command(char *request, int *start_index){
     return get_number(command);
 }
 
+void get_params(int **params_array, char *request, int params_start_index, int params_max_count){
+    int i = 0;
+    int j = params_start_index;
+    while(i < params_max_count){
+        int k = 0;
+        char temp_buf[MAX_REQUEST_SIZE] = {0};
+        while(request[j] != 32){
+            if(request[j] == 0){
+                break;
+            }
+            temp_buf[k] = request[j];
+            k++;
+            j++;
+        }
+
+        int param = get_number(temp_buf);
+        if(param > -1 ){
+
+        }
+        j++;
+        i++;
+    }
+}
 
 /*
     request must be not null buffer (full of 0) or start with ' ' or '.'
@@ -178,21 +216,22 @@ bool validate_request(char *request){
     return false;
 }
 
-
-
-int parse_request(char *request){
+int parse_request(char *request, int **params_array){
     int params_start_index = 0;
 
     if(validate_request(request)){
-        switch(get_command(request, &params_start_index)){
+        int command_id = get_command(request, &params_start_index);
+        switch(command_id){
             case 1:
-                //SETMOVE
-                break;
+                if(params_start_index != 0){
+                    if(allocate_memory(params_array, 1)){
+                        get_params(params_array, request, params_start_index, 3);
+                    }
+                }
+                return command_id;
             default:
                 return 1;
         }
-
-        return 0;
     }
 
     return 1;
@@ -211,12 +250,13 @@ NOTES:
 int main(){
     clock_t start_clk = clock();
 
-    char req[MAX_REQUEST_SIZE] = {0};
+    int *params_array = NULL;
 
+    char req[MAX_REQUEST_SIZE] = {0};
     while(fgets(req, sizeof(req), stdin)){
         remove_newline(req, MAX_REQUEST_SIZE);
 
-        parse_request(req);
+        parse_request(req, &params_array);
 
         null_buffer(req, MAX_REQUEST_SIZE);
     }
@@ -228,7 +268,8 @@ int main(){
         runtime:
             15147 lines of stdin -> 0.03 sec
     */
-
+    
+    free_memory(&params_array);
     return 0;
 }
 ///DEBUGING AREA - WONT BE INCLUDED - END
