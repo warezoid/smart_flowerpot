@@ -11,6 +11,19 @@
         In serial communication read only for MAX_BUF_SIZE chars. last char will be 0 and request will be sended.
 */
 
+/*
+    request must be not null buffer (full of 0) or start with ' ' or '.'
+    last char allways have to be 0
+    all chars in request have to be numbers, or '.' or ' '
+
+    multiple '.' or ' ' cant be direct next to eachother
+    command have to start with command id (number)
+    ' ' and '.' (and vice versa) cant be directly behind each other
+    number can have only 1 or 0 dots 
+*/
+
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -53,6 +66,7 @@ void free_memory(int **memory){
         *memory = NULL;
     }
 }
+
 bool allocate_memory(int **memory, int size){
     free_memory(memory);
 
@@ -63,6 +77,8 @@ bool allocate_memory(int **memory, int size){
 
     return true;
 }
+
+
 
 bool string_equal(char *str_1, char *str_2){
     int i = 0;
@@ -77,11 +93,13 @@ bool string_equal(char *str_1, char *str_2){
 
     return true;
 }
+
 void null_buffer(char *buf, int buf_len){
     for(int i = 0; i < buf_len; i++){
         buf[i] = 0;
     }
 }
+
 int get_length(char *str){
     int i = 0;
     while(str[i] != 0){
@@ -93,6 +111,7 @@ int get_length(char *str){
     
     return i;
 }
+
 bool include_char(char *buf, char ch){
     int i = 0;
     while(buf[i] != 0){
@@ -104,6 +123,8 @@ bool include_char(char *buf, char ch){
 
     return false;
 }
+
+
 
 int parse_int(char *str){
     int i = 0;
@@ -166,16 +187,8 @@ void get_params(int **params_array, char *request, int params_start_index, int p
     }
 }
 
-/*
-    request must be not null buffer (full of 0) or start with ' ' or '.'
-    last char allways have to be 0
-    all chars in request have to be numbers, or '.' or ' '
 
-    multiple '.' or ' ' cant be direct next to eachother
-    command have to start with command id (number)
-    ' ' and '.' (and vice versa) cant be directly behind each other
-    number can have only 1 or 0 dots 
-*/
+
 bool validate_request_format(char *request){
     int i = 0;
     while(request[i] != 32 && request[i] != 0){
@@ -217,6 +230,7 @@ bool validate_request_format(char *request){
 
     return true;
 }
+
 bool validate_request(char *request){
     request[MAX_REQUEST_SIZE - 1] = 0;
 
@@ -238,6 +252,16 @@ bool validate_request(char *request){
     return false;
 }
 
+bool validate_parameters(char *request, int params_start_index){
+    int i = params_start_index;
+    while(request[i] != 0){
+        
+        i++;
+    }
+}
+
+
+
 int parse_request(char *request, int **params_array){
     int params_start_index = 0;
 
@@ -246,8 +270,10 @@ int parse_request(char *request, int **params_array){
         switch(command_id){
             case 1:
                 if(params_start_index != 0){
-                    if(allocate_memory(params_array, 1)){
-                        get_params(params_array, request, params_start_index, 1);
+                    if(validate_parameters(request, params_start_index)){
+                        if(allocate_memory(params_array, 1)){
+                            get_params(params_array, request, params_start_index, 1);
+                        }
                     }
                 }
                 return command_id;
@@ -267,7 +293,6 @@ int parse_request(char *request, int **params_array){
 int main(){
     clock_t start_clk = clock();
 
-    
     char req[MAX_REQUEST_SIZE] = {0};
     while(fgets(req, sizeof(req), stdin)){
         remove_newline(req, MAX_REQUEST_SIZE);
