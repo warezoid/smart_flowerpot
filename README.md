@@ -3,9 +3,11 @@ The aim of the project is to create a self-sufficient and ECO-friendly planter f
 
 A photo of the current prototype model can be found below.
 
-![Current prototype model.](./img/current_photo_7.png)
+![Current prototype model.](./img/current_photo_8.png)
 
 ## Outdated model photos
+![Outdated model photo.](./img/current_photo_7.png)
+
 ![Outdated model photo.](./img/current_photo_6.png)
 
 ![Outdated model photo.](./img/current_photo_5.png)
