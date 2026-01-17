@@ -126,14 +126,18 @@ void read_serial(){
 
 */
 
-void setup(){
-  vent_servo_left.attach(VENT_SERVO_LEFT_PIN);
-  vent_servo_right.attach(VENT_SERVO_RIGHT_PIN);
+Servo s;
 
+void setup(){
+  //vent_servo_left.attach(VENT_SERVO_LEFT_PIN);
+  //vent_servo_right.attach(VENT_SERVO_RIGHT_PIN);
+  s.attach(26);
   Serial.begin(115200);
 }
 
 void loop(){
-  move_servo(vent_servo_pos);
-  read_serial();
+  //move_servo(vent_servo_pos);
+  //read_serial();
+  s.write(180);
+  delay(5000);
 }
