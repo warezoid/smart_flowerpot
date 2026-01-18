@@ -34,7 +34,7 @@ short calc_move(float open_rate){
     - command: prvnich 10 znaku v requestu
     - value:
 */
-
+/*
 #define max_request_length 101
 #define max_command_length 11
 #define open_rate_length 5
@@ -114,7 +114,7 @@ void read_serial(){
   }
 }
 
-
+*/
 
 /*
 
@@ -131,13 +131,14 @@ Servo s;
 void setup(){
   //vent_servo_left.attach(VENT_SERVO_LEFT_PIN);
   //vent_servo_right.attach(VENT_SERVO_RIGHT_PIN);
-  s.attach(26);
-  Serial.begin(115200);
+  s.attach(25);
 }
 
 void loop(){
   //move_servo(vent_servo_pos);
   //read_serial();
-  s.write(180);
+  s.write(0);
+  delay(5000);
+  s.write(360);
   delay(5000);
 }

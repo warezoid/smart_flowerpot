@@ -12,8 +12,8 @@
 #define PERIOD_US 20000     //1 / FREQUENCY * 1000000
 #define MAX_DUTY 8192       //2**DUTY_RESOLUTION
 
-#define SERVO_MIN_PW_US 1000
-#define SERVO_MAX_PW_US 2000
+#define SERVO_MIN_PW_US 500
+#define SERVO_MAX_PW_US 2500
 #define SERVO_MAX_DEG 180
 
 typedef struct{

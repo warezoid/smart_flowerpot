@@ -9,7 +9,9 @@
     servo positions: 0 (0.5ms) -> min | 90 (1.5ms) -> stred | 180 (2.5ms) -> max
         - send angle between 0 - 180 deg -> calculate pulse widht -> calculate duty cycle
     duty resolution: basicly it is offset value | more samples -> finer signal
-    duty: on time in percentage (0.75 -> 75 %) coded in offset binary
+    duty: on time in percentage (0.75 -> 75 %) coded in offset binary -> duty value between 2.5 % and 12.5 %
+
+    esp32 and servo must be in the same VOLTAGE RAILS!
 */
 
 #include <stdio.h>
@@ -20,16 +22,17 @@
 void app_main(void)
 {
     Servo vent_servo = {
-        .PIN = GPIO_NUM_18,
+        .PIN = GPIO_NUM_25,
         .TIMER = LEDC_TIMER_0,
         .CHANNEL = LEDC_CHANNEL_0
     };
     servo_setup(vent_servo);
 
-    while(1){
-        servo_write(vent_servo.CHANNEL, 45);
-        vTaskDelay(pdMS_TO_TICKS(1000));
-        servo_write(vent_servo.CHANNEL, 135);
-        vTaskDelay(pdMS_TO_TICKS(1000));        
+    while(1){       
+        servo_write(vent_servo.CHANNEL, 0);
+        vTaskDelay(pdMS_TO_TICKS(500));
+
+        servo_write(vent_servo.CHANNEL, 180);
+        vTaskDelay(pdMS_TO_TICKS(500));
     }
 }
