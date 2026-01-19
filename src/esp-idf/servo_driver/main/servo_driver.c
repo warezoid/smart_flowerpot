@@ -31,6 +31,7 @@
                 - Blocked condition will be shown in GUI.
             - Servo move vent to its final destination and activate end position sensor. -> everythink is OK.
 
+        - NUMBER OF USED PINS: 1 GPIO (pwm rail) | 2 DO (MOSFET gate) | 4 DI (END POSITION SENSORS) - TODO think about minimalization?
 */
 
 #include <stdio.h>
