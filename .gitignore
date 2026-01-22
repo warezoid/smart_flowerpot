@@ -1,5 +1,5 @@
 ignore/
 src/request_parser/RequestParser
 src/request_parser/test.stdin
-src/esp-idf/servo_driver/.vscode
 src/esp-idf/servo_driver/build
+src/esp-idf/smart_flowerpot/build
