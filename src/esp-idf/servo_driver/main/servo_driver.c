@@ -37,7 +37,7 @@
 #include <stdio.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
-#include "vent_driver.h"
+#include "servo_motor_180.h"
 
 void app_main(void)
 {
@@ -50,8 +50,10 @@ void app_main(void)
 
     while(1){       
         servo_write(vent_servo.CHANNEL, 0);
+        printf("0\n");
         vTaskDelay(pdMS_TO_TICKS(5000));
 
+        printf("180\n");
         servo_write(vent_servo.CHANNEL, 180);
         vTaskDelay(pdMS_TO_TICKS(5000));
     }
