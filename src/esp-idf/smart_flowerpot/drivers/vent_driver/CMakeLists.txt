@@ -6,5 +6,5 @@ set(
 idf_component_register(
     SRCS ${srcs}
     INCLUDE_DIRS "include"
-    REQUIRES pwm_generator
+    REQUIRES esp_driver_gpio pwm_generator
 )

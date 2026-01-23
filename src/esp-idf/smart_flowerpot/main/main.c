@@ -4,13 +4,9 @@
 #include "vent_driver.h"
 
 void app_main(void){
-    call_pwm_init(LEDC_CHANNEL_0);
-    
-    while(1){
-        calc_duty(0);   //204
-        vTaskDelay(pdMS_TO_TICKS(5000));
+    vent_driver_init();
 
-        calc_duty(180); //1024
-        vTaskDelay(pdMS_TO_TICKS(5000));
+    while(1){
+        vTaskDelay(pdMS_TO_TICKS(10));
     }
 }
