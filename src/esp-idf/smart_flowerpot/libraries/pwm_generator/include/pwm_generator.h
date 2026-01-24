@@ -18,6 +18,6 @@ typedef struct{
 } pwm_init_t;
 
 void pwm_init(pwm_init_t *pwm_cfg);
-void pwm_set_duty(const ledc_channel_t *CHANNEL_NUM, uint32_t *duty);
+void pwm_set_duty(const ledc_channel_t CHANNEL_NUM, uint16_t duty);
 
 #endif

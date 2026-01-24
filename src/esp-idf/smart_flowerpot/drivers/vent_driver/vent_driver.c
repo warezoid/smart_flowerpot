@@ -7,6 +7,7 @@
 #include "vent_driver.h"
 
 void vent_driver_init(){
+    //init pwm_generator
     pwm_init_t pwm_cfg = {
         .timer = LEDC_TIMER_0,
         .frequency_hz = 50,
@@ -15,16 +16,53 @@ void vent_driver_init(){
     };
     pwm_init(&pwm_cfg);
 
+    //init out gpio
     gpio_set_direction(OUT_VSPM1_PIN, GPIO_MODE_OUTPUT);
     gpio_set_direction(OUT_VSPM2_PIN, GPIO_MODE_OUTPUT);
     gpio_set_level(OUT_VSPM1_PIN, 0);
     gpio_set_level(OUT_VSPM2_PIN, 0);
 
+    //init in gpio
     gpio_set_direction(IN_ESO1_PIN, GPIO_MODE_INPUT);
     gpio_set_direction(IN_ESO2_PIN, GPIO_MODE_INPUT);
     gpio_set_direction(IN_ESC1_PIN, GPIO_MODE_INPUT);
     gpio_set_direction(IN_ESC2_PIN, GPIO_MODE_INPUT);
 }
+
+void vent_cls(vsrp_dataset *vent_sys){
+    if(!vent_sys->vsrs_tick){
+        pwm_set_duty(OUT_PWM_CHANNEL, SERVO_DUTY_CLOSE);
+        printf("DUTY CHANGED TO CLOSE!\n");
+
+        if(vent_sys->vsv1_enabled){
+            printf("MOSFET 1 SWITCH ON!\n");
+            gpio_set_level(OUT_VSPM1_PIN, 1);
+        }
+        
+        if(vent_sys->vsv2_enabled){
+            printf("MOSFET 2 SWITCH ON!\n");
+            gpio_set_level(OUT_VSPM2_PIN, 1);
+        }
+
+        vent_sys->vsrs_tick = xTaskGetTickCount();
+        printf("TICK UPDATED: %ld!\n", vent_sys->vsrs_tick);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
     BELLOW IS ONLY TESTING CODE

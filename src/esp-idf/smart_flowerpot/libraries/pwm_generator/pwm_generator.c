@@ -22,7 +22,7 @@ void pwm_init(pwm_init_t *pwm_cfg){
     ledc_channel_config(&c);
 }
 
-void pwm_set_duty(const ledc_channel_t *CHANNEL_NUM, uint32_t *duty){
-    ledc_set_duty(SPEED_MODE, *CHANNEL_NUM, *duty);
-    ledc_update_duty(SPEED_MODE, *CHANNEL_NUM);
+void pwm_set_duty(const ledc_channel_t CHANNEL_NUM, uint16_t duty){
+    ledc_set_duty(SPEED_MODE, CHANNEL_NUM, duty);
+    ledc_update_duty(SPEED_MODE, CHANNEL_NUM);
 }

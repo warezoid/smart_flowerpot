@@ -2,6 +2,10 @@
 #define VENT_DRIVER_H
 
 #include <stdint.h>
+
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+
 #include "driver/gpio.h"
 #include "pwm_generator.h"
 
@@ -18,7 +22,18 @@
 #define IN_ESC1_PIN GPIO_NUM_36
 #define IN_ESC2_PIN GPIO_NUM_37
 
+typedef struct{
+    TickType_t vsrs_tick;
+    uint8_t vsv1_enabled;
+    uint8_t vsv2_enabled;
+    uint8_t errcode_1;
+    uint8_t errcode_2;
+} vsrp_dataset;
+
 void vent_driver_init();
+
+void vent_cls(vsrp_dataset *vent_sys);
+
 void calc_duty(uint32_t deg);
 
 #endif
