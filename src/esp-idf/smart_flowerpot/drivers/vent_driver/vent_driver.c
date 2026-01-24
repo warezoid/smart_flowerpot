@@ -80,7 +80,7 @@ void vent_ack(vsrp_dataset *vent_sys){
         printf("VENT ACK INSIDE CONDITION!\n");
         
         if((xTaskGetTickCount() - vent_sys->vsrs_tick) >= pdMS_TO_TICKS(5000)){
-            switch(vsrp_dataset->vsp_code){
+            switch(vent_sys->vsp_code){
                 case 1:
                 //vsp_code = 1 -> close -> waiting for revision
                 //end switch conditions
@@ -90,7 +90,7 @@ void vent_ack(vsrp_dataset *vent_sys){
                 //end switch conditions
                 break;
                 default:
-                vsrp_dataset->vsp_code = 0;
+                vent_sys->vsp_code = 0;
                 vent_sys->vsrs_tick = 0;
                 break;
             }
