@@ -29,6 +29,8 @@ void vent_driver_init(){
     gpio_set_direction(IN_ESC2_PIN, GPIO_MODE_INPUT);
 }
 
+
+
 void vent_cls(vsrp_dataset *vent_sys){
     if(!vent_sys->vsrs_tick){
         pwm_set_duty(OUT_PWM_CHANNEL, SERVO_DUTY_CLOSE);
@@ -45,7 +47,45 @@ void vent_cls(vsrp_dataset *vent_sys){
         }
 
         vent_sys->vsrs_tick = xTaskGetTickCount();
+        vent_sys->vsp_code = 1;
         printf("TICK UPDATED: %ld!\n", vent_sys->vsrs_tick);
+    }
+}
+
+void vent_opn(vsrp_dataset *vent_sys){
+    if(!vent_sys->vsrs_tick){
+        pwm_set_duty(OUT_PWM_CHANNEL, SERVO_DUTY_OPEN);
+        printf("DUTY CHANGED TO OPEN!\n");
+
+        if(vent_sys->vsv1_enabled){
+            printf("MOSFET 1 SWITCH ON!\n");
+            gpio_set_level(OUT_VSPM1_PIN, 1);
+        }
+        
+        if(vent_sys->vsv2_enabled){
+            printf("MOSFET 2 SWITCH ON!\n");
+            gpio_set_level(OUT_VSPM2_PIN, 1);
+        }
+
+        vent_sys->vsrs_tick = xTaskGetTickCount();
+        vent_sys->vsp_code = 2;
+        printf("TICK UPDATED: %ld!\n", vent_sys->vsrs_tick);
+    }
+}
+
+
+
+//vsp_code = 0 -> no change -> IGNORE
+//vsp_code = 1 -> close -> waiting for revision
+//vsp_code = 2 -> open -> waiting for revision
+void vent_ack(vsrp_dataset *vent_sys){
+    if(vent_sys->vsrs_tick){
+        printf("VENT ACK INSIDE CONDITION!\n");
+
+        if(gpio_get_level(IN_ESO1_PIN)){
+            vent_sys->vsrs_tick = 0;
+            printf("TICK UPDATE: 0!\n");
+        }
     }
 }
 

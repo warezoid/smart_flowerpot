@@ -7,12 +7,13 @@ void app_main(void){
     //vent
     vsrp_dataset vs = {
         .vsrs_tick = 0,
+        .vsp_code = 0,
         .vsv1_enabled = 1,
         .vsv2_enabled = 1,
         .errcode_1 = 0,
         .errcode_2 = 0
     };
-    
+
     vent_cls(&vs);
 
     //loop

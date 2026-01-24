@@ -24,6 +24,7 @@
 
 typedef struct{
     TickType_t vsrs_tick;
+    uint8_t vsp_code;
     uint8_t vsv1_enabled;
     uint8_t vsv2_enabled;
     uint8_t errcode_1;
@@ -33,6 +34,8 @@ typedef struct{
 void vent_driver_init();
 
 void vent_cls(vsrp_dataset *vent_sys);
+void vent_opn(vsrp_dataset *vent_sys);
+void vent_ack(vsrp_dataset *vent_sys);
 
 void calc_duty(uint32_t deg);
 
