@@ -75,20 +75,30 @@ void vent_opn(vsrp_dataset *vent_sys){
 
 
 
-//vsp_code = 0 -> no change -> IGNORE
-//vsp_code = 1 -> close -> waiting for revision
-//vsp_code = 2 -> open -> waiting for revision
 void vent_ack(vsrp_dataset *vent_sys){
     if(vent_sys->vsrs_tick){
         printf("VENT ACK INSIDE CONDITION!\n");
+        
+        if((xTaskGetTickCount() - vent_sys->vsrs_tick) >= pdMS_TO_TICKS(5000)){
+            switch(vsrp_dataset->vsp_code){
+                case 1:
+                //vsp_code = 1 -> close -> waiting for revision
+                //end switch conditions
+                break;
+                case 2:
+                //vsp_code = 2 -> open -> waiting for revision
+                //end switch conditions
+                break;
+                default:
+                vsrp_dataset->vsp_code = 0;
+                vent_sys->vsrs_tick = 0;
+                break;
+            }
 
-        if(gpio_get_level(IN_ESO1_PIN)){
-            vent_sys->vsrs_tick = 0;
-            printf("TICK UPDATE: 0!\n");
+            printf("TIMER RUNOUT!\n");
         }
     }
 }
-
 
 
 
