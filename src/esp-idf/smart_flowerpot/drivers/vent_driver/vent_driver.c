@@ -34,106 +34,81 @@ void vent_driver_init(){
 void vent_cls(vsrp_dataset *vent_sys){
     if(!vent_sys->vsrs_tick){
         pwm_set_duty(OUT_PWM_CHANNEL, SERVO_DUTY_CLOSE);
-        printf("DUTY CHANGED TO CLOSE!\n");
 
         if(vent_sys->vsv1_enabled){
-            printf("MOSFET 1 SWITCH ON!\n");
             gpio_set_level(OUT_VSPM1_PIN, 1);
         }
         
         if(vent_sys->vsv2_enabled){
-            printf("MOSFET 2 SWITCH ON!\n");
             gpio_set_level(OUT_VSPM2_PIN, 1);
         }
 
         vent_sys->vsrs_tick = xTaskGetTickCount();
         vent_sys->vsp_code = 1;
-        printf("TICK UPDATED: %ld!\n", vent_sys->vsrs_tick);
     }
 }
 
 void vent_opn(vsrp_dataset *vent_sys){
     if(!vent_sys->vsrs_tick){
         pwm_set_duty(OUT_PWM_CHANNEL, SERVO_DUTY_OPEN);
-        printf("DUTY CHANGED TO OPEN!\n");
 
         if(vent_sys->vsv1_enabled){
-            printf("MOSFET 1 SWITCH ON!\n");
             gpio_set_level(OUT_VSPM1_PIN, 1);
         }
-        
+
         if(vent_sys->vsv2_enabled){
-            printf("MOSFET 2 SWITCH ON!\n");
             gpio_set_level(OUT_VSPM2_PIN, 1);
         }
 
         vent_sys->vsrs_tick = xTaskGetTickCount();
         vent_sys->vsp_code = 2;
-        printf("TICK UPDATED: %ld!\n", vent_sys->vsrs_tick);
     }
 }
 
-
-
 void vent_ack(vsrp_dataset *vent_sys){
     if(vent_sys->vsrs_tick){
-        printf("VENT ACK INSIDE CONDITION!\n");
-
-        if((xTaskGetTickCount() - vent_sys->vsrs_tick) >= pdMS_TO_TICKS(5000)){
+        if((xTaskGetTickCount() - vent_sys->vsrs_tick) >= pdMS_TO_TICKS(VENT_MOVE_DELAY_MS)){
             gpio_set_level(OUT_VSPM1_PIN, 0);
             gpio_set_level(OUT_VSPM2_PIN, 0);
             vent_sys->vsrs_tick = 0;
-            printf("VENT TIMER RUNOUT!\n");
 
             switch(vent_sys->vsp_code){
                 case 1:
-                    printf("SWITCH CASE 1!\n");
                     if(vent_sys->vsv1_enabled){
-                        printf("VSV1 ENABLED CONDITION DONE!\n");
                         if(!gpio_get_level(IN_ESC1_PIN)){
-                            printf("PROBLEM ESC1!\n");
                             vent_sys->vsv1_enabled = 0;
                             vent_sys->errcode_1 = 10;
                         }
                     }
 
                     if(vent_sys->vsv2_enabled){
-                        printf("VSV2 ENABLED CONDITION DONE!\n");
                         if(!gpio_get_level(IN_ESC2_PIN)){
-                            printf("PROBLEM ESC2!\n");
                             vent_sys->vsv2_enabled = 0;
                             vent_sys->errcode_2 = 10;
                         }
                     }
                     break;
                 case 2:
-                    printf("SWITCH CASE 2!\n");
                     if(vent_sys->vsv1_enabled){
-                        printf("VSV1 ENABLED CONDITION DONE!\n");
                         if(!gpio_get_level(IN_ESO1_PIN)){
-                            printf("PROBLEM ESO1!\n");
                             vent_sys->vsv1_enabled = 0;
                             vent_sys->errcode_1 = 10;
                         }
                     }
 
                     if(vent_sys->vsv2_enabled){
-                        printf("VSV2 ENABLED CONDITION DONE!\n");
                         if(!gpio_get_level(IN_ESO2_PIN)){
-                            printf("PROBLEM ESO2!\n");
                             vent_sys->vsv2_enabled = 0;
                             vent_sys->errcode_2 = 10;
                         }
                     }
                     break;
             }
-            
+
             vent_sys->vsp_code = 0;
-            printf("VENT ACK END\n");
         }
     }
 }
-
 
 
 

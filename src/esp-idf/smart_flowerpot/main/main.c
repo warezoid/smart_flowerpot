@@ -14,13 +14,14 @@ void app_main(void){
         .errcode_2 = 0
     };
 
-    vent_cls(&vs);
-    printf("---\n");
+    vent_opn(&vs);
 
     //loop
     while(1){
         vent_ack(&vs);
-        printf("---\n");
+
+
+
         vTaskDelay(pdMS_TO_TICKS(1000));
     }
 }
