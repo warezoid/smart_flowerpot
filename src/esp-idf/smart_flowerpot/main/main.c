@@ -15,11 +15,12 @@ void app_main(void){
     };
 
     vent_cls(&vs);
+    printf("---\n");
 
     //loop
     while(1){
         vent_ack(&vs);
-
+        printf("---\n");
         vTaskDelay(pdMS_TO_TICKS(1000));
     }
 }
