@@ -14,14 +14,14 @@ void app_main(void){
         .errcode_2 = 0
     };
 
-    vent_opn(&vs);
-
+    //vent_opn(&vs);
+    
+    uint32_t ang = 0;
     //loop
     while(1){
-        vent_ack(&vs);
+        //vent_ack(&vs);
 
-
-
-        vTaskDelay(pdMS_TO_TICKS(1000));
+        move_servo(&ang);
+        vTaskDelay(pdMS_TO_TICKS(10));
     }
 }

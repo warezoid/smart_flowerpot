@@ -40,5 +40,6 @@ void vent_opn(vsrp_dataset *vent_sys);
 void vent_ack(vsrp_dataset *vent_sys);
 
 void calc_duty(uint32_t deg);
+void move_servo(uint32_t *deg);
 
 #endif

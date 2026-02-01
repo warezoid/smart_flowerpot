@@ -133,4 +133,25 @@ void calc_duty(uint32_t deg){
     uint32_t duty = (pw * MAX_DUTY) / PERIOD_US;
 
     printf("ESP LOG: Duty value for angle %ld = %ld.\n", deg, duty);
+    pwm_set_duty(OUT_PWM_CHANNEL, duty);
+}
+
+void move_servo(uint32_t *deg){
+    int step = 1;
+
+    if(gpio_get_level(IN_ESO1_PIN)){
+        if(*deg < 180){
+            (*deg) += step;
+        }
+
+        calc_duty(*deg);
+    }
+
+    if(gpio_get_level(IN_ESC1_PIN)){
+        if(*deg > 0){
+            (*deg) -= step;
+        }
+
+        calc_duty(*deg);
+    }
 }
