@@ -9,8 +9,8 @@
 #include "driver/gpio.h"
 #include "pwm_generator.h"
 
-#define SERVO_DUTY_CLOSE 204
-#define SERVO_DUTY_OPEN 1024
+#define SERVO_DUTY_CLOSE 600
+#define SERVO_DUTY_OPEN 223
 
 #define VENT_MOVE_DELAY_MS 5000
 
@@ -38,8 +38,5 @@ void vent_driver_init();
 void vent_cls(vsrp_dataset *vent_sys);
 void vent_opn(vsrp_dataset *vent_sys);
 void vent_ack(vsrp_dataset *vent_sys);
-
-void calc_duty(uint32_t deg);
-void move_servo(uint32_t *deg);
 
 #endif

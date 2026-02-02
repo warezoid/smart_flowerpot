@@ -13,15 +13,11 @@ void app_main(void){
         .errcode_1 = 0,
         .errcode_2 = 0
     };
-
-    //vent_opn(&vs);
     
-    uint32_t ang = 0;
     //loop
     while(1){
-        //vent_ack(&vs);
-
-        move_servo(&ang);
-        vTaskDelay(pdMS_TO_TICKS(10));
+        vent_ack(&vs);
+        
+        vTaskDelay(pdMS_TO_TICKS(100));
     }
 }
