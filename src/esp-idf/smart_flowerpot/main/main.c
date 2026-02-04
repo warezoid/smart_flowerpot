@@ -2,10 +2,8 @@
 
 void app_main(void){
     //init
-    vent_driver_init();
-
-    //vent
     vsrp_dataset vs = {
+        .vscp_timer = NULL,
         .vsrs_tick = 0,
         .vsp_code = 0,
         .vsv1_enabled = 1,
@@ -13,6 +11,11 @@ void app_main(void){
         .errcode_1 = 0,
         .errcode_2 = 0
     };
+    vent_driver_init(&vs);
+
+
+    vent_opn(&vs);
+
     
     //loop
     while(1){

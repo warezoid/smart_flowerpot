@@ -5,6 +5,7 @@
 
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
+#include "esp_timer.h"
 
 #include "driver/gpio.h"
 #include "pwm_generator.h"
@@ -12,7 +13,7 @@
 #define SERVO_DUTY_CLOSE 600
 #define SERVO_DUTY_OPEN 223
 
-#define VENT_MOVE_DELAY_MS 5000
+#define VENT_MOVE_DELAY_MS 2500
 
 #define OUT_PWM_CHANNEL LEDC_CHANNEL_0
 
@@ -25,6 +26,7 @@
 #define IN_ESC2_PIN GPIO_NUM_37
 
 typedef struct{
+    esp_timer_handle_t vscp_timer;
     TickType_t vsrs_tick;
     uint8_t vsp_code;
     uint8_t vsv1_enabled;
@@ -33,7 +35,7 @@ typedef struct{
     uint8_t errcode_2;
 } vsrp_dataset;
 
-void vent_driver_init();
+void vent_driver_init(vsrp_dataset *vent_sys);
 
 void vent_cls(vsrp_dataset *vent_sys);
 void vent_opn(vsrp_dataset *vent_sys);
