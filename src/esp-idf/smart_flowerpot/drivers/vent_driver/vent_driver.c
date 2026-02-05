@@ -1,7 +1,6 @@
 /*
     - CREATE ERROR STRUCTURE FOR VENT AND OTHER ELEMENTS
         - IF ERROR SEND ERROR MESSAGE TO MASTER CONTROLER, WHICH GENERATE ERROR LOG
-    - SET TIMERS ONLY IF VSVs are ENABLED
 */
 
 #include <stdio.h>
@@ -50,29 +49,33 @@ void vent_driver_init(vsrp_dataset *vent_sys){
 
 void vent_cls(vsrp_dataset *vent_sys){
     if(!vent_sys->vsrs_tick){
-        pwm_set_duty(OUT_PWM_CHANNEL, SERVO_DUTY_CLOSE);
+        if(vent_sys->vsv1_enabled || vent_sys->vsv2_enabled){
+            pwm_set_duty(OUT_PWM_CHANNEL, SERVO_DUTY_CLOSE);
 
-        if(vent_sys->vsv1_enabled) gpio_set_level(OUT_VSPM1_PIN, 1);
+            if(vent_sys->vsv1_enabled) gpio_set_level(OUT_VSPM1_PIN, 1);
         
-        if(vent_sys->vsv2_enabled) gpio_set_level(OUT_VSPM2_PIN, 1);
+            if(vent_sys->vsv2_enabled) gpio_set_level(OUT_VSPM2_PIN, 1);
 
-        if(!esp_timer_is_active(vent_sys->vscp_timer)) esp_timer_start_once(vent_sys->vscp_timer, VENT_MOVE_DELAY_MS * 1000);
-        vent_sys->vsrs_tick = xTaskGetTickCount();
-        vent_sys->vsp_code = 1;
+            if(!esp_timer_is_active(vent_sys->vscp_timer)) esp_timer_start_once(vent_sys->vscp_timer, VENT_MOVE_DELAY_MS * 1000);
+            vent_sys->vsrs_tick = xTaskGetTickCount();
+            vent_sys->vsp_code = 1;
+        }
     }
 }
 
 void vent_opn(vsrp_dataset *vent_sys){
     if(!vent_sys->vsrs_tick){
-        pwm_set_duty(OUT_PWM_CHANNEL, SERVO_DUTY_OPEN);
+        if(vent_sys->vsv1_enabled || vent_sys->vsv2_enabled){
+            pwm_set_duty(OUT_PWM_CHANNEL, SERVO_DUTY_OPEN);
 
-        if(vent_sys->vsv1_enabled) gpio_set_level(OUT_VSPM1_PIN, 1);
+            if(vent_sys->vsv1_enabled) gpio_set_level(OUT_VSPM1_PIN, 1);
 
-        if(vent_sys->vsv2_enabled) gpio_set_level(OUT_VSPM2_PIN, 1);
+            if(vent_sys->vsv2_enabled) gpio_set_level(OUT_VSPM2_PIN, 1);
 
-        if(!esp_timer_is_active(vent_sys->vscp_timer)) esp_timer_start_once(vent_sys->vscp_timer, VENT_MOVE_DELAY_MS * 1000);
-        vent_sys->vsrs_tick = xTaskGetTickCount();
-        vent_sys->vsp_code = 2;
+            if(!esp_timer_is_active(vent_sys->vscp_timer)) esp_timer_start_once(vent_sys->vscp_timer, VENT_MOVE_DELAY_MS * 1000);
+            vent_sys->vsrs_tick = xTaskGetTickCount();
+            vent_sys->vsp_code = 2;
+        }
     }
 }
 
