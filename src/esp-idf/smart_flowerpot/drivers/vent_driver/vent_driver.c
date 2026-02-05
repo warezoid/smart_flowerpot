@@ -1,5 +1,7 @@
 /*
     - CREATE ERROR STRUCTURE FOR VENT AND OTHER ELEMENTS
+        - IF ERROR SEND ERROR MESSAGE TO MASTER CONTROLER, WHICH GENERATE ERROR LOG
+    - SET TIMERS ONLY IF VSVs are ENABLED
 */
 
 #include <stdio.h>
@@ -86,14 +88,14 @@ void vent_ack(vsrp_dataset *vent_sys){
                     if(vent_sys->vsv1_enabled){
                         if(!gpio_get_level(IN_ESC1_PIN)){
                             vent_sys->vsv1_enabled = 0;
-                            vent_sys->errcode_1 = 10;
+                            //SEND ERROR MESSAGE TO MASTER CONTROLER
                         }
                     }
 
                     if(vent_sys->vsv2_enabled){
                         if(!gpio_get_level(IN_ESC2_PIN)){
                             vent_sys->vsv2_enabled = 0;
-                            vent_sys->errcode_2 = 10;
+                            //SEND ERROR MESSAGE TO MASTER CONTROLER
                         }
                     }
                     break;
@@ -101,14 +103,14 @@ void vent_ack(vsrp_dataset *vent_sys){
                     if(vent_sys->vsv1_enabled){
                         if(!gpio_get_level(IN_ESO1_PIN)){
                             vent_sys->vsv1_enabled = 0;
-                            vent_sys->errcode_1 = 10;
+                            //SEND ERROR MESSAGE TO MASTER CONTROLER
                         }
                     }
 
                     if(vent_sys->vsv2_enabled){
                         if(!gpio_get_level(IN_ESO2_PIN)){
                             vent_sys->vsv2_enabled = 0;
-                            vent_sys->errcode_2 = 10;
+                            //SEND ERROR MESSAGE TO MASTER CONTROLER
                         }
                     }
                     break;

@@ -7,20 +7,18 @@ void app_main(void){
         .vsrs_tick = 0,
         .vsp_code = 0,
         .vsv1_enabled = 1,
-        .vsv2_enabled = 1,
-        .errcode_1 = 0,
-        .errcode_2 = 0
+        .vsv2_enabled = 1
     };
     vent_driver_init(&vs);
 
 
+    
     vent_opn(&vs);
-
     
     //loop
     while(1){
         vent_ack(&vs);
-        
+
         vTaskDelay(pdMS_TO_TICKS(100));
     }
 }
