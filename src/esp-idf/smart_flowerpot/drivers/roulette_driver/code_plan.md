@@ -1,7 +1,17 @@
 # Roulette driver
 
+## Problems
+- Main problem is that I need somehow always stop the motor -> without relaying on ESP or some driver.
+    - Idealy manualy, some type of block.
+    - Potentional solution:
+        - Physicly add some guards which will block weight from some places - bellow and above guides.
+        - Normal run -> hall effect sensors connected to ESP.
+            - Weight magnet reference with sensor -> ESP get notification -> switch off motor power.
+        - Emergency -> limit switch phisicaly behind hall efffect sensor -> normaly close -> in series with motor power -> if active (error) motor shuts down.
+        - Emergency 2 -> try to get motor driver with overcurrent protection -> if motor is drawing too much current it will switch off power to motor
+
 ## CAD
-1. Solve roulette block by using worm gear -> no need for external blocking system. 
+1. Solve roulette block by using worm gear -> no need for external blocking system.
 
 ## Code diagram
 1. Get OPEN/CLOSE request.
