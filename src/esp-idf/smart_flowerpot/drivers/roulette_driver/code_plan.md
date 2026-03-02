@@ -13,7 +13,7 @@
             - If ESP goes down -> no problem -> NC switch connected with motor power in series.
             - If motor or motor driver goes down -> motor will not spin -> no problem -> ESP set motor to block and sent alerts.
         - Emergency 2 -> try to get motor driver with overcurrent protection -> if motor is drawing too much current it will switch off power to motor.
-            - DRV8871 ???
+            - Use MP6550 motor driver.
 
 ## CAD
 1. Solve roulette block by using worm gear -> no need for external blocking system.
