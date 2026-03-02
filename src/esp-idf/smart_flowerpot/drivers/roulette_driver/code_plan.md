@@ -2,13 +2,18 @@
 
 ## Problems
 - Main problem is that I need somehow always stop the motor -> without relaying on ESP or some driver.
-    - Idealy manualy, some type of block.
     - Potentional solution:
         - Physicly add some guards which will block weight from some places - bellow and above guides.
         - Normal run -> hall effect sensors connected to ESP.
             - Weight magnet reference with sensor -> ESP get notification -> switch off motor power.
-        - Emergency -> limit switch phisicaly behind hall efffect sensor -> normaly close -> in series with motor power -> if active (error) motor shuts down.
-        - Emergency 2 -> try to get motor driver with overcurrent protection -> if motor is drawing too much current it will switch off power to motor
+            - Operation will set check index and ESP will check it in main program loop. (index 0 -> check nothing, index > 0 -> check up, index < 0 -> check down)
+            - To stop motor 2 sensors will be in OR mode, to check if position is valid use AND mode.
+        - Emergency -> limit switch (msw13 microswitch) physicaly behind hall efffect sensor (upper or lower) -> normaly close -> in series with motor power -> if active (error) motor shuts down.
+            - This is emergency stop in electrical layer.
+            - If ESP goes down -> no problem -> NC switch connected with motor power in series.
+            - If motor or motor driver goes down -> motor will not spin -> no problem -> ESP set motor to block and sent alerts.
+        - Emergency 2 -> try to get motor driver with overcurrent protection -> if motor is drawing too much current it will switch off power to motor.
+            - DRV8871 ???
 
 ## CAD
 1. Solve roulette block by using worm gear -> no need for external blocking system.
