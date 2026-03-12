@@ -16,7 +16,6 @@
             - Use MP6550 motor driver.
 
 ## CAD
-1. Solve roulette block by using worm gear -> no need for external blocking system.
 
 ## Code diagram
 1. Get OPEN/CLOSE request.

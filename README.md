@@ -9,6 +9,14 @@ The aim of the project is to create a self-sufficient and ECO-friendly planter f
 2. Sensors completation - solve sensor placement and data gathering.
 3. User interface - create user interface with graphs, controls, logs, ...
 
+## TODOs
+- Print second drainage vent.
+- Make drainage vent driving circuit.
+
+- Create roulette test stand.
+- Design and make roulette guides.
+- Program roulette driver code.
+
 ## Outdated model photos
 CAD of roulette system. 
 ![Outdated model photo.](./img/current_photo_3.png)
