@@ -23,7 +23,7 @@
 #define IN_ESO1_PIN GPIO_NUM_34
 #define IN_ESO2_PIN GPIO_NUM_35
 #define IN_ESC1_PIN GPIO_NUM_36
-#define IN_ESC2_PIN GPIO_NUM_37
+#define IN_ESC2_PIN GPIO_NUM_39
 
 typedef struct{
     esp_timer_handle_t vscp_timer;

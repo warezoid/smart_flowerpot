@@ -50,6 +50,7 @@ void vent_driver_init(vsrp_dataset *vent_sys){
 void vent_cls(vsrp_dataset *vent_sys){
     if(!vent_sys->vsrs_tick){
         if(vent_sys->vsv1_enabled || vent_sys->vsv2_enabled){
+            printf("Zaviracka\n");
             pwm_set_duty(OUT_PWM_CHANNEL, SERVO_DUTY_CLOSE);
 
             if(vent_sys->vsv1_enabled) gpio_set_level(OUT_VSPM1_PIN, 1);
@@ -66,6 +67,7 @@ void vent_cls(vsrp_dataset *vent_sys){
 void vent_opn(vsrp_dataset *vent_sys){
     if(!vent_sys->vsrs_tick){
         if(vent_sys->vsv1_enabled || vent_sys->vsv2_enabled){
+            printf("Oteviracka\n");
             pwm_set_duty(OUT_PWM_CHANNEL, SERVO_DUTY_OPEN);
 
             if(vent_sys->vsv1_enabled) gpio_set_level(OUT_VSPM1_PIN, 1);
