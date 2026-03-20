@@ -10,8 +10,8 @@
 #include "driver/gpio.h"
 #include "pwm_generator.h"
 
-#define SERVO_DUTY_CLOSE 600
-#define SERVO_DUTY_OPEN 223
+#define SERVO_DUTY_CLOSE 700
+#define SERVO_DUTY_OPEN 220
 
 #define VENT_MOVE_DELAY_MS 2500
 

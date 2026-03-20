@@ -15,19 +15,19 @@ void app_main(void){
         .vsv1_enabled = 1,
         .vsv2_enabled = 1
     };
-    vent_driver_init(&vs);
+    vent_driver_init(&vs);  //this should return if init is done or error occured!
     
     //loop
     while(1){
 
         if(gpio_get_level(PIN_16)){
             printf("-\n");
-            vent_opn(&vs);
+            vent_opn(&vs);  //this should return if open is done or error occured! - respons only to MASTER if OK
         }
 
         if(gpio_get_level(PIN_17)){
             printf("--\n");
-            vent_cls(&vs);
+            vent_cls(&vs);  //this should return if close is done or error occured! - respons only to MASTER if OK
         }
 
         vent_ack(&vs);
