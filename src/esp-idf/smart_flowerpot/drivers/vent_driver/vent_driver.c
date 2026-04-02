@@ -83,17 +83,21 @@ void vent_opn(vsrp_dataset *vent_sys){
 
 void vent_ack(vsrp_dataset *vent_sys){
     if(vent_sys->vsrs_tick){
+        printf("check!\n");
         if((xTaskGetTickCount() - vent_sys->vsrs_tick) >= pdMS_TO_TICKS(VENT_MOVE_DELAY_MS + 500)){
+            printf("check ticks!\n");
             gpio_set_level(OUT_VSPM1_PIN, 0);
             gpio_set_level(OUT_VSPM2_PIN, 0);
             vent_sys->vsrs_tick = 0;
 
             switch(vent_sys->vsp_code){
                 case 1:
+                    printf("check 1!\n");
                     if(vent_sys->vsv1_enabled){
                         if(!gpio_get_level(IN_ESC1_PIN)){
                             vent_sys->vsv1_enabled = 0;
                             //SEND ERROR MESSAGE TO MASTER CONTROLER
+                            printf("vs1 error!\n");
                         }
                     }
 
@@ -101,14 +105,17 @@ void vent_ack(vsrp_dataset *vent_sys){
                         if(!gpio_get_level(IN_ESC2_PIN)){
                             vent_sys->vsv2_enabled = 0;
                             //SEND ERROR MESSAGE TO MASTER CONTROLER
+                            printf("vs2 error!\n");
                         }
                     }
                     break;
                 case 2:
+                    printf("check 2!\n");
                     if(vent_sys->vsv1_enabled){
                         if(!gpio_get_level(IN_ESO1_PIN)){
                             vent_sys->vsv1_enabled = 0;
                             //SEND ERROR MESSAGE TO MASTER CONTROLER
+                            printf("vs1 error!\n");
                         }
                     }
 
@@ -116,6 +123,7 @@ void vent_ack(vsrp_dataset *vent_sys){
                         if(!gpio_get_level(IN_ESO2_PIN)){
                             vent_sys->vsv2_enabled = 0;
                             //SEND ERROR MESSAGE TO MASTER CONTROLER
+                            printf("vs2 error!\n");
                         }
                     }
                     break;

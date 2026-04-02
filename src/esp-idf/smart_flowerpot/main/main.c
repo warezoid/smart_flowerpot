@@ -1,12 +1,21 @@
 #include "vent_driver.h"
 
-#define PIN_16 GPIO_NUM_16
-#define PIN_17 GPIO_NUM_17
+/****************TEST CODE*********************/
+void test_open(){
+    printf("open\n");
+    pwm_set_duty(OUT_PWM_CHANNEL, SERVO_DUTY_OPEN);
+}
+
+void test_close(){
+    printf("close\n");
+    pwm_set_duty(OUT_PWM_CHANNEL, SERVO_DUTY_CLOSE);
+}
+
+int test_opened = 1;
+/*************************************/
+
 
 void app_main(void){
-    gpio_set_direction(PIN_16, GPIO_MODE_INPUT);
-    gpio_set_direction(PIN_17, GPIO_MODE_INPUT);
-
     //init
     vsrp_dataset vs = {
         .vscp_timer = NULL,
@@ -16,22 +25,24 @@ void app_main(void){
         .vsv2_enabled = 1
     };
     vent_driver_init(&vs);  //this should return if init is done or error occured!
+
+    printf("init\n");
+    gpio_set_level(OUT_VSPM1_PIN, 1);
+    gpio_set_level(OUT_VSPM2_PIN, 1);
+
+
+    test_open();
     
     //loop
     while(1){
-
-        if(gpio_get_level(PIN_16)){
-            printf("-\n");
-            vent_opn(&vs);  //this should return if open is done or error occured! - respons only to MASTER if OK
+        if(test_opened){
+            test_close();
         }
-
-        if(gpio_get_level(PIN_17)){
-            printf("--\n");
-            vent_cls(&vs);  //this should return if close is done or error occured! - respons only to MASTER if OK
+        else{
+            test_open();
         }
-
-        vent_ack(&vs);
-
-        vTaskDelay(pdMS_TO_TICKS(100));
+        test_opened = !test_opened;
+        
+        vTaskDelay(pdMS_TO_TICKS(3000));
     }
 }

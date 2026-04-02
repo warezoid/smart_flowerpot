@@ -17,13 +17,13 @@
 
 #define OUT_PWM_CHANNEL LEDC_CHANNEL_0
 
-#define OUT_VSPM1_PIN GPIO_NUM_26
-#define OUT_VSPM2_PIN GPIO_NUM_27
+#define IN_ESC1_PIN GPIO_NUM_34
+#define IN_ESO1_PIN GPIO_NUM_35
+#define OUT_VSPM1_PIN GPIO_NUM_32
 
-#define IN_ESO1_PIN GPIO_NUM_34
-#define IN_ESO2_PIN GPIO_NUM_35
-#define IN_ESC1_PIN GPIO_NUM_36
-#define IN_ESC2_PIN GPIO_NUM_39
+#define IN_ESC2_PIN GPIO_NUM_36
+#define IN_ESO2_PIN GPIO_NUM_39
+#define OUT_VSPM2_PIN GPIO_NUM_33
 
 typedef struct{
     esp_timer_handle_t vscp_timer;
