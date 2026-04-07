@@ -16,6 +16,8 @@ int test_opened = 1;
 
 
 void app_main(void){
+    printf("hello from esp\n");
+
     //init
     vsrp_dataset vs = {
         .vscp_timer = NULL,
@@ -42,7 +44,7 @@ void app_main(void){
             test_open();
         }
         test_opened = !test_opened;
-        
+
         vTaskDelay(pdMS_TO_TICKS(3000));
     }
 }
