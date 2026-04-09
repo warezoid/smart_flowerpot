@@ -10,11 +10,9 @@ The aim of the project is to create a self-sufficient and ECO-friendly planter f
 3. User interface - create user interface with graphs, controls, logs, ...
 
 ## TODOs
-- Print second drainage vent.
-- Make drainage vent driving circuit.
+- Debug drainage vent driving circuit.
 
-- Create roulette test stand.
-- Design and make roulette guides.
+- Redesign and make roulette guides.
 - Program roulette driver code.
 
 ## Outdated model photos

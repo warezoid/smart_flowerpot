@@ -3,6 +3,14 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 
 
+## TODOs
+- Add project roadmap.
+- Add project structure - electronis, construction, code, ...
+- Add some RPI web server notes - MAN/AUTO mode, ...
+- Add roulettes program text.
+
+
+
 ## Construction - **COMPLETE BY THE END OF MAY**
 - Finish welding:
     - Weld roof and bottom together.
@@ -32,7 +40,7 @@ This document is overview of progress and TODOs on smart flowerpot project.
     - Test for shorts, poor soldering and wire brakes.
     - Put circuit description on board.
 
-- Update schematic of vent driver circuit. (**FINISH UNTILL 16. APR 2026**)
+- Update schematic of vent driver circuit. (**FINISH UNTIL 16. APR 2026**)
 
 - Program update (**FINISH TILL 12. APR 2026**):
     - Update file structure of project.
@@ -43,6 +51,26 @@ This document is overview of progress and TODOs on smart flowerpot project.
     - Plan case for vent servo and RJ45 mini-board.
     - Make CAD model - include cabel input with some default protection.
     - Print cases and add them to test stand.
+
+
+### Roulette
+- Hardware & Software (**FINISH UNTIL 19. APR 2026**):
+    - Put roulette driver circuit on breadboard.
+    - Create development diagram.
+    - Write roulette driver code and debug it.
+
+- CAD and making (**FINISH UNTIL 26. APR 2026**):
+    - Redesign roulette guide - make deeper groves, think about wall OSB, ...
+    - Create roulette guides test stand and test it with hardware & software.
+
+- Second pair:
+    - Make 2 pairs of roulette guides test stands.
+    - Duplicate breadboard circuit and test stand with hardware & software.
+
+- Final works:
+    - Solder together roulette driver circuit and debug it.
+    - Put description on board.
+    - Update schematic of roulette driver.
 
 
 
