@@ -4,10 +4,45 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 
 ## TODOs
-- Add project roadmap.
 - Add project structure - electronis, construction, code, ...
 - Add some RPI web server notes - MAN/AUTO mode, ...
 - Add roulettes program text.
+
+
+## Project roadmap
+- Version 1: create functional sample of smart flowerpot.
+    - Mechanical phase:
+        - Create and make smartflowerpot structure.
+        - Steel frame, OSB, polycarbonate, 3d printing.
+        - CAD, FEM, 3d printing.
+        - Output should be physical structure of smartflowerpot without drivers, sensors and electronics.
+
+    - Driver phase:
+        - Create hardware and software drivers for smart fowerpot.
+        - Drainage vent, roulette, flower vent, roof vent.
+        - Water circuit driver, solar power recharge.
+        - Software, hardware, electronics.
+        - Output should be functional drivers.
+
+    - Sensor phase:
+        - Place sensors for watering, overview, ventilation, ...
+        - Create some algorithms for data procesing.
+        - Output should be updated table with sensor data.
+        - Coding, electronics, logic, simple table database.
+
+    - Master-slave phase:
+        - Create communication between MASTER (RPi) and multiple slaves (ESP32).
+        - Send commands from MASTER to SLAVE, which will reply.
+        - Start self-hosting webserver on RPi.
+        - Create simple web GUI which will serve as commands IO.
+
+    - Advanced master-slave phase:
+        - RPi will get data from sensor ESP32 and store them in some local copy for overviews and commands.
+        - Data will be checked and if needed drivers will be called to do some action.
+        - Drivers will reply with action status and process is done.
+        - Update GUI to more profesional form - overviews, logs, ...
+
+- Version 2: add IR camera and add some machine vision. Pests monitoring.
 
 
 
