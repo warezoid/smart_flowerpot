@@ -32,12 +32,14 @@ This document is overview of progress and TODOs on smart flowerpot project.
     - Test for shorts, poor soldering and wire brakes.
     - Put circuit description on board.
 
+- Update schematic of vent driver circuit. (**FINISH UNTILL 16. APR 2026**)
+
 - Program update (**FINISH TILL 12. APR 2026**):
     - Update file structure of project.
     - Update GPIOs names and check their numbers to be compatible with *smartflowerpot_tech_db*.
     - Test software with hardware.
 
-- Create servo case:
+- Create servo case (**COMPLETE BY THE END OF APRIL**):
     - Plan case for vent servo and RJ45 mini-board.
     - Make CAD model - include cabel input with some default protection.
     - Print cases and add them to test stand.
