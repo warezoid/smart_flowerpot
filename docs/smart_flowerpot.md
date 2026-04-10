@@ -9,6 +9,7 @@ This document is overview of progress and TODOs on smart flowerpot project.
 - Add roulettes program text.
 
 
+
 ## Project roadmap
 - Version 1: create functional sample of smart flowerpot.
     - Mechanical phase:
@@ -69,17 +70,12 @@ This document is overview of progress and TODOs on smart flowerpot project.
 ## ESP32 / DRIVERs / MOTION
 
 ### Drainage vent
-- Repair vent driver electronics (**FINISH TILL 11. APR 2026**):
-    - Resolder new servo.
-    - Assembly new ESP32 on a board.
-    - Test for shorts, poor soldering and wire brakes.
-    - Put circuit description on board.
-
 - Update schematic of vent driver circuit. (**FINISH UNTIL 16. APR 2026**)
 
 - Program update (**FINISH TILL 12. APR 2026**):
     - Update file structure of project.
     - Update GPIOs names and check their numbers to be compatible with *smartflowerpot_tech_db*.
+    - Do configuration of vent - set CLOSE and OPEN duty.
     - Test software with hardware.
 
 - Create servo case (**COMPLETE BY THE END OF APRIL**):
