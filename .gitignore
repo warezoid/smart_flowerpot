@@ -1,3 +1,2 @@
 src/request_parser/RequestParser
 src/request_parser/test.stdin
-src/esp-idf/smart_flowerpot/build

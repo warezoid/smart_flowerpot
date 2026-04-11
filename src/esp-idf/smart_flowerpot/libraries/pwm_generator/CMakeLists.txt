@@ -1,10 +1,5 @@
-set(
-    srcs 
-    "pwm_generator.c"
-)
-
 idf_component_register(
-    SRCS ${srcs}
+    SRCS "pwm_generator.c"
     INCLUDE_DIRS "include"
     REQUIRES esp_driver_ledc
 )

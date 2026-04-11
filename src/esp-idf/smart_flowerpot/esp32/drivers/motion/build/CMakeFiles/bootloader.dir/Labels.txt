@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/build/CMakeFiles/bootloader
+/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/build/CMakeFiles/bootloader.rule
+/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/build/CMakeFiles/bootloader-complete.rule
+/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
