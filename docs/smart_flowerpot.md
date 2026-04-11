@@ -74,7 +74,6 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 - Program update (**FINISH TILL 12. APR 2026**):
     - Update file structure of project.
-    - Update GPIOs names and check their numbers to be compatible with *smartflowerpot_tech_db*.
     - Do configuration of vent - set CLOSE and OPEN duty.
     - Test software with hardware.
 

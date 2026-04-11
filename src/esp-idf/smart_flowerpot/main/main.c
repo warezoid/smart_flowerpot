@@ -3,12 +3,12 @@
 /****************TEST CODE*********************/
 void test_open(){
     printf("open\n");
-    pwm_set_duty(OUT_PWM_CHANNEL, SERVO_DUTY_OPEN);
+    pwm_set_duty(SYS_DRAIN_VENT_PWM_CHNL, SERVO_DUTY_OPEN);
 }
 
 void test_close(){
     printf("close\n");
-    pwm_set_duty(OUT_PWM_CHANNEL, SERVO_DUTY_CLOSE);
+    pwm_set_duty(SYS_DRAIN_VENT_PWM_CHNL, SERVO_DUTY_CLOSE);
 }
 
 int test_opened = 1;
@@ -29,8 +29,8 @@ void app_main(void){
     vent_driver_init(&vs);  //this should return if init is done or error occured!
 
     printf("init\n");
-    gpio_set_level(OUT_VSPM1_PIN, 1);
-    gpio_set_level(OUT_VSPM2_PIN, 1);
+    gpio_set_level(OUT_DRAIN_VENT_SPM1, 1);
+    gpio_set_level(OUT_DRAIN_VENT_SPM2, 1);
 
 
     test_open();
