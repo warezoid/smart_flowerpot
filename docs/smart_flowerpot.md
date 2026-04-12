@@ -72,10 +72,6 @@ This document is overview of progress and TODOs on smart flowerpot project.
 ### Drainage vent
 - Update schematic of vent driver circuit. (**FINISH UNTIL 16. APR 2026**)
 
-- Program update (**FINISH TILL 12. APR 2026**):
-    - Do configuration of vent - set CLOSE and OPEN duty.
-    - Test software with hardware.
-
 - Create servo case (**COMPLETE BY THE END OF APRIL**):
     - Plan case for vent servo and RJ45 mini-board.
     - Make CAD model - include cabel input with some default protection.

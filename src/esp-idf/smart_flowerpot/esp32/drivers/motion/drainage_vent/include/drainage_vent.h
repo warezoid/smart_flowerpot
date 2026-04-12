@@ -7,8 +7,8 @@
 
 #include "pwm_generator.h"
 
-#define SERVO_DUTY_CLOSE 700
-#define SERVO_DUTY_OPEN 220
+#define SERVO_DUTY_CLOSE 630
+#define SERVO_DUTY_OPEN 230
 #define VENT_MOVE_DELAY_MS 2500
 
 #define SYS_DRAIN_VENT_PWM_CHNL LEDC_CHANNEL_0
@@ -20,8 +20,8 @@
 #define IN_DRAIN_VENT_ESO1 GPIO_NUM_35
 
 #define OUT_DRAIN_VENT_SPM2 GPIO_NUM_33
-#define IN_DRAIN_VENT_ESC2 GPIO_NUM_39
-#define IN_DRAIN_VENT_ESO2 GPIO_NUM_36
+#define IN_DRAIN_VENT_ESC2 GPIO_NUM_36
+#define IN_DRAIN_VENT_ESO2 GPIO_NUM_39
 
 typedef struct{
     esp_timer_handle_t power_cut_off_timer;
