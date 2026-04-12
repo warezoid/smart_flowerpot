@@ -1,14 +1,15 @@
+#include <stdio.h>
 #include "drainage_vent.h"
 
 /****************TEST CODE*********************/
 void test_open(){
     printf("open\n");
-    pwm_set_duty(SYS_DRAIN_VENT_PWM_CHNL, SERVO_DUTY_OPEN);
+    pwm_generator_set_duty(SYS_DRAIN_VENT_PWM_CHNL, SERVO_DUTY_OPEN);
 }
 
 void test_close(){
     printf("close\n");
-    pwm_set_duty(SYS_DRAIN_VENT_PWM_CHNL, SERVO_DUTY_CLOSE);
+    pwm_generator_set_duty(SYS_DRAIN_VENT_PWM_CHNL, SERVO_DUTY_CLOSE);
 }
 
 int test_opened = 1;
@@ -19,14 +20,12 @@ void app_main(void){
     printf("hello from esp\n");
 
     //init
-    vsrp_dataset vs = {
-        .vscp_timer = NULL,
-        .vsrs_tick = 0,
-        .vsp_code = 0,
-        .vsv1_enabled = 1,
-        .vsv2_enabled = 1
+    drainage_vent_dataset_t drainage_vent_sys = {
+        .power_cut_off_timer = NULL,
+        .event_start_tick = 0,
+        .control_flags = 0b11000000
     };
-    vent_driver_init(&vs);  //this should return if init is done or error occured!
+    drainage_vent_init(&drainage_vent_sys);  //this should return if init is done or error occured!
 
     printf("init\n");
     gpio_set_level(OUT_DRAIN_VENT_SPM1, 1);

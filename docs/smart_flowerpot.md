@@ -73,7 +73,6 @@ This document is overview of progress and TODOs on smart flowerpot project.
 - Update schematic of vent driver circuit. (**FINISH UNTIL 16. APR 2026**)
 
 - Program update (**FINISH TILL 12. APR 2026**):
-    - Update program variables.
     - Do configuration of vent - set CLOSE and OPEN duty.
     - Test software with hardware.
 

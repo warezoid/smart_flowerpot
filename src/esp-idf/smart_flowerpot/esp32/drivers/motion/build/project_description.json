@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "motion",
-    "project_version":    "210f6e2-dirty",
+    "project_version":    "c43a3bb-dirty",
     "project_path":       "/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion",
     "idf_path":           "/esp/esp-idf",
     "build_dir":          "/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/build",

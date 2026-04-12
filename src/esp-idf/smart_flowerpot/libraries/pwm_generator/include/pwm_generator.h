@@ -1,5 +1,4 @@
-#ifndef PWM_GENERATOR_H
-#define PWM_GENERATOR_H
+#pragma once
 
 #include <stdint.h>
 #include "driver/ledc.h"
@@ -12,12 +11,10 @@
 
 typedef struct{
     const ledc_timer_t timer;
-    const uint32_t frequency_hz;
     const ledc_channel_t channel;
-    const uint8_t out_pwm_pin;
-} pwm_init_t;
+    const uint32_t freq_hz;
+    const int out_pin;
+} pwm_generator_config_t;
 
-void pwm_init(pwm_init_t *pwm_cfg);
-void pwm_set_duty(const ledc_channel_t CHANNEL_NUM, uint16_t duty);
-
-#endif
+void pwm_generator_init(pwm_generator_config_t *pwm_cfg);
+void pwm_generator_set_duty(const ledc_channel_t CHANNEL_NUM, uint32_t duty);
