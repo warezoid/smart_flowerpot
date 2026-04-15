@@ -1,5 +1,15 @@
 # Roulette driver
 
+## Code
+1. Program header file.
+    - Define PIN macros.
+    - Init functions: open, close, ack, init, power_cut_of_callback
+    - Define structure: power cut off timer, time ticks, control_flags
+    - Define enum: states for directions.
+2. Write .c program file.
+3. Debuging.
+
+
 ## Problems
 - Main problem is that I need somehow always stop the motor -> without relaying on ESP or some driver.
     - Potentional solution:
