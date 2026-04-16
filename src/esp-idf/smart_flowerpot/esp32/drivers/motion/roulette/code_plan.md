@@ -1,10 +1,8 @@
 # Roulette driver
 
 ## Code
-1. Program header file.
-    - Define enum: states for directions.
-2. Write .c program file.
-3. Debuging.
+1. Write .c program file.
+2. Debuging.
 
 
 ## Problems

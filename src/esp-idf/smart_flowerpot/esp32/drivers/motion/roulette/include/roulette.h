@@ -25,13 +25,6 @@ typedef struct{
     //todo: add some error system
 } roulette_dataset_t;
 
-/*
-typedef enum{
-    dir_1_mask = 0b0000 0100;
-    dir_2_mask = 0b0000 1000;
-} temp_dir_mask;
-*/
-
 void roulette_init(roulette_dataset_t *roulette_sys);
 void roulette_cls(roulette_dataset_t *roulette_sys);
 void roulette_opn(roulette_dataset_t *roulette_sys);
