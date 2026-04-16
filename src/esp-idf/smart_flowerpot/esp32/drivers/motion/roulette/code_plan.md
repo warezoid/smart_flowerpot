@@ -2,9 +2,6 @@
 
 ## Code
 1. Program header file.
-    - Define PIN macros.
-    - Init functions: open, close, ack, init, power_cut_of_callback
-    - Define structure: power cut off timer, time ticks, control_flags
     - Define enum: states for directions.
 2. Write .c program file.
 3. Debuging.
