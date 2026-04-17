@@ -4,6 +4,7 @@ set(
     EXTRA_COMPONENT_DIRS
     "../../../libraries/pwm_generator"
     drainage_vent
+    roulette
 )
 
 include( $ENV{IDF_PATH}/tools/cmake/project.cmake )

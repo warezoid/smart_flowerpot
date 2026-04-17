@@ -852,6 +852,13 @@
 /media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/build/esp-idf/drainage_vent/CMakeFiles/install.dir
 /media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/build/esp-idf/drainage_vent/CMakeFiles/install/local.dir
 /media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/build/esp-idf/drainage_vent/CMakeFiles/install/strip.dir
+/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/build/esp-idf/roulette/CMakeFiles/__idf_roulette.dir
+/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/build/esp-idf/roulette/CMakeFiles/edit_cache.dir
+/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/build/esp-idf/roulette/CMakeFiles/rebuild_cache.dir
+/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/build/esp-idf/roulette/CMakeFiles/list_install_components.dir
+/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/build/esp-idf/roulette/CMakeFiles/install.dir
+/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/build/esp-idf/roulette/CMakeFiles/install/local.dir
+/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/build/esp-idf/roulette/CMakeFiles/install/strip.dir
 /media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/build/esp-idf/main/CMakeFiles/__idf_main.dir
 /media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/build/esp-idf/main/CMakeFiles/edit_cache.dir
 /media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/build/esp-idf/main/CMakeFiles/rebuild_cache.dir

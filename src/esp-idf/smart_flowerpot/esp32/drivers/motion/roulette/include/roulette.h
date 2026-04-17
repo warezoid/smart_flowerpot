@@ -5,7 +5,7 @@
 #include "esp_timer.h"
 #include "driver/gpio.h"
 
-#define VENT_MOVE_DELAY_MS 5000     //measure time needed for roulette full movement
+#define ROULETTE_MOVE_DELAY_MS 9500     //measure time needed for roulette full movement
 
 #define OUT_ROULETTE_DIR1 GPIO_NUM_18
 #define OUT_ROULETTE_DIR2 GPIO_NUM_19
