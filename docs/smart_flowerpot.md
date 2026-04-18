@@ -70,8 +70,6 @@ This document is overview of progress and TODOs on smart flowerpot project.
 ## ESP32 / DRIVERs / MOTION
 
 ### Drainage vent
-- Update schematic of vent driver circuit. (**FINISH UNTIL 16. APR 2026**)
-
 - Create servo case (**COMPLETE BY THE END OF APRIL**):
     - Plan case for vent servo and RJ45 mini-board.
     - Make CAD model - include cabel input with some default protection.
@@ -80,9 +78,7 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 ### Roulette
 - Hardware & Software (**FINISH UNTIL 19. APR 2026**):
-    - Put roulette driver circuit on breadboard.
-    - Create development diagram.
-    - Write roulette driver code and debug it.
+    - Debug roulette driver code.
 
 - CAD and making (**FINISH UNTIL 26. APR 2026**):
     - Redesign roulette guide - make deeper groves, think about wall OSB, ...
