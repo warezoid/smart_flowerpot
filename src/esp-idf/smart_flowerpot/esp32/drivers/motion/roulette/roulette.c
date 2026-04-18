@@ -4,6 +4,8 @@
 static void power_cut_off_callback(void *arg){
     gpio_set_level(OUT_ROULETTE_EN1, 0);
     gpio_set_level(OUT_ROULETTE_EN2, 0);
+    gpio_set_level(OUT_ROULETTE_DIR1, 0);
+    gpio_set_level(OUT_ROULETTE_DIR2, 0);
 }
 
 void roulette_init(roulette_dataset_t *roulette_sys){
@@ -69,6 +71,53 @@ void roulette_opn(roulette_dataset_t *roulette_sys){
 
             roulette_sys->control_flags &= 0xC0;
             roulette_sys->control_flags |= 0x02;
+        }
+    }
+}
+
+void roulette_ack(roulette_dataset_t *roulette_sys){
+    if(roulette_sys->event_start_tick){
+        if((xTaskGetTickCount() - roulette_sys->event_start_tick) >= pdMS_TO_TICKS(ROULETTE_MOVE_DELAY_MS + 500)){
+            gpio_set_level(OUT_ROULETTE_EN1, 0);
+            gpio_set_level(OUT_ROULETTE_EN2, 0);
+            gpio_set_level(OUT_ROULETTE_DIR1, 0);
+            gpio_set_level(OUT_ROULETTE_DIR2, 0);
+            roulette_sys->event_start_tick = 0;
+
+            switch(roulette_sys->control_flags & 0x3F){
+                case 1:
+                    if(roulette_sys->control_flags & 0x40){
+                        if(!gpio_get_level(IN_ROULETTE_ESC1)){
+                            roulette_sys->control_flags &= 0xBF;
+                            //v1 error
+                        }
+                    }
+
+                    if(roulette_sys->control_flags & 0x80){
+                        if(!gpio_get_level(IN_ROULETTE_ESC2)){
+                            roulette_sys->control_flags &= 0x7F;
+                            //v2 error
+                        }
+                    }
+                    break;
+                case 2:
+                    if(roulette_sys->control_flags & 0x40){
+                        if(!gpio_get_level(IN_ROULETTE_ESO1)){
+                            roulette_sys->control_flags &= 0xBF;
+                            //v1 error
+                        }
+                    }
+
+                    if(roulette_sys->control_flags & 0x80){
+                        if(!gpio_get_level(IN_ROULETTE_ESO2)){
+                            roulette_sys->control_flags &= 0x7F;
+                            //v2 error
+                        }
+                    }
+                    break;
+            }
+
+            roulette_sys->control_flags &= 0xC0;
         }
     }
 }

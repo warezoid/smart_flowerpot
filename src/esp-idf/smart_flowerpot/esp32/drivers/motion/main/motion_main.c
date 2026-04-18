@@ -17,14 +17,14 @@ void app_main(void){
         .control_flags = 0b11000000
     };
     roulette_init(&roulette_sys);
-    roulette_cls(&roulette_sys);
+    roulette_opn(&roulette_sys);
 
 //loop
     while(1){
         //printf("\033[H\033[J");
 
         drainage_vent_ack(&drainage_vent_sys);
-        
+        roulette_ack(&roulette_sys);
 
         vTaskDelay(pdMS_TO_TICKS(100));
     }
