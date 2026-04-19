@@ -40,8 +40,8 @@ void roulette_cls(roulette_dataset_t *roulette_sys){
         if(roulette_sys->control_flags & 0xC0){
             printf("STATE:\tCLOSING\n");
 
-            gpio_set_level(OUT_ROULETTE_DIR1, 1);
-            gpio_set_level(OUT_ROULETTE_DIR2, 0);
+            gpio_set_level(OUT_ROULETTE_DIR1, 0);
+            gpio_set_level(OUT_ROULETTE_DIR2, 1);
 
             if(roulette_sys->control_flags & 0x40) gpio_set_level(OUT_ROULETTE_EN1, 1);
             if(roulette_sys->control_flags & 0x80) gpio_set_level(OUT_ROULETTE_EN2, 1);
@@ -60,8 +60,8 @@ void roulette_opn(roulette_dataset_t *roulette_sys){
         if(roulette_sys->control_flags & 0xC0){
             printf("STATE:\tOPENING\n");
 
-            gpio_set_level(OUT_ROULETTE_DIR1, 0);
-            gpio_set_level(OUT_ROULETTE_DIR2, 1);
+            gpio_set_level(OUT_ROULETTE_DIR1, 1);
+            gpio_set_level(OUT_ROULETTE_DIR2, 0);
 
             if(roulette_sys->control_flags & 0x40) gpio_set_level(OUT_ROULETTE_EN1, 1);
             if(roulette_sys->control_flags & 0x80) gpio_set_level(OUT_ROULETTE_EN2, 1);
