@@ -4,9 +4,7 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 
 ## TODOs
-- Add project structure - electronis, construction, code, ...
 - Add some RPI web server notes - MAN/AUTO mode, ...
-- Add roulettes program text.
 
 
 
@@ -103,6 +101,25 @@ This document is overview of progress and TODOs on smart flowerpot project.
     - Solder together roulette driver circuit and debug it.
     - Put description on board.
     - Update schematic of roulette driver.
+
+
+
+## Documentation
+
+### warezoid.com
+- Project description.
+- Pictures.
+- Guide.
+- TODOs.
+- Roadmap.
+- DOCs.
+- Download links.
+
+
+### Documentation
+- Construction: steele frame, OSB, polycarbonate, FEM.
+- Drivers: drainage vent system, roulette system, flower vent system.
+- Sensors, RPI server, communication, ...
 
 
 

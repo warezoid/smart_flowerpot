@@ -1,8 +1,7 @@
 # Roulette driver
 
 ## Code
-1. Write .c program file.
-2. Debuging.
+1. Debuging.
 
 
 ## Problems
@@ -20,7 +19,6 @@
         - Emergency 2 -> try to get motor driver with overcurrent protection -> if motor is drawing too much current it will switch off power to motor.
             - Use MP6550 motor driver.
 
-## CAD
 
 ## Code diagram
 1. Get OPEN/CLOSE request.
@@ -41,6 +39,12 @@
         8. Return.
 3. Ignore request.
 
-- Drive 2 roulettes separatly -> STEP 1: write code only for 1 roulette. 
+- DIR signal will be same for both roulettes. Signals 11 and 00 means non active state. 01 is direction one and 10 is direction two.
+- Motor will be stoped by driver electronics.
+- ESP only set enable signal and read limit switches. ESP can also block one roulette.
+- Roulette default state is CLOSED.
+- ESP have to drive Enable and DIR signals.
+
+
 
 ##### Created by warezoid with the love of freedom and numbers <3
