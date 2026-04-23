@@ -75,15 +75,13 @@ This document is overview of progress and TODOs on smart flowerpot project.
     - Make CAD model - include cabel input with some default protection.
     - Print cases and add them to test stand.
 
+- Electronics:
+    - Think about filtering. Maybe add some filters to my circuit.
+
 
 ### Roulette
-- Hardware & Software (**FINISH UNTIL 19. APR 2026**):
-    - Debug roulette driver code.
-
 - CAD and making (**FINISH UNTIL 26. APR 2026**):
-    - 3d print and mount motor gear to place. Test motor on roulette test stand. (**21. APR 2026**)
     - Redesign roulette guide:
-        - Redesign guide stop without bottom stop. Add some wire guide.
         - 3d print guide stop and mount them to wooden roulette guide, add some hot glue.
     - Create roulette guides test stand and test it with hardware & software:
         - Create new OSB test stand. Buy screws for roulette guides.
@@ -94,6 +92,8 @@ This document is overview of progress and TODOs on smart flowerpot project.
         - Mount 44E Hall effect sensors to test stand.
         - Try code on test stand.
 
+- Electronics:
+    - Think about filtering. Maybe add some filters to my circuit.
 
 - Second pair:
     - Make 2 pairs of roulette guides test stands.
