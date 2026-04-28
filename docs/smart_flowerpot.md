@@ -78,17 +78,15 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 
 ### Roulette
-- CAD and making (**FINISH UNTIL 26. APR 2026**):
-    - Redesign roulette guide:
-        - 3d print guide stop and mount them to wooden roulette guide, add some hot glue.
-    - Create roulette guides test stand and test it with hardware & software:
-        - Create new OSB test stand. Buy screws for roulette guides.
-        - Grind wooden roulette guides in some places.
-        - Add wire grove to woden roulette guide.
-        - Add new roulette textile to make it wider. Same as roulette weight.
-        - Replace textile guides on wooden rods.
-        - Mount 44E Hall effect sensors to test stand.
-        - Try code on test stand.
+- Bug report (**1. MAY 2026**):
+    - Mount 44E Hall effect sensors to test stand.
+    - Try code on test stand, mabye debug it.
+
+- Bug solving and final works (**3. MAY 2026**):
+    - Print and replace broken slider rod flange.
+    - Add more screws to slider rod flanges.
+    - Replace roulette textile for longer and leveled.
+    - Test new setup.
 
 - Electronics:
     - Think about filtering. Maybe add some filters to my circuit.
@@ -101,6 +99,7 @@ This document is overview of progress and TODOs on smart flowerpot project.
     - Solder together roulette driver circuit and debug it.
     - Put description on board.
     - Update schematic of roulette driver.
+    - Update CAD files of roulette guides and winge rod gear.
 
 
 
