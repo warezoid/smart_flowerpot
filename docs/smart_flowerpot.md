@@ -78,15 +78,20 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 
 ### Roulette
-- Bug report (**1. MAY 2026**):
-    - Mount 44E Hall effect sensors to test stand.
-    - Try code on test stand, mabye debug it.
-
-- Bug solving and final works (**3. MAY 2026**):
+- Bug solving 1 (**3. MAY 2026**):
     - Print and replace broken slider rod flange.
     - Add more screws to slider rod flanges.
     - Replace roulette textile for longer and leveled.
-    - Test new setup.
+    - Test new setup - check Hall effect sensors signals, motor, ...
+
+- Redesign roulette driver:
+    - Desing new roulette driver circuit:
+        - Direction will be set even if are both Hall effect sensors are HIGH (OFF).
+        - Logic will be something like this:
+            - DIRECTION from ESP32 pins will be allways set.
+            - ENABLE or DIRECTION pins will be set to OFF by ESP32 timer callback or by limit switches (roulette get to its final destination).
+    - Create digital simulation of new circuit and test it.
+    - Put new circuit on breadboard and test it with test stand.
 
 - Electronics:
     - Think about filtering. Maybe add some filters to my circuit.
