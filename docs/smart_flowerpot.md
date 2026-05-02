@@ -68,22 +68,15 @@ This document is overview of progress and TODOs on smart flowerpot project.
 ## ESP32 / DRIVERs / MOTION
 
 ### Drainage vent
-- Create servo case (**COMPLETE BY THE END OF APRIL**):
-    - Plan case for vent servo and RJ45 mini-board.
-    - Make CAD model - include cabel input with some default protection.
-    - Print cases and add them to test stand.
+- Create servo case (**5. May 2026**):
+    - Assemble first case on test stand. Use some test piece of wire.
+    - Print and assemble the second servo case and add it to test stand.
 
 - Electronics:
     - Think about filtering. Maybe add some filters to my circuit.
 
 
 ### Roulette
-- Bug solving 1 (**3. MAY 2026**):
-    - Print and replace broken slider rod flange.
-    - Add more screws to slider rod flanges.
-    - Replace roulette textile for longer and leveled.
-    - Test new setup - check Hall effect sensors signals, motor, ...
-
 - Redesign roulette driver:
     - Desing new roulette driver circuit:
         - Direction will be set even if are both Hall effect sensors are HIGH (OFF).
@@ -92,6 +85,10 @@ This document is overview of progress and TODOs on smart flowerpot project.
             - ENABLE or DIRECTION pins will be set to OFF by ESP32 timer callback or by limit switches (roulette get to its final destination).
     - Create digital simulation of new circuit and test it.
     - Put new circuit on breadboard and test it with test stand.
+
+- Bug solving 2:
+    - There is sometimes some friction which will stuck motor.
+    - Try to debug it and remove this problem.
 
 - Electronics:
     - Think about filtering. Maybe add some filters to my circuit.
