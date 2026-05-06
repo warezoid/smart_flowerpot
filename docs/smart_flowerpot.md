@@ -68,10 +68,6 @@ This document is overview of progress and TODOs on smart flowerpot project.
 ## ESP32 / DRIVERs / MOTION
 
 ### Drainage vent
-- Create servo case (**5. May 2026**):
-    - Assemble first case on test stand. Use some test piece of wire.
-    - Print and assemble the second servo case and add it to test stand.
-
 - Electronics:
     - Think about filtering. Maybe add some filters to my circuit.
 
