@@ -45,11 +45,13 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 
 
-## Construction - **COMPLETE BY THE END OF MAY**
-- Finish welding:
+## Construction - **COMPLETE BY THE END OF JULY**
+- Finish welding (**14. JUN 2026**):
     - Weld roof and bottom together.
     - Grind all welds.
     - Check length, perpendicularity and levelness.
+
+- Finish steel construcion:
     - Paint construction by some color.
     - Update warezoid.com page: update metal profile photo and finished steel frame.
     - Add FEM section of metal frame.
@@ -69,29 +71,21 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 ### Drainage vent
 - Electronics:
-    - Think about filtering. Maybe add some filters to my circuit.
-
+    - Update vent schematic - add signal filtering and circuit proctection.
+    - Buy new parts - capacitors, rezistors, diodes, ...
+    - Test new circuit on breadboard.
+    - Solder together new circuit.
+    - Test and repair new circut.
 
 ### Roulette
 - Redesign roulette driver:
-    - Desing new roulette driver circuit:
-        - Direction will be set even if are both Hall effect sensors are HIGH (OFF).
-        - Logic will be something like this:
-            - DIRECTION from ESP32 pins will be allways set.
-            - ENABLE or DIRECTION pins will be set to OFF by ESP32 timer callback or by limit switches (roulette get to its final destination).
-    - Create digital simulation of new circuit and test it.
-    - Put new circuit on breadboard and test it with test stand.
+    - Create Hall effect senors parts - solder them together and mount them to the stand.
+    - Calibrate Hall sensoros - both should be active on TOP and BOTTOM.
+    - Put logic circuit on breadboard, try it and debugit.
 
-- Bug solving 2:
-    - There is sometimes some friction which will stuck motor.
-    - Try to debug it and remove this problem.
-
-- Electronics:
-    - Think about filtering. Maybe add some filters to my circuit.
-
-- Second pair:
-    - Make 2 pairs of roulette guides test stands.
-    - Duplicate breadboard circuit and test stand with hardware & software.
+- Version 1 will have only one roulette.
+    - Next versions can have 2 roulettes - independet driving, only one circuit, ???
+    - Update code, Excel, ...
 
 - Final works:
     - Solder together roulette driver circuit and debug it.
