@@ -79,8 +79,7 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 ### Roulette
 - Redesign roulette driver:
-    - Create Hall effect senors parts - solder them together and mount them to the stand.
-    - Calibrate Hall sensoros - both should be active on TOP and BOTTOM.
+    - Mount and calibrate Hall sensoros - both should be active on TOP and BOTTOM.
     - Put logic circuit on breadboard, try it and debugit.
 
 - Version 1 will have only one roulette.
