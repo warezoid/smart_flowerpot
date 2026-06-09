@@ -41,6 +41,8 @@ This document is overview of progress and TODOs on smart flowerpot project.
         - Drivers will reply with action status and process is done.
         - Update GUI to more profesional form - overviews, logs, ...
 
+- Version 1.1: fix bugs. Write potentional future improvements. See if second roulette is needed.
+
 - Version 2: add IR camera and add some machine vision. Pests monitoring.
 
 
@@ -71,20 +73,28 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 ### Drainage vent
 - Electronics:
-    - Update vent schematic - add signal filtering and circuit proctection.
+    - Update vent schematic - add signal filtering and circuit proctection (**14. JUN 2026**):
+        - Solve PWM pin protection - reverse voltage.
+        - Solve mosfet connection - research for some advance protection.
+        - Uniform schematic with other ones.
+        - Duplicate circuit for drainage vent 2.
+        - Update Excel - add connection to schematic tags.
+
     - Buy new parts - capacitors, rezistors, diodes, ...
     - Test new circuit on breadboard.
     - Solder together new circuit.
     - Test and repair new circut.
 
-### Roulette
+### Roulette **COMPLETE BY THE END OF JUNE**
+- Update docs and code for only 1 roulette version of smart flowerpot (**14. JUN 2026**):
+    - Think about different things in 1 and 2 roulette version of smart flowerpot.
+    - Update roulette code.
+    - Update smart flowerpot excel.
+    - Check schematics.
+
 - Redesign roulette driver:
     - Mount and calibrate Hall sensoros - both should be active on TOP and BOTTOM.
     - Put logic circuit on breadboard, try it and debugit.
-
-- Version 1 will have only one roulette.
-    - Next versions can have 2 roulettes - independet driving, only one circuit, ???
-    - Update code, Excel, ...
 
 - Final works:
     - Solder together roulette driver circuit and debug it.
