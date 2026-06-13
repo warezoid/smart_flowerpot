@@ -48,14 +48,13 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 
 ## Construction - **COMPLETE BY THE END OF JULY**
-- Finish welding (**14. JUN 2026**):
-    - Weld roof and bottom together.
-    - Grind all welds.
-    - Check length, perpendicularity and levelness.
-
 - Finish steel construcion:
-    - Paint construction by some color.
-    - Update warezoid.com page: update metal profile photo and finished steel frame.
+    - Sand structure with coarse-grit sandpaper - P80 or P100.
+    - Clean and degrease structure.
+    - Paint construction by some color - multiple layers.
+
+- Post-finish works:
+    - Update metal profile photo and finished steel frame section.
     - Add FEM section of metal frame.
 
 - OSB + polycarbonate:
