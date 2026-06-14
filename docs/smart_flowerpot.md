@@ -72,14 +72,6 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 ### Drainage vent
 - Electronics:
-    - Update vent schematic - add signal filtering and circuit proctection (**14. JUN 2026**):
-        - Solve PWM pin protection - reverse voltage.
-        - Solve mosfet connection - research for some advance protection.
-        - Uniform schematic with other ones.
-        - Duplicate circuit for drainage vent 2.
-        - Update Excel - add connection to schematic tags.
-
-    - Buy new parts - capacitors, rezistors, diodes, ...
     - Test new circuit on breadboard.
     - Solder together new circuit.
     - Test and repair new circut.
