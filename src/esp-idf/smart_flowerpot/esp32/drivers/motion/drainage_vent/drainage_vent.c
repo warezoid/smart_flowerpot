@@ -39,16 +39,16 @@ void drainage_vent_init(drainage_vent_dataset_t *vent_sys){
 
 void drainage_vent_cls(drainage_vent_dataset_t *vent_sys){
     if(!vent_sys->event_start_tick){
-        if(vent_sys->control_flags & 0xC0){
+        if(vent_sys->control_flags & 0x0C){
             pwm_generator_set_duty(SYS_DRAIN_VENT_PWM_CHNL, SERVO_DUTY_CLOSE);
 
-            if(vent_sys->control_flags & 0x40) gpio_set_level(OUT_DRAIN_VENT_SPM1, 1);
-            if(vent_sys->control_flags & 0x80) gpio_set_level(OUT_DRAIN_VENT_SPM2, 1);
+            if(vent_sys->control_flags & 0x04) gpio_set_level(OUT_DRAIN_VENT_SPM1, 1);
+            if(vent_sys->control_flags & 0x08) gpio_set_level(OUT_DRAIN_VENT_SPM2, 1);
 
             if(!esp_timer_is_active(vent_sys->power_cut_off_timer)) esp_timer_start_once(vent_sys->power_cut_off_timer, VENT_MOVE_DELAY_MS * 1000);
             vent_sys->event_start_tick = xTaskGetTickCount();
 
-            vent_sys->control_flags &= 0xC0;
+            vent_sys->control_flags &= 0x0C;
             vent_sys->control_flags |= 0x01;
         }
     }
@@ -56,16 +56,16 @@ void drainage_vent_cls(drainage_vent_dataset_t *vent_sys){
 
 void drainage_vent_opn(drainage_vent_dataset_t *vent_sys){
     if(!vent_sys->event_start_tick){
-        if(vent_sys->control_flags & 0xC0){
+        if(vent_sys->control_flags & 0x0C){
             pwm_generator_set_duty(SYS_DRAIN_VENT_PWM_CHNL, SERVO_DUTY_OPEN);
 
-            if(vent_sys->control_flags & 0x40) gpio_set_level(OUT_DRAIN_VENT_SPM1, 1);
-            if(vent_sys->control_flags & 0x80) gpio_set_level(OUT_DRAIN_VENT_SPM2, 1);
+            if(vent_sys->control_flags & 0x04) gpio_set_level(OUT_DRAIN_VENT_SPM1, 1);
+            if(vent_sys->control_flags & 0x08) gpio_set_level(OUT_DRAIN_VENT_SPM2, 1);
 
             if(!esp_timer_is_active(vent_sys->power_cut_off_timer)) esp_timer_start_once(vent_sys->power_cut_off_timer, VENT_MOVE_DELAY_MS * 1000);
             vent_sys->event_start_tick = xTaskGetTickCount();
 
-            vent_sys->control_flags &= 0xC0;
+            vent_sys->control_flags &= 0x0C;
             vent_sys->control_flags |= 0x02;
         }
     }
@@ -78,40 +78,40 @@ void drainage_vent_ack(drainage_vent_dataset_t *vent_sys){
             gpio_set_level(OUT_DRAIN_VENT_SPM2, 0);
             vent_sys->event_start_tick = 0;
 
-            switch(vent_sys->control_flags & 0x3F){
+            switch(vent_sys->control_flags & 0x03){
                 case 1:
-                    if(vent_sys->control_flags & 0x40){
+                    if(vent_sys->control_flags & 0x04){
                         if(!gpio_get_level(IN_DRAIN_VENT_ESC1)){
-                            vent_sys->control_flags &= 0xBF;
+                            vent_sys->control_flags &= 0xFB;
                             //v1 error
                         }
                     }
 
-                    if(vent_sys->control_flags & 0x80){
+                    if(vent_sys->control_flags & 0x08){
                         if(!gpio_get_level(IN_DRAIN_VENT_ESC2)){
-                            vent_sys->control_flags &= 0x7F;
+                            vent_sys->control_flags &= 0xF7;
                             //v2 error
                         }
                     }
                     break;
                 case 2:
-                    if(vent_sys->control_flags & 0x40){
+                    if(vent_sys->control_flags & 0x04){
                         if(!gpio_get_level(IN_DRAIN_VENT_ESO1)){
-                            vent_sys->control_flags &= 0xBF;
+                            vent_sys->control_flags &= 0xFB;
                             //v1 error
                         }
                     }
 
-                    if(vent_sys->control_flags & 0x80){
+                    if(vent_sys->control_flags & 0x08){
                         if(!gpio_get_level(IN_DRAIN_VENT_ESO2)){
-                            vent_sys->control_flags &= 0x7F;
+                            vent_sys->control_flags &= 0xF7;
                             //v2 error
                         }
                     }
                     break;
             }
 
-            vent_sys->control_flags &= 0xC0;
+            vent_sys->control_flags &= 0x0C;
         }
     }
 }

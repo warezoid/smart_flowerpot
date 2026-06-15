@@ -78,9 +78,7 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 ### Roulette **COMPLETE BY THE END OF JUNE**
 - Update docs and code for only 1 roulette version of smart flowerpot (**14. JUN 2026**):
-    - Think about different things in 1 and 2 roulette version of smart flowerpot.
     - Update roulette code.
-    - Update smart flowerpot excel.
     - Check schematics.
 
 - Redesign roulette driver:
