@@ -77,10 +77,6 @@ This document is overview of progress and TODOs on smart flowerpot project.
     - Test and repair new circut.
 
 ### Roulette **COMPLETE BY THE END OF JUNE**
-- Update docs and code for only 1 roulette version of smart flowerpot (**14. JUN 2026**):
-    - Update roulette code.
-    - Check schematics.
-
 - Redesign roulette driver:
     - Mount and calibrate Hall sensoros - both should be active on TOP and BOTTOM.
     - Put logic circuit on breadboard, try it and debugit.

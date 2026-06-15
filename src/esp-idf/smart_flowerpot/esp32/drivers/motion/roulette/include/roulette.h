@@ -14,10 +14,6 @@
 #define IN_ROULETTE_ESO1 GPIO_NUM_22
 #define IN_ROULETTE_ESC1 GPIO_NUM_23
 
-#define OUT_ROULETTE_EN2 GPIO_NUM_17
-#define IN_ROULETTE_ESO2 GPIO_NUM_25
-#define IN_ROULETTE_ESC2 GPIO_NUM_26
-
 typedef struct{
     esp_timer_handle_t power_cut_off_timer;
     TickType_t event_start_tick;
