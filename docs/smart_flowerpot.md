@@ -78,8 +78,12 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 ### Roulette **COMPLETE BY THE END OF JUNE**
 - Redesign roulette driver:
-    - Mount and calibrate Hall sensoros - both should be active on TOP and BOTTOM.
+    - Repair one hall sensor and mount it on test stand.
     - Put logic circuit on breadboard, try it and debugit.
+    - Calibrate hall sensors and debug roulette code.
+    - Fix bugs.
+    
+    - Grind some angle on roulette OSB inside bottom edge.
 
 - Final works:
     - Solder together roulette driver circuit and debug it.
