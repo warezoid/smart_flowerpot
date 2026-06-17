@@ -8,6 +8,13 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 
 
+## To buy
+- https://www.hornbach.cz/p/sit-proti-hmyzu-seda-sirka-1-m-metraz/4262685/ [ 85 CZK/m -> needed 2m = 170 CZK ]
+- https://www.hornbach.cz/p/univerzalni-barva-balakryl-uni-mat-0199-cerna-ekologicka-0-7-kg/4289282/ [ 300 CZK ]
+- https://www.obi.cz/lazury-na-drevo/balakryl-tenkovrstva-lazura-na-drev-dixol-orech-0-7-kg/p/6361679 [ 280 CZK ]
+
+
+
 ## Project roadmap
 - Version 1: create functional sample of smart flowerpot.
     - Mechanical phase:
