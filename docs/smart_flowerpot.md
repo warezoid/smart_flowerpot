@@ -17,7 +17,7 @@ This document is overview of progress and TODOs on smart flowerpot project.
         - Output should be physical structure of smartflowerpot without drivers, sensors and electronics.
 
     - Driver phase:
-        - Create hardware and software drivers for smart fowerpot.
+        - Create hardware and software drivers for smart flowerpot.
         - Drainage vent, roulette, flower vent, roof vent.
         - Water circuit driver, solar power recharge.
         - Software, hardware, electronics.
@@ -48,6 +48,21 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 
 ## Construction - **COMPLETE BY THE END OF JULY**
+- OSB:
+    - Buy OSBs - front and back walls (only lowerparts), bottom and side walls.
+    - Cut needed holes into OSBs, grind them.
+    - Grind some edge on roullete OSB hole - bottom edge of roulette window, roulette hit it and can be stucked (only on it's way down).
+    - Paint OSBs by some protective paint.
+    - Drill holes for OSBs mounting.
+    - Do the things to finish steel construction.
+    - Mount walls to the steel construction.
+
+    - OSB FEM sources:
+        - https://www.drevoostrava.cz/cz/osb-desky/ostra-hrana/3-swiss-krono-osb-3-18-x-1250-x-2500.html?varianta=3
+        - https://regata.b-cdn.net/media/folio3/productattachments/SKHU_Technical_Data_EN_2025_03_03.pdf
+        - https://europanels.org/the-wood-based-panel-industry/types-of-wood-based-panels-economic-impact/oriented-strand-board/
+        - https://hrcak.srce.hr/file/263350
+
 - Finish steel construcion:
     - Sand structure with coarse-grit sandpaper - P80 or P100.
     - Clean and degrease structure.
@@ -57,14 +72,9 @@ This document is overview of progress and TODOs on smart flowerpot project.
     - Update metal profile photo and finished steel frame section.
     - Add FEM section of metal frame.
 
-- OSB + polycarbonate:
+- Polycarbonate:
     - Plan OSB and polycarbonate from walls and roof - create CAD files.
         - https://www.hornbach.cz/p/polykarbonatova-deska-bravo-dutinkova-3000-x-1050-x-10-mm-cira/8234584/
-    - OSB FEM sources:
-        - https://www.drevoostrava.cz/cz/osb-desky/ostra-hrana/3-swiss-krono-osb-3-18-x-1250-x-2500.html?varianta=3
-        - https://regata.b-cdn.net/media/folio3/productattachments/SKHU_Technical_Data_EN_2025_03_03.pdf
-        - https://europanels.org/the-wood-based-panel-industry/types-of-wood-based-panels-economic-impact/oriented-strand-board/
-        - https://hrcak.srce.hr/file/263350
 
 
 
@@ -72,18 +82,15 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 ### Drainage vent
 - Electronics:
-    - Test new circuit on breadboard.
+    - Test new circuit on breadboard - (**21. Jun 2026**).
     - Solder together new circuit.
     - Test and repair new circut.
 
 ### Roulette **COMPLETE BY THE END OF JUNE**
 - Redesign roulette driver:
-    - Repair one hall sensor and mount it on test stand.
-    - Put logic circuit on breadboard, try it and debugit.
-    - Calibrate hall sensors and debug roulette code.
-    - Fix bugs.
-    
-    - Grind some angle on roulette OSB inside bottom edge.
+    - Put logic circuit on breadboard, try it and debugit - (**19. Jun 2026**).
+    - Calibrate hall sensors and debug roulette code  - (**21. Jun 2026**).
+    - Fix bugs - (**21. Jun 2026**).
 
 - Final works:
     - Solder together roulette driver circuit and debug it.
