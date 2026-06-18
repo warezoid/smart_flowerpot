@@ -95,7 +95,7 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 ### Roulette **COMPLETE BY THE END OF JUNE**
 - Redesign roulette driver:
-    - Put logic circuit on breadboard, try it and debugit - (**19. Jun 2026**).
+    - Check breadboard circuit, try it and debugit - (**19. Jun 2026**).
     - Calibrate hall sensors and debug roulette code  - (**21. Jun 2026**).
     - Fix bugs - (**21. Jun 2026**).
 
