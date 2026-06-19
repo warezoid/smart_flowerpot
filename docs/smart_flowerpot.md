@@ -95,8 +95,12 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 ### Roulette **COMPLETE BY THE END OF JUNE**
 - Redesign roulette driver:
-    - Check breadboard circuit, try it and debugit - (**19. Jun 2026**).
     - Calibrate hall sensors and debug roulette code  - (**21. Jun 2026**).
+        - Solve ESP32 overheating problem.
+        - Solve CD4001BE overheating problem.
+        - Replace broken motor driver and power motor with independent power supply.
+        - Solder 100nF capacitor to motor and add power cables - twisted.
+        - Debug DIR signals of motor driver, curently it is not working - stucked add final position - probably it need calibration.
     - Fix bugs - (**21. Jun 2026**).
 
 - Final works:

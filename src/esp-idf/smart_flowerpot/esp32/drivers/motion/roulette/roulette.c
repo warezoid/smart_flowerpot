@@ -2,6 +2,7 @@
 #include <stdio.h>
 
 static void power_cut_off_callback(void *arg){
+    printf("STATE:\tPOWER CUT OFF CALLBACK\n");
     gpio_set_level(OUT_ROULETTE_EN1, 0);
     gpio_set_level(OUT_ROULETTE_DIR1, 0);
     gpio_set_level(OUT_ROULETTE_DIR2, 0);
@@ -35,8 +36,8 @@ void roulette_cls(roulette_dataset_t *roulette_sys){
         if(roulette_sys->control_flags & 0x04){
             printf("STATE:\tCLOSING\n");
 
-            gpio_set_level(OUT_ROULETTE_DIR1, 0);
-            gpio_set_level(OUT_ROULETTE_DIR2, 1);
+            gpio_set_level(OUT_ROULETTE_DIR1, 1);
+            gpio_set_level(OUT_ROULETTE_DIR2, 0);
 
             gpio_set_level(OUT_ROULETTE_EN1, 1);
 
@@ -54,8 +55,8 @@ void roulette_opn(roulette_dataset_t *roulette_sys){
         if(roulette_sys->control_flags & 0x04){
             printf("STATE:\tOPENING\n");
 
-            gpio_set_level(OUT_ROULETTE_DIR1, 1);
-            gpio_set_level(OUT_ROULETTE_DIR2, 0);
+            gpio_set_level(OUT_ROULETTE_DIR1, 0);
+            gpio_set_level(OUT_ROULETTE_DIR2, 1);
 
             gpio_set_level(OUT_ROULETTE_EN1, 1);
 
@@ -71,6 +72,8 @@ void roulette_opn(roulette_dataset_t *roulette_sys){
 void roulette_ack(roulette_dataset_t *roulette_sys){
     if(roulette_sys->event_start_tick){
         if((xTaskGetTickCount() - roulette_sys->event_start_tick) >= pdMS_TO_TICKS(ROULETTE_MOVE_DELAY_MS + 500)){
+            printf("STATE:\tPOSITION CHECK\n");
+
             gpio_set_level(OUT_ROULETTE_EN1, 0);
             gpio_set_level(OUT_ROULETTE_DIR1, 0);
             gpio_set_level(OUT_ROULETTE_DIR2, 0);
@@ -78,16 +81,20 @@ void roulette_ack(roulette_dataset_t *roulette_sys){
 
             switch(roulette_sys->control_flags & 0x03){
                 case 1:
-                    if(roulette_sys->control_flags & 0x40){
+                    printf("STATE:\tPOSITION CHECK - CLOSED\n");
+                    if(roulette_sys->control_flags & 0x04){
                         if(!gpio_get_level(IN_ROULETTE_ESC1)){
+                            printf("STATE:\tROULETE BLOCKED - NOT CLOSED\n");
                             roulette_sys->control_flags &= 0xFB;
                             //v1 error
                         }
                     }
                     break;
                 case 2:
-                    if(roulette_sys->control_flags & 0x40){
+                    printf("STATE:\tPOSITION CHECK - OPENED\n");
+                    if(roulette_sys->control_flags & 0x04){
                         if(!gpio_get_level(IN_ROULETTE_ESO1)){
+                            printf("STATE:\tROULETE BLOCKED - NOT OPENED\n");
                             roulette_sys->control_flags &= 0xFB;
                             //v1 error
                         }
