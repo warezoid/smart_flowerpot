@@ -9,11 +9,23 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 
 ## To buy
-- https://www.hornbach.cz/p/sit-proti-hmyzu-seda-sirka-1-m-metraz/4262685/ [ 85 CZK/m -> needed 2m = 170 CZK ]
+- Hornbach things:
+    - [ 170 CZK, 2 m ] <=> https://www.hornbach.cz/p/sit-proti-hmyzu-seda-sirka-1-m-metraz/4262685/
+    - [ 89 CZK, 1 pcs ] <=> https://www.hornbach.cz/p/spona-530-14-j-c-schwarz-1000-ks/10671318/
 
-- Paint OSB + steel (different colors):
-    - https://balakryl.cz/nase-barvy/univerzalni-barvy/balakryl-uni-mat
-    - https://balakryl.cz/nase-barvy/barvy-na-drevo/balakryl-zaklad
+- Paints:
+    - [ 299 CZK, 1 pcs ] <=> https://www.obi.cz/zakladni-naterove-barvy-na-drevo/balakryl-zakladni-barva-na-drevo-bila-0-7-kg/p/4147989
+    - [ 329 CZK, 1 pcs ] <=> https://www.obi.cz/barevne-laky/balakryl-univerzalni-barva-na-kov-a-drevo-uni-mat-0199-cerna-0-7-kg/p/2314524
+    - [ 329 CZK, 1 pcs ] <=> https://www.obi.cz/barevne-laky/balakryl-univerzalni-barva-na-kov-a-drevo-uni-mat-0615-slonova-kost-0-7-kg/p/2899391
+
+- OSB:
+    - [ 635 CZK, 1 pcs ] <=> https://www.hornbach.cz/conf/osb-deska-kronospan-osb-3-f0-15-x-1250-x-2500-mm-nebrousena/3397975/
+        - [ 325.25 CZK, 1 pcs ] <=> 1400x880
+        - [ 369.60 CZK, 2 pcs ] <=> 1400x500
+        - [ 663.70 CZK, 2 pcs ] <=> 1526x824
+    - [ 759 CZK, 1 pcs ] <=> https://www.hornbach.cz/conf/osb-deska-kronospan-osb-3-f0-18-x-1250-x-2500-mm-nebrousena/3397986/
+        - [ 353.92 CZK, 1 pcs ] <=> 1400x800
+
 
 
 ## Project roadmap
