@@ -102,19 +102,17 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 ### Drainage vent
 - Electronics:
-    - Test new circuit on breadboard - (**21. Jun 2026**).
+    - Test new circuit on breadboard - (**3. Jul 2026**).
     - Solder together new circuit.
     - Test and repair new circut.
 
 ### Roulette **COMPLETE BY THE END OF JUNE**
 - Redesign roulette driver:
-    - Calibrate hall sensors and debug roulette code  - (**21. Jun 2026**).
-        - Solve ESP32 overheating problem.
-        - Solve CD4001BE overheating problem.
-        - Replace broken motor driver and power motor with independent power supply.
-        - Solder 100nF capacitor to motor and add power cables - twisted.
-        - Debug DIR signals of motor driver, curently it is not working - stucked add final position - probably it need calibration.
-    - Fix bugs - (**21. Jun 2026**).
+    - Calibrate hall sensors, debug roulette code and driver - (**26. Jun 2026**).
+        - Study values of resistors in voltage dividers - mabye chang values of rezistors in roulette and vent driver.
+        - Add some ESP32 GPIO pin protection - overvoltage protection and mabye some extra protection.
+        - Buy some bundle of ESP32s.
+        - Change placement of hall sensors - both need to be active in final position, otherwise TOP/BOTTOM signal will not be activated = error = blocked roullete, even if hall is working.
 
 - Final works:
     - Solder together roulette driver circuit and debug it.
