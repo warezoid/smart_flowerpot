@@ -109,9 +109,10 @@ This document is overview of progress and TODOs on smart flowerpot project.
 ### Roulette **COMPLETE BY THE END OF JUNE**
 - Redesign roulette driver:
     - Calibrate hall sensors, debug roulette code and driver - (**26. Jun 2026**).
-        - Study values of resistors in voltage dividers - mabye chang values of rezistors in roulette and vent driver.
-        - Add some ESP32 GPIO pin protection - overvoltage protection and mabye some extra protection.
-        - Buy some bundle of ESP32s.
+        - Test circuits with voltage dividers with lower resistors values.
+        - Invert value of step-up buffer, test step-up buffers without and with ESP32.
+        - Draw new added circuits to schematics.
+        - Buy some bundle of ESP32s, rezistors, 2N2222 transistors and more.
         - Change placement of hall sensors - both need to be active in final position, otherwise TOP/BOTTOM signal will not be activated = error = blocked roullete, even if hall is working.
 
 - Final works:
