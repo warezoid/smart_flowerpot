@@ -4783,16 +4783,16 @@ Discarded input sections
  .bss           0x00000000        0x0 esp-idf/pwm_generator/libpwm_generator.a(pwm_generator.c.obj)
  .xt.lit        0x00000000       0x10 esp-idf/pwm_generator/libpwm_generator.a(pwm_generator.c.obj)
  .xt.prop       0x00000000       0x60 esp-idf/pwm_generator/libpwm_generator.a(pwm_generator.c.obj)
- .literal.roulette_cls
+ .literal.roulette_opn
                 0x00000000       0x24 esp-idf/roulette/libroulette.a(roulette.c.obj)
  .literal.roulette_ack
                 0x00000000       0x44 esp-idf/roulette/libroulette.a(roulette.c.obj)
  .text          0x00000000        0x0 esp-idf/roulette/libroulette.a(roulette.c.obj)
  .data          0x00000000        0x0 esp-idf/roulette/libroulette.a(roulette.c.obj)
  .bss           0x00000000        0x0 esp-idf/roulette/libroulette.a(roulette.c.obj)
- .rodata.roulette_cls.str1.4
+ .rodata.roulette_opn.str1.4
                 0x00000000        0xf esp-idf/roulette/libroulette.a(roulette.c.obj)
- .text.roulette_cls
+ .text.roulette_opn
                 0x00000000       0x6a esp-idf/roulette/libroulette.a(roulette.c.obj)
  .rodata.roulette_ack.str1.4
                 0x00000000       0xa0 esp-idf/roulette/libroulette.a(roulette.c.obj)
@@ -17857,7 +17857,7 @@ LOAD /home/warezoid/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-e
                 0x3f408590       0x1e esp-idf/roulette/libroulette.a(roulette.c.obj)
  .rodata.roulette_init.str1.4
                 0x3f408590       0x14 esp-idf/roulette/libroulette.a(roulette.c.obj)
- .rodata.roulette_opn.str1.4
+ .rodata.roulette_cls.str1.4
                 0x3f408590        0xf esp-idf/roulette/libroulette.a(roulette.c.obj)
  .rodata.str1.4
                 0x3f408590       0x23 esp-idf/xtensa/libxtensa.a(xtensa_intr.c.obj)
@@ -19009,7 +19009,7 @@ LOAD /home/warezoid/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-e
  .literal.roulette_init
                 0x400d06b0        0x8 esp-idf/roulette/libroulette.a(roulette.c.obj)
                                  0x30 (size before relaxing)
- .literal.roulette_opn
+ .literal.roulette_cls
                 0x400d06b8        0x8 esp-idf/roulette/libroulette.a(roulette.c.obj)
                                  0x24 (size before relaxing)
  .literal.gpio_input_disable
@@ -20490,10 +20490,10 @@ LOAD /home/warezoid/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-e
                                  0x76 (size before relaxing)
                 0x400d6364                roulette_init
  *fill*         0x400d63be        0x2 
- .text.roulette_opn
+ .text.roulette_cls
                 0x400d63c0       0x5a esp-idf/roulette/libroulette.a(roulette.c.obj)
                                  0x6a (size before relaxing)
-                0x400d63c0                roulette_opn
+                0x400d63c0                roulette_cls
  *fill*         0x400d641a        0x2 
  .text.gpio_input_disable
                 0x400d641c       0x7d esp-idf/esp_driver_gpio/libesp_driver_gpio.a(gpio.c.obj)
@@ -27832,10 +27832,10 @@ rom_flash_chip_dummy                              esp-idf/spi_flash/libspi_flash
 rom_flash_chip_dummy_hpm                          esp-idf/spi_flash/libspi_flash.a(spi_flash_chip_generic.c.obj)
 roulette_ack                                      esp-idf/roulette/libroulette.a(roulette.c.obj)
 roulette_cls                                      esp-idf/roulette/libroulette.a(roulette.c.obj)
+                                                  esp-idf/main/libmain.a(motion_main.c.obj)
 roulette_init                                     esp-idf/roulette/libroulette.a(roulette.c.obj)
                                                   esp-idf/main/libmain.a(motion_main.c.obj)
 roulette_opn                                      esp-idf/roulette/libroulette.a(roulette.c.obj)
-                                                  esp-idf/main/libmain.a(motion_main.c.obj)
 rtc_clk_32k_bootstrap                             esp-idf/esp_hw_support/libesp_hw_support.a(rtc_clk.c.obj)
 rtc_clk_32k_disable_external                      esp-idf/esp_hw_support/libesp_hw_support.a(rtc_clk.c.obj)
                                                   esp-idf/esp_system/libesp_system.a(clk.c.obj)

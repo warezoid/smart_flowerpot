@@ -18,7 +18,7 @@ void app_main(void){
     };
     roulette_init(&roulette_sys);
 
-    roulette_opn(&roulette_sys);
+    roulette_cls(&roulette_sys);
 
     //code for getting a approximate value of roulette movement sequency time (closing: 55s | opening: not measured)
     TickType_t ticks_measurements = xTaskGetTickCount();
