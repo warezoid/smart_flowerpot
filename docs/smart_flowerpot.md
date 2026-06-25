@@ -109,10 +109,9 @@ This document is overview of progress and TODOs on smart flowerpot project.
 ### Roulette **COMPLETE BY THE END OF JUNE**
 - Redesign roulette driver:
     - Calibrate hall sensors, debug roulette code and driver - (**26. Jun 2026**).
-        - Add GPIO TOP/BOT protection and test it with ESP32.
-        - Test circuit with 22k voltage dividers resistors.
-        - Crimp dupont connectors to roullet wires.
+        - Test GPIO TOP/BOT protection with ESP32 and test new voltage dividers.
         - Draw new added circuits to schematics.
+        - Crimp dupont connectors to roullet wires.
 
 - Final works:
     - Solder together roulette driver circuit and debug it.
