@@ -18,30 +18,32 @@ void app_main(void){
     };
     roulette_init(&roulette_sys);
 
-    roulette_cls(&roulette_sys);
+    roulette_opn(&roulette_sys);
 
-    //code for getting a approximate value of roulette movement sequency time (closing: 55s | opening: not measured)
+    //code for getting a approximate value of roulette movement sequency time
     TickType_t ticks_measurements = xTaskGetTickCount();
     printf("TICKS started!\n");
+    bool just_print = false;
 
 //loop
     while(1){
-        //printf("\033[H\033[J");
-/*
-        printf("ESO1:\t%d\n", gpio_get_level(IN_ROULETTE_ESO1));
-        printf("ESC1:\t%d\n", gpio_get_level(IN_ROULETTE_ESC1));
-        printf("---\n");
-*/
-/*
-        if( gpio_get_level(IN_ROULETTE_ESC1) ){
-            printf("TICKS: %ld\n", pdTICKS_TO_MS( xTaskGetTickCount() - ticks_measurements ));
+        printf("\033[H\033[J");
+        
+        if( gpio_get_level(IN_ROULETTE_ESO1) && !just_print ){
+            ticks_measurements = xTaskGetTickCount() - ticks_measurements;
+            just_print = true;
         }
-*/
+        
+        printf("ESO1:\t\t%d\n", gpio_get_level(IN_ROULETTE_ESO1));
+        printf("ESC1:\t\t%d\n", gpio_get_level(IN_ROULETTE_ESC1));
+        if(just_print) printf("MOVEMENT TIME:\t%ld\n", pdTICKS_TO_MS(ticks_measurements));
+        printf("---\n");
+
 /*
         drainage_vent_ack(&drainage_vent_sys);
         roulette_ack(&roulette_sys);
 */
 
-        vTaskDelay(pdMS_TO_TICKS(100));
+        vTaskDelay(pdMS_TO_TICKS(10));
     }
 }
