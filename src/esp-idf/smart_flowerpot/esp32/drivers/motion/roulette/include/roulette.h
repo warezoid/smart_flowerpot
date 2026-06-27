@@ -7,10 +7,11 @@
 
 /*
     MEASURMENT:     1       2       3
-    CLOSING TIME:   55s     55s     55s
-    OPENING TIME    67s     67s     67s
+    CLOSING TIME:   55s     55s     55s     -> 58s = 58000 ms
+    OPENING TIME    67s     67s     67s     -> 70s = 70000 ms
 */
-#define ROULETTE_MOVE_DELAY_MS 70000
+#define ROULETTE_MOVE_CLOSE_DELAY_MS 5000//58000
+#define ROULETTE_MOVE_OPEN_DELAY_MS 8000//70000
 
 #define OUT_ROULETTE_DIR1 GPIO_NUM_18
 #define OUT_ROULETTE_DIR2 GPIO_NUM_19

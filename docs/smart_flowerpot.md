@@ -109,10 +109,13 @@ This document is overview of progress and TODOs on smart flowerpot project.
 ### Roulette **COMPLETE BY THE END OF JUNE**
 - Redesign roulette driver:
     - Calibrate hall sensors, debug roulette code and driver - (**28. Jun 2026**).
-        - Crimp dupont connectors to roullet wires.
-        - Properly check roulette code.
-        - TOP sensors will need recalibration. 
+        - Repair or replace (probably buy some E44 hall sensors) TOP yellow hall sensor.
+        - Calibrate TOP yellow sensor and keep it in place with hot glue.
+        - Check hot glue isolation.
+        - Properly test roulette code and roulette driver.
         - Draw new added circuits to schematics.
+
+        - Buy crimping tool. Crimp dupont connectors to roullet wires.
 
 - Final works:
     - Solder together roulette driver circuit and debug it.
