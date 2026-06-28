@@ -102,18 +102,16 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 ### Drainage vent
 - Electronics:
-    - Test new circuit on breadboard - (**3. Jul 2026**).
+    - Test new circuit on breadboard.
     - Solder together new circuit.
     - Test and repair new circut.
 
 ### Roulette **COMPLETE BY THE END OF JUNE**
 - Redesign roulette driver:
-    - Calibrate hall sensors, debug roulette code and driver - (**28. Jun 2026**).
+    - Calibrate hall sensors, debug roulette code and driver - (**3. Jul 2026**).
         - Calibrate TOP yellow hall sensor - move it a little bit lower.
-        - Properly test roulette code and roulette driver.
-        - Draw new added circuits to schematics.
-
         - Buy crimping tool. Crimp dupont connectors to roullet wires.
+        - Properly test roulette code and roulette driver.
 
 - Final works:
     - Solder together roulette driver circuit and debug it.
