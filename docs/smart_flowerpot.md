@@ -109,8 +109,6 @@ This document is overview of progress and TODOs on smart flowerpot project.
 ### Roulette **COMPLETE BY THE END OF JUNE**
 - Redesign roulette driver:
     - Calibrate hall sensors, debug roulette code and driver - (**3. Jul 2026**).
-        - Calibrate TOP yellow hall sensor - move it a little bit lower.
-        - Buy crimping tool. Crimp dupont connectors to roullet wires.
         - Properly test roulette code and roulette driver.
 
 - Final works:
