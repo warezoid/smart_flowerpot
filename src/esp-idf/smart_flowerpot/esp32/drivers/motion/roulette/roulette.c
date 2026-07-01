@@ -7,7 +7,7 @@ static void power_cut_off_callback(void *arg){
     gpio_set_level(OUT_ROULETTE_DIR1, 0);
     gpio_set_level(OUT_ROULETTE_DIR2, 0);
 
-    vTaskDelay(pdMS_TO_TICKS(1000));
+    vTaskDelay(pdMS_TO_TICKS(2000));
 }
 
 void roulette_init(roulette_dataset_t *roulette_sys){
@@ -85,7 +85,7 @@ void roulette_ack(roulette_dataset_t *roulette_sys){
             gpio_set_level(OUT_ROULETTE_DIR1, 0);
             gpio_set_level(OUT_ROULETTE_DIR2, 0);
             roulette_sys->event_start_tick = 0;
-/*
+
             switch(roulette_sys->control_flags & 0x03){
                 case 1:
                     printf("STATE:\tPOSITION CHECK - CLOSED\n");
@@ -108,7 +108,7 @@ void roulette_ack(roulette_dataset_t *roulette_sys){
                     }
                     break;
             }
-*/
+
             roulette_sys->control_flags &= 0x04;
 
             vTaskDelay(pdMS_TO_TICKS(2000));

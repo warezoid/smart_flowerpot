@@ -27,7 +27,7 @@ void app_main(void){
         if( gpio_get_level(IN_DRAIN_VENT_ESC1) ) roulette_opn(&roulette_sys);
         if( gpio_get_level(IN_DRAIN_VENT_ESO1) ) roulette_cls(&roulette_sys);
 
-        //drainage_vent_ack(&drainage_vent_sys);
+        drainage_vent_ack(&drainage_vent_sys);
         roulette_ack(&roulette_sys);
 
         vTaskDelay(pdMS_TO_TICKS(100));

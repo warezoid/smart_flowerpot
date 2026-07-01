@@ -9,21 +9,21 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 
 ## To buy
-- Hornbach things:
+- Hornbach things [ 259 CZK ]:
     - [ 170 CZK, 2 m ] <=> https://www.hornbach.cz/p/sit-proti-hmyzu-seda-sirka-1-m-metraz/4262685/
     - [ 89 CZK, 1 pcs ] <=> https://www.hornbach.cz/p/spona-530-14-j-c-schwarz-1000-ks/10671318/
 
-- Paints:
+- Paints [ 957 CZK ]:
     - [ 299 CZK, 1 pcs ] <=> https://www.obi.cz/zakladni-naterove-barvy-na-drevo/balakryl-zakladni-barva-na-drevo-bila-0-7-kg/p/4147989
     - [ 329 CZK, 1 pcs ] <=> https://www.obi.cz/barevne-laky/balakryl-univerzalni-barva-na-kov-a-drevo-uni-mat-0199-cerna-0-7-kg/p/2314524
     - [ 329 CZK, 1 pcs ] <=> https://www.obi.cz/barevne-laky/balakryl-univerzalni-barva-na-kov-a-drevo-uni-mat-0615-slonova-kost-0-7-kg/p/2899391
 
-- OSB:
-    - [ 635 CZK, 1 pcs ] <=> https://www.hornbach.cz/conf/osb-deska-kronospan-osb-3-f0-15-x-1250-x-2500-mm-nebrousena/3397975/
+- OSB [ 1713 CZK ]:
+    - [ 1359 CZK ] <=> https://www.hornbach.cz/conf/osb-deska-kronospan-osb-3-f0-15-x-1250-x-2500-mm-nebrousena/3397975/
         - [ 325.25 CZK, 1 pcs ] <=> 1400x880
         - [ 369.60 CZK, 2 pcs ] <=> 1400x500
         - [ 663.70 CZK, 2 pcs ] <=> 1526x824
-    - [ 759 CZK, 1 pcs ] <=> https://www.hornbach.cz/conf/osb-deska-kronospan-osb-3-f0-18-x-1250-x-2500-mm-nebrousena/3397986/
+    - [ 354 CZK ] <=> https://www.hornbach.cz/conf/osb-deska-kronospan-osb-3-f0-18-x-1250-x-2500-mm-nebrousena/3397986/
         - [ 353.92 CZK, 1 pcs ] <=> 1400x800
 
 
@@ -102,16 +102,12 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 ### Drainage vent
 - Electronics:
-    - Test new circuit on breadboard.
+    - Test new circuit on breadboard - (**26. Jul 2026**).
     - Solder together new circuit.
     - Test and repair new circut.
 
-### Roulette **COMPLETE BY THE END OF JUNE**
-- Redesign roulette driver:
-    - Calibrate hall sensors, debug roulette code and driver - (**3. Jul 2026**).
-        - Properly test roulette code and roulette driver.
-
-- Final works:
+### Roulette
+- Final works (**9. Jul 2026**):
     - Solder together roulette driver circuit and debug it.
     - Put description on board.
     - Update schematic of roulette driver.
