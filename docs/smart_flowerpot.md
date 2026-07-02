@@ -9,15 +9,6 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 
 ## To buy
-- Hornbach things [ 259 CZK ]:
-    - [ 170 CZK, 2 m ] <=> https://www.hornbach.cz/p/sit-proti-hmyzu-seda-sirka-1-m-metraz/4262685/
-    - [ 89 CZK, 1 pcs ] <=> https://www.hornbach.cz/p/spona-530-14-j-c-schwarz-1000-ks/10671318/
-
-- Paints [ 957 CZK ]:
-    - [ 299 CZK, 1 pcs ] <=> https://www.obi.cz/zakladni-naterove-barvy-na-drevo/balakryl-zakladni-barva-na-drevo-bila-0-7-kg/p/4147989
-    - [ 329 CZK, 1 pcs ] <=> https://www.obi.cz/barevne-laky/balakryl-univerzalni-barva-na-kov-a-drevo-uni-mat-0199-cerna-0-7-kg/p/2314524
-    - [ 329 CZK, 1 pcs ] <=> https://www.obi.cz/barevne-laky/balakryl-univerzalni-barva-na-kov-a-drevo-uni-mat-0615-slonova-kost-0-7-kg/p/2899391
-
 - OSB [ 1713 CZK ]:
     - [ 1359 CZK ] <=> https://www.hornbach.cz/conf/osb-deska-kronospan-osb-3-f0-15-x-1250-x-2500-mm-nebrousena/3397975/
         - [ 325.25 CZK, 1 pcs ] <=> 1400x880
