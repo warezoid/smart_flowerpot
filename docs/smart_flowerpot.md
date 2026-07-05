@@ -65,7 +65,8 @@ This document is overview of progress and TODOs on smart flowerpot project.
     - Grind some edge on roullete OSB hole - bottom edge of roulette window, roulette hit it and can be stucked (only on it's way down).
     - Paint OSBs by some protective paint.
     - Drill holes for OSBs mounting.
-    - Do the things to finish steel construction.
+    - Add thread to the holes.
+    - Repaint steel construction - drilled holes only.
     - Mount walls to the steel construction.
 
     - OSB FEM sources:
@@ -73,11 +74,6 @@ This document is overview of progress and TODOs on smart flowerpot project.
         - https://regata.b-cdn.net/media/folio3/productattachments/SKHU_Technical_Data_EN_2025_03_03.pdf
         - https://europanels.org/the-wood-based-panel-industry/types-of-wood-based-panels-economic-impact/oriented-strand-board/
         - https://hrcak.srce.hr/file/263350
-
-- Finish steel construcion:
-    - Sand structure with coarse-grit sandpaper - P80 or P100.
-    - Clean and degrease structure.
-    - Paint construction by some color - multiple layers.
 
 - Post-finish works:
     - Update metal profile photo and finished steel frame section.
