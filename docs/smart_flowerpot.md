@@ -94,8 +94,15 @@ This document is overview of progress and TODOs on smart flowerpot project.
     - Test and repair new circut.
 
 ### Roulette
-- Final works (**9. Jul 2026**):
-    - Solder together roulette driver circuit and debug it.
+- Soldering works - (**9. Jul 2026**):
+    - Solder components to GND and VCC points and paths.
+    - Solder signal wires - ESP32 IO, logic gates IO, dividers input, ...
+    - Visual test and test for shorts, try to power up circuit.
+
+    - Test roulette driver with roulette. Find bugs, if there are some.
+    - Repair circuit and try tests again.
+
+- Final works:
     - Put description on board.
     - Update schematic of roulette driver.
     - Update CAD files of roulette guides and winge rod gear.
