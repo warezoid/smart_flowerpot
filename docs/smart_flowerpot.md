@@ -95,7 +95,8 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 ### Roulette
 - Soldering works - (**9. Jul 2026**):
-    - Solder components to GND and VCC points and paths.
+    - Repair and resolder GND and VCC path to NOR gate.
+    - Pick some signal wire - probably can be very thin.
     - Solder signal wires - ESP32 IO, logic gates IO, dividers input, ...
     - Visual test and test for shorts, try to power up circuit.
 
