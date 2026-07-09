@@ -94,8 +94,9 @@ This document is overview of progress and TODOs on smart flowerpot project.
     - Test and repair new circut.
 
 ### Roulette
-- Soldering works - (**9. Jul 2026**):
-    - Solder signal wires - ESP32 IO, logic gates IO, dividers input, ...
+- Soldering works - (**19. Jul 2026**):
+    - Add motor driver socket to DPS - remove motor driver, resolder motor driver socket.
+    - Finish signal wires soldering - ESP32 IO, logic gates IO, dividers input, ...
     - Visual test and test for shorts, try to power up circuit.
 
     - Test roulette driver with roulette. Find bugs, if there are some.
