@@ -89,16 +89,14 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 ### Drainage vent
 - Electronics:
-    - Test new circuit on breadboard - (**26. Jul 2026**).
+    - Test new circuit on breadboard.
     - Solder together new circuit.
     - Test and repair new circut.
 
 ### Roulette
-- Soldering works - (**19. Jul 2026**):
-    - Add motor driver socket to DPS - remove motor driver, resolder motor driver socket.
-    - Finish signal wires soldering - ESP32 IO, logic gates IO, dividers input, ...
+- Soldering works - (**26. Jul 2026**):
+    - Finish signal wires soldering - ESP IO, NAND and NOT gates, dividers input, ...
     - Visual test and test for shorts, try to power up circuit.
-
     - Test roulette driver with roulette. Find bugs, if there are some.
     - Repair circuit and try tests again.
 
