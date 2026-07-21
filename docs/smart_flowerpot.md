@@ -95,7 +95,7 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 ### Roulette
 - Soldering works - (**26. Jul 2026**):
-    - Finish signal wires soldering - ESP IO, NAND and NOT gates, dividers input, ...
+    - Finish signal wires soldering - NAND outputs, NOT gate, motor driver inputs.
     - Visual test and test for shorts, try to power up circuit.
     - Test roulette driver with roulette. Find bugs, if there are some.
     - Repair circuit and try tests again.
