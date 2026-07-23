@@ -98,10 +98,7 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 ### Roulette
 - Soldering works - (**26. Jul 2026**):
-    - (**23. Jul 2026**)
-        - Finish signal wires soldering - last motor driver input (ENABLE).
-        - Visual test and test for shorts, try to power up circuit.
-
+    - Try to power up roulette driver circuit.
     - Test roulette driver with roulette. Find bugs, if there are some.
     - Repair circuit and try tests again.
 
