@@ -97,14 +97,15 @@ This document is overview of progress and TODOs on smart flowerpot project.
     - Test and repair new circut.
 
 ### Roulette
-- Soldering works - (**26. Jul 2026**):
-    - Test roulette driver with roulette. Find bugs, if there are some.
-    - Repair circuit and try tests again.
-
 - Final works:
-    - Put description on board.
-    - Update schematic of roulette driver.
+    - Recalibrate TOP Hall sensor - TOP GREEN probably.
+    - Check driver schematics with real circuit and update it if needed.
+    - Put descriptions on circuit.
+    - Do some last testing of circuit before epoxy cover.
+    - Cover circuit in epoxy resin to prevent shorts and add some protection.
+
     - Update CAD files of roulette guides and winge rod gear.
+    - Maybe solve some better system for holding hall sensors than hot glue - easier calibration.
 
 
 

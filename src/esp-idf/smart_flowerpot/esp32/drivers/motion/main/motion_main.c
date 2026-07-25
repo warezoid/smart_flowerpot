@@ -18,6 +18,8 @@ void app_main(void){
     };
     roulette_init(&roulette_sys);
 
+    roulette_opn(&roulette_sys);
+
 //loop
     while(1){
         printf("\033[H\033[J");        
