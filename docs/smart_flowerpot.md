@@ -89,12 +89,15 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 ### Drainage vent
 - Electronics:
-    - (**26. Jul 2026**):
-        - Desolder some components from old circuit and try to use them.
-        - Test new circuit on breadboard.
+    - Replace RJ45 connectors with dupont - change wires connectors.
+    - Create vent side driver circuit - servo capacitor and dupont terminal.
+    - Build circuit on breadboard.
+    - Test breadbord circuit and fix bugs.
 
     - Solder together new circuit.
     - Test and repair new circut.
+    - Update schematics - RJ45 to dupont.
+    - Add circuit connection to Excel.
 
 ### Roulette
 - Final works:
