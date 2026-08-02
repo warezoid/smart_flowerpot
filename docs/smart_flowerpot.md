@@ -89,9 +89,7 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 ### Drainage vent
 - Electronics:
-    - Create vent side driver circuit - servo capacitor and dupont terminal.
-
-    - Build circuit on breadboard.
+    - Build circuit on breadboard - **3. Aug 2026**
     - Test breadbord circuit and fix bugs.
 
     - Solder together new circuit.
