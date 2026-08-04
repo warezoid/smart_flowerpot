@@ -89,10 +89,15 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 ### Drainage vent
 - Electronics:
-    - Test breadbord circuit and fix bugs.
-
+    - Vent driver circuit bugs (**5. Aug 2026**):
+        - Check ESP GPIO connections.
+        - Both servos will need to be recalibrated - manual and software reclibration of position and duty position. Both end switches have to be active when open and close.
+        - Last checks before driver soldering.
+    
     - Solder together new circuit.
+    - Dupont connection is lose and is not conduction properly - connectors will have to be repaired.
     - Test and repair new circut.
+
     - Update schematics - RJ45 to dupont.
     - Add circuit connection to Excel.
 
