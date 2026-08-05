@@ -81,16 +81,18 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 ### Drainage vent
 - Electronics:
-    - Vent driver circuit bugs (**5. Aug 2026**):
-        - Both servos will need to be recalibrated - manual and software reclibration of position and duty position. Both end switches have to be active when open and close.
-        - Last checks before driver soldering.
-    
-    - Solder together new circuit.
-    - Dupont connection is lose and is not conduction properly - connectors will have to be repaired.
-    - Test and repair new circut.
+    - Repair DUPONT connectors on one end of both cables.
+        - Test continuity of new cables.
+        - Add plastic cover to connectors.
+    - Debug ESO2 and ESC2 signals - signals should be active, but ESP does not recieve it.
+    - Try vent driver with new chagnes before soldering.
 
+    - Solder together new circuit.
+    - Test and repair new circut.
     - Update schematics - RJ45 to dupont.
     - Add circuit connection to Excel.
+
+    - Before instalation vents need to be calibrated properly. Their placement on OSB will need to be accurate a same for both vents. Then OPEN and CLOSE duty cycles in software will need to be changed.
 
 ### Roulette
 - Final works:

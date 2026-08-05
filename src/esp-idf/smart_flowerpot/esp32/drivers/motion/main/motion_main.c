@@ -22,6 +22,8 @@ void app_main(void){
     gpio_set_level(OUT_DRAIN_VENT_SPM1, 1);
     gpio_set_level(OUT_DRAIN_VENT_SPM2, 1);
     
+    //pwm_generator_set_duty(SYS_DRAIN_VENT_PWM_CHNL, SERVO_DUTY_OPEN);
+
     int i = 0;
 //loop
     while(1){
@@ -33,12 +35,15 @@ void app_main(void){
 
         if(i){
             pwm_generator_set_duty(SYS_DRAIN_VENT_PWM_CHNL, SERVO_DUTY_OPEN);
+            printf("open!\n");
         }
         else{
             pwm_generator_set_duty(SYS_DRAIN_VENT_PWM_CHNL, SERVO_DUTY_CLOSE);
+            printf("close!\n");
         }
         
         i = !i;
+
         vTaskDelay(pdMS_TO_TICKS(2000));
 
         //drainage_vent_ack(&drainage_vent_sys);
