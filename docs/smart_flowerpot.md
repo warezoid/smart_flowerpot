@@ -9,13 +9,6 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 
 ## To buy
-- OSB [ 1713 CZK ]:
-    - [ 1359 CZK ] <=> https://www.hornbach.cz/conf/osb-deska-kronospan-osb-3-f0-15-x-1250-x-2500-mm-nebrousena/3397975/
-        - [ 325.25 CZK, 1 pcs ] <=> 1400x880
-        - [ 369.60 CZK, 2 pcs ] <=> 1400x500
-        - [ 663.70 CZK, 2 pcs ] <=> 1526x824
-    - [ 354 CZK ] <=> https://www.hornbach.cz/conf/osb-deska-kronospan-osb-3-f0-18-x-1250-x-2500-mm-nebrousena/3397986/
-        - [ 353.92 CZK, 1 pcs ] <=> 1400x800
 
 
 
@@ -60,7 +53,6 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 ## Construction
 - OSB:
-    - Buy OSBs - front and back walls (only lowerparts), bottom and side walls.
     - Cut needed holes into OSBs, grind them.
     - Grind some edge on roullete OSB hole - bottom edge of roulette window, roulette hit it and can be stucked (only on it's way down).
     - Paint OSBs by some protective paint.
@@ -90,7 +82,6 @@ This document is overview of progress and TODOs on smart flowerpot project.
 ### Drainage vent
 - Electronics:
     - Vent driver circuit bugs (**5. Aug 2026**):
-        - Check ESP GPIO connections.
         - Both servos will need to be recalibrated - manual and software reclibration of position and duty position. Both end switches have to be active when open and close.
         - Last checks before driver soldering.
     
