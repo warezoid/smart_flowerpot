@@ -81,12 +81,6 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 ### Drainage vent
 - Electronics:
-    - Repair DUPONT connectors on one end of both cables.
-        - Test continuity of new cables.
-        - Add plastic cover to connectors.
-    - Debug ESO2 and ESC2 signals - signals should be active, but ESP does not recieve it.
-    - Try vent driver with new chagnes before soldering.
-
     - Solder together new circuit.
     - Test and repair new circut.
     - Update schematics - RJ45 to dupont.
