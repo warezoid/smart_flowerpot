@@ -82,8 +82,9 @@ This document is overview of progress and TODOs on smart flowerpot project.
 ### Drainage vent
 - Electronics:
     - Solder vent driver together:
-        - Solder components to the board.
         - Solder hard paths from conductive material and solder - GND and short signal paths.
+            - Twice path from transil diode node to 10V GND.
+            - 3.3V paths - VCC and GND.
         - Solder wire paths.
         - Visual check and check for shorts.
     - Test and repair new circut.
