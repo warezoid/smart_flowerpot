@@ -81,11 +81,9 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 ### Drainage vent
 - Electronics:
-    - Solder vent driver together:
-        - Visual and check for shorts for components and solid paths.
-        - Solder wire paths.
-        - Visual check and check for shorts.
-    - Test and repair new circut.
+    - Test and repair new circut:
+        - Power UP new circuit and connect vents.
+        - Test for circuit functionality.
     - Update schematics:
         - RJ45 to dupont.
         - Show separated GNDs in schematic.
