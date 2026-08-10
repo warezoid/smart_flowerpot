@@ -7,8 +7,8 @@
 
 #include "pwm_generator.h"
 
-#define SERVO_DUTY_CLOSE 600
-#define SERVO_DUTY_OPEN 200//8192
+#define SERVO_DUTY_CLOSE 500//600
+#define SERVO_DUTY_OPEN 300//200
 #define VENT_MOVE_DELAY_MS 2500
 
 #define SYS_DRAIN_VENT_PWM_CHNL LEDC_CHANNEL_0

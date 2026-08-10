@@ -9,7 +9,13 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 
 ## To buy
-
+- Hornbach & Hadex
+- DIN lišta.
+- Kus prkna.
+- Distribuční můstky.
+- DC/DC měnič.
+- Malé šrouby pro DC/DC měniče.
+- Možná podložky pro DIN lištu.
 
 
 ## Project roadmap
@@ -82,8 +88,9 @@ This document is overview of progress and TODOs on smart flowerpot project.
 ### Drainage vent
 - Electronics:
     - Test and repair new circut:
-        - Power UP new circuit and connect vents.
-        - Test for circuit functionality.
+        - For testing circuit will need to have united GND. I have to create some power block for now and future testing. Buy some things, create distribution block and calibrated & check for output voltage and circuit outputs.
+        - Servos will need to be repaired. Take apart servos and repair them.
+        - Then properly test vent driver circuit and check again roulette driver circuit if it is working properly, maybe also check if it is working with vent in same time.
     - Update schematics:
         - RJ45 to dupont.
         - Show separated GNDs in schematic.

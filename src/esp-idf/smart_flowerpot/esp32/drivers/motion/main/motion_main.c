@@ -44,7 +44,7 @@ void app_main(void){
         
         i = !i;
 */
-        vTaskDelay(pdMS_TO_TICKS(5000));
+        vTaskDelay(pdMS_TO_TICKS(2000));
 
         //drainage_vent_ack(&drainage_vent_sys);
         //roulette_ack(&roulette_sys);
