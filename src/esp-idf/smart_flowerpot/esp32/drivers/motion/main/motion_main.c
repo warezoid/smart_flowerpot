@@ -32,7 +32,7 @@ void app_main(void){
         printf("ESC1:\t\t%d\n", gpio_get_level(IN_DRAIN_VENT_ESC1));
         printf("ESO2:\t\t%d\n", gpio_get_level(IN_DRAIN_VENT_ESO2));
         printf("ESC2:\t\t%d\n", gpio_get_level(IN_DRAIN_VENT_ESC2));      
-/*
+
         if(i){
             pwm_generator_set_duty(SYS_DRAIN_VENT_PWM_CHNL, SERVO_DUTY_OPEN);
             printf("open!\n");
@@ -43,7 +43,7 @@ void app_main(void){
         }
         
         i = !i;
-*/
+
         vTaskDelay(pdMS_TO_TICKS(2000));
 
         //drainage_vent_ack(&drainage_vent_sys);
