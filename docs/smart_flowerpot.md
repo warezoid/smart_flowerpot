@@ -45,7 +45,7 @@ This document is overview of progress and TODOs on smart flowerpot project.
         - Drivers will reply with action status and process is done.
         - Update GUI to more profesional form - overviews, logs, ...
 
-- Version 1.1: fix bugs. Write potentional future improvements. See if second roulette is needed.
+- Version 1.1: fix bugs. Write potentional future improvements. See if second roulette is needed. Think about driving vents independently (first drive Vent 1, then vent 2) -> better for instalation, new code should be written. Harder calibration.
 
 - Version 2: add IR camera and add some machine vision. Pests monitoring.
 
@@ -78,17 +78,23 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 
 ## ESP32 / DRIVERs / MOTION
+- Final testing:
+    - Connect test buttons to ESP for vent OPEN/CLOSE and ROULETTE OPEN/CLOSE.
+    - Write nice testing code for both: vent and roulette.
+    - Connect roulette to power distribution circuits - configure VOLTAGE and CURRENT.
+    - Do needed recalibration.
+    - Test everything nicely and properly.
+
 
 ### Drainage vent
 - Electronics:
-    - Test and repair new circut:
-        - Then properly test vent driver circuit and check again roulette driver circuit if it is working properly, maybe also check if it is working with vent in same time.
     - Update schematics:
         - RJ45 to dupont.
         - Show separated GNDs in schematic.
         - Check schemtics with real circuit.
     - Add circuit connection to Excel.
 
+    - Solve calibration problem, I need somehow place servos at same place. Then do calibration properly - hardware (vent placement) and software (duty cycle).
     - Before instalation vents need to be calibrated properly. Their placement on OSB will need to be accurate a same for both vents. Then OPEN and CLOSE duty cycles in software will need to be changed.
 
 ### Roulette

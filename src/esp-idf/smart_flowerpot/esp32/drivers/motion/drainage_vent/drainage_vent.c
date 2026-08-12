@@ -39,7 +39,11 @@ void drainage_vent_init(drainage_vent_dataset_t *vent_sys){
 
 void drainage_vent_cls(drainage_vent_dataset_t *vent_sys){
     if(!vent_sys->event_start_tick){
+        printf("Opening request!\n");
+
         if(vent_sys->control_flags & 0x0C){
+            printf("Opening!\n");
+
             pwm_generator_set_duty(SYS_DRAIN_VENT_PWM_CHNL, SERVO_DUTY_CLOSE);
 
             if(vent_sys->control_flags & 0x04) gpio_set_level(OUT_DRAIN_VENT_SPM1, 1);
@@ -51,12 +55,18 @@ void drainage_vent_cls(drainage_vent_dataset_t *vent_sys){
             vent_sys->control_flags &= 0x0C;
             vent_sys->control_flags |= 0x01;
         }
+
+        vTaskDelay(pdMS_TO_TICKS(1500));
     }
 }
 
 void drainage_vent_opn(drainage_vent_dataset_t *vent_sys){
     if(!vent_sys->event_start_tick){
+        printf("Opening request!\n");
+
         if(vent_sys->control_flags & 0x0C){
+            printf("Opening!\n");
+
             pwm_generator_set_duty(SYS_DRAIN_VENT_PWM_CHNL, SERVO_DUTY_OPEN);
 
             if(vent_sys->control_flags & 0x04) gpio_set_level(OUT_DRAIN_VENT_SPM1, 1);
@@ -68,12 +78,16 @@ void drainage_vent_opn(drainage_vent_dataset_t *vent_sys){
             vent_sys->control_flags &= 0x0C;
             vent_sys->control_flags |= 0x02;
         }
+
+        vTaskDelay(pdMS_TO_TICKS(1500));
     }
 }
 
 void drainage_vent_ack(drainage_vent_dataset_t *vent_sys){
     if(vent_sys->event_start_tick){
         if((xTaskGetTickCount() - vent_sys->event_start_tick) >= pdMS_TO_TICKS(VENT_MOVE_DELAY_MS + 500)){
+            printf("Acknowledge request!\n");
+        
             gpio_set_level(OUT_DRAIN_VENT_SPM1, 0);
             gpio_set_level(OUT_DRAIN_VENT_SPM2, 0);
             vent_sys->event_start_tick = 0;
@@ -84,6 +98,7 @@ void drainage_vent_ack(drainage_vent_dataset_t *vent_sys){
                         if(!gpio_get_level(IN_DRAIN_VENT_ESC1)){
                             vent_sys->control_flags &= 0xFB;
                             //v1 error
+                            printf("Vent1 CLOSE ERROR!\n");
                         }
                     }
 
@@ -91,6 +106,7 @@ void drainage_vent_ack(drainage_vent_dataset_t *vent_sys){
                         if(!gpio_get_level(IN_DRAIN_VENT_ESC2)){
                             vent_sys->control_flags &= 0xF7;
                             //v2 error
+                            printf("Vent2 CLOSE ERROR!\n");
                         }
                     }
                     break;
@@ -99,6 +115,7 @@ void drainage_vent_ack(drainage_vent_dataset_t *vent_sys){
                         if(!gpio_get_level(IN_DRAIN_VENT_ESO1)){
                             vent_sys->control_flags &= 0xFB;
                             //v1 error
+                            printf("Vent1 OPEN ERROR!\n");
                         }
                     }
 
@@ -106,12 +123,15 @@ void drainage_vent_ack(drainage_vent_dataset_t *vent_sys){
                         if(!gpio_get_level(IN_DRAIN_VENT_ESO2)){
                             vent_sys->control_flags &= 0xF7;
                             //v2 error
+                            printf("Vent2 OPEN ERROR!\n");
                         }
                     }
                     break;
             }
 
             vent_sys->control_flags &= 0x0C;
+            
+            vTaskDelay(pdMS_TO_TICKS(1500));
         }
     }
 }
