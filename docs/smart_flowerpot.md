@@ -81,7 +81,6 @@ This document is overview of progress and TODOs on smart flowerpot project.
 - Final testing:
     - Connect test buttons to ESP for vent OPEN/CLOSE and ROULETTE OPEN/CLOSE.
     - Write nice testing code for both: vent and roulette.
-    - Connect roulette to power distribution circuits - configure VOLTAGE and CURRENT.
     - Do needed recalibration.
     - Test everything nicely and properly.
 
@@ -89,16 +88,16 @@ This document is overview of progress and TODOs on smart flowerpot project.
 ### Drainage vent
 - Electronics:
     - Update schematics:
-        - RJ45 to dupont.
         - Show separated GNDs in schematic.
         - Check schemtics with real circuit.
-    - Add circuit connection to Excel.
 
     - Solve calibration problem, I need somehow place servos at same place. Then do calibration properly - hardware (vent placement) and software (duty cycle).
     - Before instalation vents need to be calibrated properly. Their placement on OSB will need to be accurate a same for both vents. Then OPEN and CLOSE duty cycles in software will need to be changed.
 
 ### Roulette
 - Final works:
+    - Make new dupont connections on hall effect sensors and motor wires.
+
     - Recalibrate TOP Hall sensor - TOP GREEN probably.
     - Check driver schematics with real circuit and update it if needed.
     - Put descriptions on circuit.
