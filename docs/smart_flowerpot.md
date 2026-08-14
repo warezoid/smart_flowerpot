@@ -96,8 +96,6 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 ### Roulette
 - Final works:
-    - Make new dupont connections on hall effect sensors and motor wires.
-
     - Recalibrate TOP Hall sensor - TOP GREEN probably.
     - Check driver schematics with real circuit and update it if needed.
     - Put descriptions on circuit.
