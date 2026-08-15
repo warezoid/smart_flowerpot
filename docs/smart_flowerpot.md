@@ -87,11 +87,16 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 ### Drainage vent
 - Electronics:
+    - Update drainage_vent code:
+        - Drive both vent separatly - first vent 1 then vent 2.
+        - Than i can set different duty cycle and calibration will be easier.
+        - I can block one roulette, do movement, then do same for second vent.
+        - Solve problem of how to know when vent 1 finished its movement - do it efficient.
+
     - Update schematics:
         - Show separated GNDs in schematic.
         - Check schemtics with real circuit.
 
-    - Solve calibration problem, I need somehow place servos at same place. Then do calibration properly - hardware (vent placement) and software (duty cycle).
     - Before instalation vents need to be calibrated properly. Their placement on OSB will need to be accurate a same for both vents. Then OPEN and CLOSE duty cycles in software will need to be changed.
 
 ### Roulette
