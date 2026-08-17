@@ -1,8 +1,20 @@
 #include "drainage_vent.h"
 #include "roulette.h"
 
+
+
+/*************** START of temp code - ROULETTE and VENT testing */
+#define TMP_VENT_OPEN GPIO_NUM_17
+#define TMP_VENT_CLOSE GPIO_NUM_21
+#define TMP_ROULETTE_OPEN GPIO_NUM_25 
+#define TMP_ROULETTE_CLOSE GPIO_NUM_26
+/*************** END of temp code - ROULETTE and VENT testing */
+
+
+
 void app_main(void){
 //init
+/*
     drainage_vent_dataset_t drainage_vent_sys = {
         .power_cut_off_timer = NULL,
         .event_start_tick = 0,
@@ -17,71 +29,47 @@ void app_main(void){
         .control_flags = 0b00000100
     };
     roulette_init(&roulette_sys);
-/*
-    // drainage vent configuration - closed position
-    int vent1_position = SERVO_DUTY_OPEN;
-    int vent2_position = SERVO_DUTY_OPEN;
 */
-/*
-    gpio_set_level(OUT_DRAIN_VENT_SPM1, 1);
-    gpio_set_level(OUT_DRAIN_VENT_SPM2, 1);
-    pwm_generator_set_duty(SYS_DRAIN_VENT_PWM_CHNL, SERVO_DUTY_CLOSE);
-*/
-    int vent_timer = 0;
-    int closed = 1;
+
+
+/*************** START of temp code - ROULETTE and VENT testing */
+    gpio_set_direction(TMP_VENT_OPEN, GPIO_MODE_INPUT);
+    gpio_set_direction(TMP_VENT_CLOSE, GPIO_MODE_INPUT);
+    gpio_set_direction(TMP_ROULETTE_OPEN, GPIO_MODE_INPUT);
+    gpio_set_direction(TMP_ROULETTE_CLOSE, GPIO_MODE_INPUT);
+/*************** END of temp code - ROULETTE and VENT testing */
+
+
 
 //loop
     while(1){
-        printf("\033[H\033[J");
-        printf("ESO1:\t\t%d\n", gpio_get_level(IN_DRAIN_VENT_ESO1));
-        printf("ESC1:\t\t%d\n", gpio_get_level(IN_DRAIN_VENT_ESC1));
-        printf("ESO2:\t\t%d\n", gpio_get_level(IN_DRAIN_VENT_ESO2));
-        printf("ESC2:\t\t%d\n", gpio_get_level(IN_DRAIN_VENT_ESC2));
 
 
-        if(vent_timer >= 50){
-            if(closed){
-                pwm_generator_set_duty(SYS_DRAIN_VENT_PWM_CHNL, SERVO_DUTY_OPEN);
-            }
-            else{
-                pwm_generator_set_duty(SYS_DRAIN_VENT_PWM_CHNL, SERVO_DUTY_CLOSE);
+
+        /*************** START of temp code - ROULETTE and VENT testing */
+            //printf("\033[H\033[J");
+
+            if(gpio_get_level(TMP_VENT_OPEN)){
+                printf("V-LOG:\topen request!\n");
             }
 
-            closed = !closed;
-            vent_timer = 0;
-        }
+            if(gpio_get_level(TMP_VENT_CLOSE)){
+                printf("V-LOG:\tclose request!\n");
+            }
 
-        vent_timer++;
-        vTaskDelay(pdMS_TO_TICKS(100));
+            if(gpio_get_level(TMP_ROULETTE_OPEN)){
+                printf("R-LOG:\topen request!\n");
+            }
 
-    /*
+            if(gpio_get_level(TMP_ROULETTE_CLOSE)){
+                printf("R-LOG:\tclose request!\n");
+            }
 
-        if(!gpio_get_level(IN_DRAIN_VENT_ESC1))printf("VENT 1 POSITION: %d\n", vent1_position);
-        if(!gpio_get_level(IN_DRAIN_VENT_ESC2))printf("VENT 2 POSITION: %d\n", vent2_position);
-    
-        if( gpio_get_level(IN_DRAIN_VENT_ESC1) ){
-            gpio_set_level(OUT_DRAIN_VENT_SPM1, 0);           
-            printf("VENT 1 CLOSED POSITION: %d\n", vent1_position);
-        }
-        else{
-            vent1_position += 5;
-        }
+            vTaskDelay(pdMS_TO_TICKS(100));
+        /*************** END of temp code - ROULETTE and VENT testing */
 
-        if( gpio_get_level(IN_DRAIN_VENT_ESC2) ){
-            gpio_set_level(OUT_DRAIN_VENT_SPM2, 0);
-            printf("VENT 2 CLOSED POSITION: %d\n", vent2_position);
-        }
-        else{
-            vent2_position += 5;
-        }
 
-        int tmp_pos = vent1_position >= vent2_position ? vent1_position : vent2_position;
-        printf("TMP_POS:\t\t%d\n", tmp_pos);
-        pwm_generator_set_duty(SYS_DRAIN_VENT_PWM_CHNL, tmp_pos);
-   
-        vTaskDelay(pdMS_TO_TICKS(500));
-*/
-
+        
         //drainage_vent_ack(&drainage_vent_sys);
         //roulette_ack(&roulette_sys);
     }

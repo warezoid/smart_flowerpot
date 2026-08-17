@@ -79,7 +79,6 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 ## ESP32 / DRIVERs / MOTION
 - Final testing:
-    - Connect test buttons to ESP for vent OPEN/CLOSE and ROULETTE OPEN/CLOSE.
     - Write nice testing code for both: vent and roulette.
     - Do needed recalibration.
     - Test everything nicely and properly.
@@ -92,6 +91,16 @@ This document is overview of progress and TODOs on smart flowerpot project.
         - Than i can set different duty cycle and calibration will be easier.
         - I can block one roulette, do movement, then do same for second vent.
         - Solve problem of how to know when vent 1 finished its movement - do it efficient.
+        - Use folowing state machine:
+            - Waiting (0): listening for OPEN or CLOSE request. If request is observed then state is set to Starting 1 (1).
+            - Start 1 (1): set PWM for given operation for vent 1, start cut off timer, set power mosfet 1 to ON. Set state to Moving 1 (2).
+            - Moving 1 (2):
+                - Check for given limit switch and if switch is active then switch off PWM, set power mosfet 1 to OFF and switch of power cut of timer, then acknowledge.
+                - OR:
+                - Wait for power cut off timer then switch off PWM, set power mosfet 1 to OFF. Then check if given limit switch is active, if yes acknowledge vent 1 movement. If no, then handle error logic (block vent and sent warning).
+                - Set state to the NEXT STATE
+        - Default state: both vents are unblocked, state machine is set to 0 (waiting), power cut off timer OFF, PWM channel 0, ...
+
 
     - Update schematics:
         - Show separated GNDs in schematic.
