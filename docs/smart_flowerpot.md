@@ -83,6 +83,7 @@ This document is overview of progress and TODOs on smart flowerpot project.
     - Do needed recalibration.
     - Test everything nicely and properly.
 
+- Create bill of material table for all drivers.
 
 ### Drainage vent
 - Electronics:
@@ -103,7 +104,6 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 
     - Update schematics:
-        - Show separated GNDs in schematic.
         - Check schemtics with real circuit.
 
     - Before instalation vents need to be calibrated properly. Their placement on OSB will need to be accurate a same for both vents. Then OPEN and CLOSE duty cycles in software will need to be changed.
@@ -115,8 +115,8 @@ This document is overview of progress and TODOs on smart flowerpot project.
     - Put descriptions on circuit.
     - Do some last testing of circuit before epoxy cover.
     - Cover circuit in epoxy resin to prevent shorts and add some protection.
-
     - Update CAD files of roulette guides and winge rod gear.
+
     - Maybe solve some better system for holding hall sensors than hot glue - easier calibration.
 
 
