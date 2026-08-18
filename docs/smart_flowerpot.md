@@ -93,14 +93,27 @@ This document is overview of progress and TODOs on smart flowerpot project.
         - I can block one roulette, do movement, then do same for second vent.
         - Solve problem of how to know when vent 1 finished its movement - do it efficient.
         - Use folowing state machine:
-            - Waiting (0): listening for OPEN or CLOSE request. If request is observed then state is set to Starting 1 (1).
+            - IDLE (0): listening for OPEN or CLOSE request. If request is observed then set direction bit and state to Start 1 (1).
             - Start 1 (1): set PWM for given operation for vent 1, start cut off timer, set power mosfet 1 to ON. Set state to Moving 1 (2).
             - Moving 1 (2):
                 - Check for given limit switch and if switch is active then switch off PWM, set power mosfet 1 to OFF and switch of power cut of timer, then acknowledge.
                 - OR:
                 - Wait for power cut off timer then switch off PWM, set power mosfet 1 to OFF. Then check if given limit switch is active, if yes acknowledge vent 1 movement. If no, then handle error logic (block vent and sent warning).
-                - Set state to the NEXT STATE
+                - Set state to the Start 2 (3).
+            - Start 2 (3): set PWM for given operation for vent 2, start cut off timer again, then set ON to power mosfet 2. Switch state to Moving 2 (4).
+            - Moving 2 (4):
+                - Check for given limit switch and if switch is active then switch off PWM, set power mosfet 2 to OFF and switch of power cut of timer, then acknowledge.
+                - OR:
+                - Wait for power cut off timer then switch off PWM, set power mosfet 2 to OFF. Then check if given limit switch is active, if yes acknowledge vent 2 movement. If no, then handle error logic (block vent and sent warning).
+                - Set state to the Start 2 (3).
         - Default state: both vents are unblocked, state machine is set to 0 (waiting), power cut off timer OFF, PWM channel 0, ...
+        - Control byte (uint8_t):
+            - 1 bit: vent 1 enable
+            - 1 bit: vent 2 enable
+            - 3 bit: state machine process code
+        - Temporary byte(uint8_t)
+            - 1 bit: direction bit
+        - Error word(uint16_t)
 
 
     - Update schematics:
