@@ -88,47 +88,64 @@ This document is overview of progress and TODOs on smart flowerpot project.
 ### Drainage vent
 - Electronics:
     - Update drainage_vent code:
-        - Drive both vent separatly - first vent 1 then vent 2.
-        - Than i can set different duty cycle and calibration will be easier.
-        - I can block one roulette, do movement, then do same for second vent.
-        - Solve problem of how to know when vent 1 finished its movement - do it efficient.
+        - DONT USE TIMERS or DELAY or some different sort of WAITING. Use tick systems instead.
         - Use folowing state machine:
-            - IDLE (0): listening for OPEN or CLOSE request. If request is observed then set direction bit and state to Start 1 (1).
-            - Start 1 (1): set PWM for given operation for vent 1, start cut off timer, set power mosfet 1 to ON. Set state to Moving 1 (2).
+            - IDLE (0):
+                - Scan for process code. If process code (in control byte) is 00 then break. If not, then copy&paste control byte process code to temporary byte process code. Set state machine to 1 and breake.
+                - Commands will be set by process code bits: 00 non active, 01 opening, 10 closing, 11 spare, in future maybe calibration.
+                - Program will read only from temporary process code, which can be set only in IDLE, so overriding should be solved.
+            
+            - Start 1 (1):
+                - If vent 1 is enabled then set action_start_ticks, set power mosfet 1 to ON, and set PWM for given operation for vent 1. Then set state machine to 2 and break.
+                - Otherwise set state machine to 3 and break.
+
             - Moving 1 (2):
-                - Check for given limit switch and if switch is active then switch off PWM, set power mosfet 1 to OFF and switch of power cut of timer, then acknowledge.
-                - OR:
-                - Wait for power cut off timer then switch off PWM, set power mosfet 1 to OFF. Then check if given limit switch is active, if yes acknowledge vent 1 movement. If no, then handle error logic (block vent and sent warning).
-                - Set state to the Start 2 (3).
-            - Start 2 (3): set PWM for given operation for vent 2, start cut off timer again, then set ON to power mosfet 2. Switch state to Moving 2 (4).
+                - Check for given limit switch and if switch is active then switch off PWM, set power mosfet 1 to OFF and null action_start_ticks. Then acknowledge - set vent 1 enable bit to 1. Set state machine bit to 3 and break.
+                - If limit switch is not active, then check if current_ticks - action_start_ticks are bellow given time interval. If yes, just break. If no, then  switch off PWM, set power mosfet 1 to OFF and null action_start_ticks and block vent 1 - set vent 1 enable bit to 0. Then set state machine bit to 3 and break.
+
+            - Start 2 (3):
+                - If vent 2 is enabled then set action_start_ticks, set power mosfet 2 to ON, and set PWM for given operation for vent 2. Then set state machine to 4 and break.
+                - Otherwise set state machine to 5 and break.
+
             - Moving 2 (4):
-                - Check for given limit switch and if switch is active then switch off PWM, set power mosfet 2 to OFF and switch of power cut of timer, then acknowledge.
-                - OR:
-                - Wait for power cut off timer then switch off PWM, set power mosfet 2 to OFF. Then check if given limit switch is active, if yes acknowledge vent 2 movement. If no, then handle error logic (block vent and sent warning).
-                - Set state to the Start 2 (3).
+                - Check for given limit switch and if switch is active then switch off PWM, set power mosfet 2 to OFF and null action_start_ticks. Then acknowledge - set vent 2 enable bit to 1. Set state machine bit to 5 and break.
+                - If limit switch is not active, then check if current_ticks - action_start_ticks are bellow given time interval. If yes, just break. If no, then  switch off PWM, set power mosfet 2 to OFF and null action_start_ticks and block vent 2 - set vent 2 enable bit to 0. Then set state machine bit to 5 and break.
+            
+            - Finish (5):
+                - Null control byte process code, temporary process code.
+                - Set state machine bit to 0 and breake.
+
+
         - Default state: both vents are unblocked, state machine is set to 0 (waiting), power cut off timer OFF, PWM channel 0, ...
-        - Control byte (uint8_t):
-            - 1 bit: vent 1 enable
-            - 1 bit: vent 2 enable
-            - 3 bit: state machine process code
+
+        - (uint8_t)
+            - Control nibble:
+                - 2 bit: process code
+            - Status nibble:
+                - 1 bit: vent 1 enable
+                - 1 bit: vent 2 enable
+
         - Temporary byte(uint8_t)
-            - 1 bit: direction bit
+            - 2 bit: temporary process code 
+            - 4 bit: state machine
+
         - Error word(uint16_t)
+            - ???
 
 
     - Update schematics:
         - Check schemtics with real circuit.
-
-    - Before instalation vents need to be calibrated properly. Their placement on OSB will need to be accurate a same for both vents. Then OPEN and CLOSE duty cycles in software will need to be changed.
 
 ### Roulette
 - Final works:
     - Recalibrate TOP Hall sensor - TOP GREEN probably.
     - Check driver schematics with real circuit and update it if needed.
     - Put descriptions on circuit.
+    
+    - Update CAD files of roulette guides and winge rod gear.
+
     - Do some last testing of circuit before epoxy cover.
     - Cover circuit in epoxy resin to prevent shorts and add some protection.
-    - Update CAD files of roulette guides and winge rod gear.
 
     - Maybe solve some better system for holding hall sensors than hot glue - easier calibration.
 
