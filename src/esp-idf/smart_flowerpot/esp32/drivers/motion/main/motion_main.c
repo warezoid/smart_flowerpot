@@ -14,6 +14,8 @@
 
 void app_main(void){
 //init
+drainage_vent_dataset_t test = init_dataset();
+
 /*
     drainage_vent_dataset_t drainage_vent_sys = {
         .power_cut_off_timer = NULL,

@@ -83,6 +83,8 @@ This document is overview of progress and TODOs on smart flowerpot project.
     - Do needed recalibration.
     - Test everything nicely and properly.
 
+- Upgrade Excel table.
+    - Separate MOTION to diferent lists, ....
 - Create bill of material table for all drivers.
 
 ### Drainage vent
@@ -115,23 +117,7 @@ This document is overview of progress and TODOs on smart flowerpot project.
                 - Null control byte process code, temporary process code.
                 - Set state machine bit to 0 and breake.
 
-
         - Default state: both vents are unblocked, state machine is set to 0 (waiting), power cut off timer OFF, PWM channel 0, ...
-
-        - (uint8_t)
-            - Control nibble:
-                - 2 bit: process code
-            - Status nibble:
-                - 1 bit: vent 1 enable
-                - 1 bit: vent 2 enable
-
-        - Temporary byte(uint8_t)
-            - 2 bit: temporary process code 
-            - 4 bit: state machine
-
-        - Error word(uint16_t)
-            - ???
-
 
     - Update schematics:
         - Check schemtics with real circuit.
