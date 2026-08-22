@@ -13,18 +13,18 @@
 
 
 void app_main(void){
+/*************** START of temp code - ROULETTE and VENT testing */
+    gpio_set_direction(TMP_VENT_OPEN, GPIO_MODE_INPUT);
+    gpio_set_direction(TMP_VENT_CLOSE, GPIO_MODE_INPUT);
+    gpio_set_direction(TMP_ROULETTE_OPEN, GPIO_MODE_INPUT);
+    gpio_set_direction(TMP_ROULETTE_CLOSE, GPIO_MODE_INPUT);
+/*************** END of temp code - ROULETTE and VENT testing */
+
 //init
-drainage_vent_dataset_t test = init_dataset();
+drainage_vent_init();
+drainage_vent_dataset_t drainage_vent_sys = drainage_vent_init_dataset();
 
 /*
-    drainage_vent_dataset_t drainage_vent_sys = {
-        .power_cut_off_timer = NULL,
-        .event_start_tick = 0,
-        .control_flags = 0b00001100
-    };
-    drainage_vent_init(&drainage_vent_sys);
-    //drainage_vent_opn(&drainage_vent_sys);
-
     roulette_dataset_t roulette_sys = {
         .power_cut_off_timer = NULL,
         .event_start_tick = 0,
@@ -34,45 +34,42 @@ drainage_vent_dataset_t test = init_dataset();
 */
 
 
-/*************** START of temp code - ROULETTE and VENT testing */
-    gpio_set_direction(TMP_VENT_OPEN, GPIO_MODE_INPUT);
-    gpio_set_direction(TMP_VENT_CLOSE, GPIO_MODE_INPUT);
-    gpio_set_direction(TMP_ROULETTE_OPEN, GPIO_MODE_INPUT);
-    gpio_set_direction(TMP_ROULETTE_CLOSE, GPIO_MODE_INPUT);
-/*************** END of temp code - ROULETTE and VENT testing */
-
-
 
 //loop
     while(1){
-
-
-
         /*************** START of temp code - ROULETTE and VENT testing */
-            //printf("\033[H\033[J");
+        printf("\033[H\033[J");
 
-            if(gpio_get_level(TMP_VENT_OPEN)){
-                printf("V-LOG:\topen request!\n");
-            }
+        if(gpio_get_level(TMP_VENT_OPEN)){
+            printf("V-LOG:\topen request!\n");
+            drainage_vent_sys.io_byte = (drainage_vent_sys.io_byte & 0xFC) | 0x01;
+        }
 
-            if(gpio_get_level(TMP_VENT_CLOSE)){
-                printf("V-LOG:\tclose request!\n");
-            }
+        if(gpio_get_level(TMP_VENT_CLOSE)){
+            printf("V-LOG:\tclose request!\n");
+            drainage_vent_sys.io_byte = (drainage_vent_sys.io_byte & 0xFC) | 0x02;          
+        }
 
-            if(gpio_get_level(TMP_ROULETTE_OPEN)){
-                printf("R-LOG:\topen request!\n");
-            }
+        if(gpio_get_level(TMP_ROULETTE_OPEN)){
+            printf("R-LOG:\topen request!\n");
+        }
 
-            if(gpio_get_level(TMP_ROULETTE_CLOSE)){
-                printf("R-LOG:\tclose request!\n");
-            }
-
-            vTaskDelay(pdMS_TO_TICKS(100));
+        if(gpio_get_level(TMP_ROULETTE_CLOSE)){
+            printf("R-LOG:\tclose request!\n");
+        }
         /*************** END of temp code - ROULETTE and VENT testing */
 
 
+
+        drainage_vent_print_dataset(&drainage_vent_sys);
+        drainage_vent_fsm(&drainage_vent_sys);
+
         
-        //drainage_vent_ack(&drainage_vent_sys);
+
         //roulette_ack(&roulette_sys);
+
+
+
+        vTaskDelay(pdMS_TO_TICKS(10));
     }
 }

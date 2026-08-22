@@ -20,12 +20,12 @@
 
 typedef struct{
     TickType_t action_start_tick;
-
+    
     TickType_t v1_opn_tick;
     TickType_t v1_cls_tick;
     TickType_t v2_opn_tick;
     TickType_t v2_cls_tick;
-
+    
     uint32_t v1_opn_duty;
     uint32_t v1_cls_duty;
     uint32_t v2_opn_duty;
@@ -33,8 +33,10 @@ typedef struct{
 
     uint16_t err_word;
     uint8_t io_byte;
-    uint8_t tmp_byte;
+    uint8_t ctrl_byte;
 } drainage_vent_dataset_t;
 
 void drainage_vent_init();
-drainage_vent_dataset_t init_dataset();
+drainage_vent_dataset_t drainage_vent_init_dataset();
+void drainage_vent_print_dataset(const drainage_vent_dataset_t *vent_sys);
+void drainage_vent_fsm(drainage_vent_dataset_t *vent_sys);

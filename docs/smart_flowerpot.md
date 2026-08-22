@@ -117,7 +117,7 @@ This document is overview of progress and TODOs on smart flowerpot project.
                 - Null control byte process code, temporary process code.
                 - Set state machine bit to 0 and breake.
 
-        - Default state: both vents are unblocked, state machine is set to 0 (waiting), power cut off timer OFF, PWM channel 0, ...
+        - Default state: both vents are unblocked, state machine is set to 0 (waiting), PWM channel 0, ...
 
     - Update schematics:
         - Check schemtics with real circuit.
@@ -125,6 +125,7 @@ This document is overview of progress and TODOs on smart flowerpot project.
 ### Roulette
 - Final works:
     - Recalibrate TOP Hall sensor - TOP GREEN probably.
+    
     - Check driver schematics with real circuit and update it if needed.
     - Put descriptions on circuit.
     
