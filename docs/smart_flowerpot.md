@@ -102,7 +102,7 @@ This document is overview of progress and TODOs on smart flowerpot project.
                 - Otherwise set state machine to 3 and break.
 
             - Moving 1 (2):
-                - Check for given limit switch and if switch is active then switch off PWM, set power mosfet 1 to OFF and null action_start_ticks. Then acknowledge - set vent 1 enable bit to 1. Set state machine bit to 3 and break.
+                - Check for given limit switch and if switch is active then switch off PWM, set power mosfet 1 to OFF and null action_start_ticks. Set state machine bit to 3 and break.
                 - If limit switch is not active, then check if current_ticks - action_start_ticks are bellow given time interval. If yes, just break. If no, then  switch off PWM, set power mosfet 1 to OFF and null action_start_ticks and block vent 1 - set vent 1 enable bit to 0. Then set state machine bit to 3 and break.
 
             - Start 2 (3):

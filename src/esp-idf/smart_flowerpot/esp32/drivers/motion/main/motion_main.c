@@ -64,12 +64,13 @@ drainage_vent_dataset_t drainage_vent_sys = drainage_vent_init_dataset();
         drainage_vent_print_dataset(&drainage_vent_sys);
         drainage_vent_fsm(&drainage_vent_sys);
 
-        
+
 
         //roulette_ack(&roulette_sys);
 
 
 
-        vTaskDelay(pdMS_TO_TICKS(10));
+        //vTaskDelay(pdMS_TO_TICKS(1));
+        vTaskDelay(pdMS_TO_TICKS(25));
     }
 }

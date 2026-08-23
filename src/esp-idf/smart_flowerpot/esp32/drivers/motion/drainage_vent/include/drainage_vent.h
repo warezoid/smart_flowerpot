@@ -11,20 +11,20 @@
 #define OUT_DRAIN_VENT_PWM GPIO_NUM_13
 
 #define OUT_DRAIN_VENT_SPM1 GPIO_NUM_32
-#define IN_DRAIN_VENT_ESC1 GPIO_NUM_34
 #define IN_DRAIN_VENT_ESO1 GPIO_NUM_35
+#define IN_DRAIN_VENT_ESC1 GPIO_NUM_34
 
 #define OUT_DRAIN_VENT_SPM2 GPIO_NUM_33
-#define IN_DRAIN_VENT_ESC2 GPIO_NUM_36
 #define IN_DRAIN_VENT_ESO2 GPIO_NUM_39
+#define IN_DRAIN_VENT_ESC2 GPIO_NUM_36
 
 typedef struct{
     TickType_t action_start_tick;
     
-    TickType_t v1_opn_tick;
-    TickType_t v1_cls_tick;
-    TickType_t v2_opn_tick;
-    TickType_t v2_cls_tick;
+    uint32_t v1_opn_ms;
+    uint32_t v1_cls_ms;
+    uint32_t v2_opn_ms;
+    uint32_t v2_cls_ms;
     
     uint32_t v1_opn_duty;
     uint32_t v1_cls_duty;

@@ -28,10 +28,10 @@ drainage_vent_dataset_t drainage_vent_init_dataset(){
     drainage_vent_dataset_t res = {
         .action_start_tick = 0,
 
-        .v1_opn_tick = 500,
-        .v1_cls_tick = 500,
-        .v2_opn_tick = 500,
-        .v2_cls_tick = 500,
+        .v1_opn_ms = 50,
+        .v1_cls_ms = 50,
+        .v2_opn_ms = 50,
+        .v2_cls_ms = 50,
 
         .v1_opn_duty = 200,
         .v1_cls_duty = 600,
@@ -56,10 +56,10 @@ void drainage_vent_print_dataset(const drainage_vent_dataset_t *vent_sys){
 
     printf("\taction_start_tick : %lu\n", (unsigned long)vent_sys->action_start_tick);
 
-    printf("\tv1_opn_tick       : %lu\n", (unsigned long)vent_sys->v1_opn_tick);
-    printf("\tv1_cls_tick       : %lu\n", (unsigned long)vent_sys->v1_cls_tick);
-    printf("\tv2_opn_tick       : %lu\n", (unsigned long)vent_sys->v2_opn_tick);
-    printf("\tv2_cls_tick       : %lu\n", (unsigned long)vent_sys->v2_cls_tick);
+    printf("\tv1_opn_ms       : %lu\n", (unsigned long)vent_sys->v1_opn_ms);
+    printf("\tv1_cls_ms       : %lu\n", (unsigned long)vent_sys->v1_cls_ms);
+    printf("\tv2_opn_ms       : %lu\n", (unsigned long)vent_sys->v2_opn_ms);
+    printf("\tv2_cls_ms       : %lu\n", (unsigned long)vent_sys->v2_cls_ms);
 
     printf("\tv1_opn_duty       : %lu\n", (unsigned long)vent_sys->v1_opn_duty);
     printf("\tv1_cls_duty       : %lu\n", (unsigned long)vent_sys->v1_cls_duty);
@@ -73,18 +73,30 @@ void drainage_vent_print_dataset(const drainage_vent_dataset_t *vent_sys){
     printf("========================================\n");
 }
 
+static inline void v1_switch_off(uint32_t *ticks){
+    pwm_generator_set_duty(SYS_DRAIN_VENT_PWM_CHNL, 0);
+    gpio_set_level(OUT_DRAIN_VENT_SPM1, 0);
+    *ticks = 0;
+}
+
+static inline void v2_switch_off(uint32_t *ticks){
+    pwm_generator_set_duty(SYS_DRAIN_VENT_PWM_CHNL, 0);
+    gpio_set_level(OUT_DRAIN_VENT_SPM2, 0);
+    *ticks = 0;
+}
+
 void drainage_vent_fsm(drainage_vent_dataset_t *vent_sys){
     switch(vent_sys->ctrl_byte & 0x0F){
         case 0:
             if(vent_sys->io_byte & 0x03){
                 vent_sys->ctrl_byte = ((vent_sys->io_byte & 0x03) << 4) | 0x01;
             }
-            break;
+        break;
         
         case 1:
             if(vent_sys->io_byte & 0x10){
                 vent_sys->action_start_tick = xTaskGetTickCount();
-                gpio_set_level(OUT_DRAIN_VENT_SPM1, 0);
+                gpio_set_level(OUT_DRAIN_VENT_SPM1, 1);
                 
                 uint8_t dir_byte = (vent_sys->ctrl_byte & 0x30) >> 4;
                 if(dir_byte == 1){
@@ -99,9 +111,103 @@ void drainage_vent_fsm(drainage_vent_dataset_t *vent_sys){
             else{
                 vent_sys->ctrl_byte = (vent_sys->ctrl_byte & 0xF0) | 0x03;
             }
-            break;
+        break;
         
         case 2:
-            break;
+        {
+            uint8_t dir_byte = (vent_sys->ctrl_byte & 0x30) >> 4;
+            if(dir_byte == 1){
+                if(gpio_get_level(IN_DRAIN_VENT_ESO1)){
+                    //here I can add some acknowledge for user that vent1 is opened
+                    v1_switch_off(&vent_sys->action_start_tick);
+                    vent_sys->ctrl_byte = (vent_sys->ctrl_byte & 0xF0) | 0x03;
+                }
+                else{
+                    if(pdMS_TO_TICKS(xTaskGetTickCount() - vent_sys->action_start_tick) > vent_sys->v1_opn_ms){
+                        //here I can add some alarm (NOT OPEN) that emergency switch off timer was activated
+                        v1_switch_off(&vent_sys->action_start_tick);
+                        vent_sys->io_byte &= 0xEF;
+                        vent_sys->ctrl_byte = (vent_sys->ctrl_byte & 0xF0) | 0x03;
+                    }
+                }
+            }
+            else if(dir_byte == 2){
+                if(gpio_get_level(IN_DRAIN_VENT_ESC1)){
+                    //here I can add some acknowledge for user that vent1 is closed
+                    v1_switch_off(&vent_sys->action_start_tick);
+                    vent_sys->ctrl_byte = (vent_sys->ctrl_byte & 0xF0) | 0x03;
+                }
+                else{
+                    if(pdMS_TO_TICKS(xTaskGetTickCount() - vent_sys->action_start_tick) > vent_sys->v1_cls_ms){
+                        //here I can add some alarm (NOT CLOSE) that emergency switch off timer was activated
+                        v1_switch_off(&vent_sys->action_start_tick);
+                        vent_sys->io_byte &= 0xEF;
+                        vent_sys->ctrl_byte = (vent_sys->ctrl_byte & 0xF0) | 0x03;
+                    }
+                }
+            }
+        }
+        break;
+
+        case 3:
+            if(vent_sys->io_byte & 0x20){
+                vent_sys->action_start_tick = xTaskGetTickCount();
+                gpio_set_level(OUT_DRAIN_VENT_SPM2, 1);
+                
+                uint8_t dir_byte = (vent_sys->ctrl_byte & 0x30) >> 4;
+                if(dir_byte == 1){
+                    pwm_generator_set_duty(SYS_DRAIN_VENT_PWM_CHNL, vent_sys->v2_opn_duty);
+                }
+                else if(dir_byte == 2){
+                    pwm_generator_set_duty(SYS_DRAIN_VENT_PWM_CHNL, vent_sys->v2_cls_duty);
+                }
+
+                vent_sys->ctrl_byte = (vent_sys->ctrl_byte & 0xF0) | 0x04;
+            }
+            else{
+                vent_sys->ctrl_byte = (vent_sys->ctrl_byte & 0xF0) | 0x05;
+            }
+        break;
+
+        case 4:
+        {
+            uint8_t dir_byte = (vent_sys->ctrl_byte & 0x30) >> 4;
+            if(dir_byte == 1){
+                if(gpio_get_level(IN_DRAIN_VENT_ESO2)){
+                    //here I can add some acknowledge for user that vent2 is opened
+                    v2_switch_off(&vent_sys->action_start_tick);
+                    vent_sys->ctrl_byte = (vent_sys->ctrl_byte & 0xF0) | 0x05;
+                }
+                else{
+                    if(pdMS_TO_TICKS(xTaskGetTickCount() - vent_sys->action_start_tick) > vent_sys->v2_opn_ms){
+                        //here I can add some alarm (NOT OPEN) that emergency switch off timer was activated
+                        v2_switch_off(&vent_sys->action_start_tick);
+                        vent_sys->io_byte &= 0xDF;
+                        vent_sys->ctrl_byte = (vent_sys->ctrl_byte & 0xF0) | 0x05;
+                    }
+                }
+            }
+            else if(dir_byte == 2){
+                if(gpio_get_level(IN_DRAIN_VENT_ESC2)){
+                    //here I can add some acknowledge for user that vent2 is closed
+                    v2_switch_off(&vent_sys->action_start_tick);
+                    vent_sys->ctrl_byte = (vent_sys->ctrl_byte & 0xF0) | 0x05;
+                }
+                else{
+                    if(pdMS_TO_TICKS(xTaskGetTickCount() - vent_sys->action_start_tick) > vent_sys->v2_cls_ms){
+                        //here I can add some alarm (NOT CLOSE) that emergency switch off timer was activated
+                        v2_switch_off(&vent_sys->action_start_tick);
+                        vent_sys->io_byte &= 0xDF;
+                        vent_sys->ctrl_byte = (vent_sys->ctrl_byte & 0xF0) | 0x05;
+                    }
+                }
+            }
+        }
+        break;
+
+        case 5:
+            vent_sys->io_byte &= 0xFC;
+            vent_sys->ctrl_byte &= 0xC0;
+        break;
     }
 }

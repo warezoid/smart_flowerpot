@@ -1,0 +1,3476 @@
+Command: /home/warezoid/.espressif/python_env/idf5.5_py3.12_env/bin/python /esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/build/motion.elf /media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/build/bootloader/bootloader.elf -m '/home/warezoid/.espressif/python_env/idf5.5_py3.12_env/bin/python' '/esp/esp-idf/tools/idf.py' '-p' '/dev/ttyUSB0'
+[0;32mI (151) esp_image: segment 5: paI (151) esp_image: segment 5: paI (151) esp_image: segment 5: paI (151) esp_image: segment 5: paI (151) esp_image: segment 5: paI (151) esp_image: segment 5: paI (151) esp_image: segment 5: paI (151) esp_image: segment 5: paI (151) esp_image: segment 5: paI (151) esp_image: segment 5: paI (151) esp_image: segment 5: paI (151) esp_image: segment 5: paI (151) esp_image: segment 5: paI (151) esp_image: segment 5: paI (151) esp_image: segment 5: paI (151) esp_image: segment 5: paI (151) esp_image: segment 5: paI (151) esp_image: segment 5: paI (151) esp_image: segment 5: paI (151) esp_image: segment 5: paI (151) esp_image: segment 5: paI (151) esp_image: segment 5: paI (151) esp_image: segment 5: paI (151) esp_image: segment 5: paI (151) esp_image: segment 5: paI (151) esp_image: segment 5: paI (151) esp_image: segment 5: paI (151) esp_image: segment 5: paI (151) esp_image: segment 5: paI (151) esp_image: segment 5: paI (151) esp_image: segment 5: paI (151) esp_image: segment 5: paI (151) esp_image: segment 5: paI (151) esp_image: segment 5: paI (151) esp_image: segment 5: paddr=0003a9c0 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (158) boot: Loaded app from partition at offsets Jul 29 2019 12:21:46[0m
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6384
+load:0x40078000,len:15916
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v5.5.2 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Jun 15 2026 17:56:31[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.1[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (75) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0a4d4h ( 42196) map[0m
+[0;32mI (101) esp_image: segment 1: paddr=0001a4fc vaddr=3ffb0000 size=02458h (  9304) load[0m
+[0;32mI (104) esp_image: segment 2: paddr=0001c95c vaddr=40080000 size=036bch ( 14012) load[0m
+[0;32mI (110) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=10e58h ( 69208) map[0m
+[0;32mI (136) esp_image: segment 4: paddr=00030e80 vaddr=400836bc size=09b38h ( 39736) load[0m
+[0;32mI (151) esp_image: segment 5: paddr=0003a9c0 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (158) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (158) boot: Disabling RNG early entropy source...[0m
+[0;32mI (169) cpu_start: Multicore app[0m
+[0;32mI (178) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (178) cpu_start: Pro cpu start user code[0m
+[0;32mI (178) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (180) app_init: Application information:[0m
+[0;32mI (184) app_init: Project name:     motion[0m
+[0;32mI (187) app_init: App version:      01bfbd8-dirty[0m
+[0;32mI (192) app_init: Compile time:     Aug 23 2026 08:45:51[0m
+[0;32mI (197) app_init: ELF file SHA256:  088ad7652...[0m
+[0;32mI (201) app_init: ESP-IDF:          v5.5.2[0m
+[0;32mI (205) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (209) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (213) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (217) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (223) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (228) heap_init: At 3FFB2D78 len 0002D288 (180 KiB): DRAM[0m
+[0;32mI (233) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (239) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (244) heap_init: At 4008D1F4 len 00012E0C (75 KiB): IRAM[0m
+[0;32mI (251) spi_flash: detected chip: generic[0m
+[0;32mI (253) spi_flash: flash io: dio[0m
+[0;33mW (256) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (269) main_task: Started on CPU0[0m
+[0;32mI (279) main_task: Calling app_main()[0m
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 0
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x30
+	ctrl_byte         : 0x00
+========================================
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 0
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x30
+	ctrl_byte         : 0x00
+========================================
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 0
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x30
+	ctrl_byte         : 0x00
+========================================
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 0
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x30
+	ctrl_byte         : 0x00
+========================================
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 0
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x30
+	ctrl_byte         : 0x00
+========================================
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 0
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x30
+	ctrl_byte         : 0x00
+========================================
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 0
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x30
+	ctrl_byte         : 0x00
+========================================
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 0
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x30
+	ctrl_byte         : 0x00
+========================================
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 0
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x30
+	ctrl_byte         : 0x00
+========================================
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 0
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x30
+	ctrl_byte         : 0x00
+========================================
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 0
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x30
+	ctrl_byte         : 0x00
+========================================
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 0
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x30
+	ctrl_byte         : 0x00
+========================================
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 0
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x30
+	ctrl_byte         : 0x00
+========================================
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 0
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x30
+	ctrl_byte         : 0x00
+========================================
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 0
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x30
+	ctrl_byte         : 0x00
+========================================
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 0
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x30
+	ctrl_byte         : 0x00
+========================================
+[H[JV-LOG:	open request!
+
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 0
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x00
+========================================
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 0
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x11
+========================================
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 1
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 2
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 3
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 5
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 6
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 7
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 9
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 10
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 11
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 12
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 14
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 15
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 16
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 18
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 19
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 20
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 22
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 23
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 24
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 25
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 27
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 28
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 29
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 31
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 32
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 33
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 35
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 36
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 37
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 38
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 40
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 41
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 42
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 44
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 45
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 46
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 48
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 49
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 50
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 51
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 53
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 54
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 55
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 57
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 58
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 59
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 61
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 62
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 63
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 64
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 66
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 67
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 68
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 70
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 71
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 72
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 74
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 75
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 76
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 77
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 79
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 80
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 81
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 83
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 84
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 85
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 87
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 88
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 89
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 90
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 92
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 93
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 94
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 96
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 97
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 98
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 100
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 101
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 102
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 103
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 105
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 106
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 107
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 109
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 110
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 111
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 113
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 114
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 115
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 116
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 118
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 119
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 120
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 122
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 123
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 124
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 126
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 127
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 128
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 129
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 131
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 132
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 133
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 135
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 136
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 137
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 139
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 140
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 141
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 142
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 144
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 145
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 146
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 148
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 149
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 150
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 152
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 153
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 154
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 155
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 157
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 158
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 159
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 161
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 162
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 163
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 165
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 166
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 167
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 168
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 170
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 171
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 172
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 174
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 175
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 176
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 178
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 179
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 180
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 181
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 183
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 184
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 185
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 187
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 188
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 189
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 191
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 192
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 193
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 194
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 196
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 197
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 198
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 200
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 201
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 202
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 204
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 205
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 206
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 207
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 209
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 210
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 211
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 213
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 214
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 215
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 217
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 218
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 219
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 220
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 222
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31
+	ctrl_byte         : 0x12
+========================================
+test3: 223
+[H[J
+========================================
+Drainage vent dataset:
+========================================
+	action_start_tick : 211
+	v1_opn_ms       : 500
+	v1_cls_ms       : 500
+	v2_opn_ms       : 5000
+	v2_cls_ms       : 5000
+	v1_opn_duty       : 200
+	v1_cls_duty       : 600
+	v2_opn_duty       : 200
+	v2_cls_duty       : 600
+	err_word          : 0x0000
+	io_byte           : 0x31

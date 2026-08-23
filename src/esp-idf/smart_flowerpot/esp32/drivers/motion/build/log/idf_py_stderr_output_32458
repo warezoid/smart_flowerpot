@@ -1,0 +1,686 @@
+Command: /home/warezoid/.espressif/python_env/idf5.5_py3.12_env/bin/python /esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/build/motion.elf /media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/build/bootloader/bootloader.elf -m '/home/warezoid/.espressif/python_env/idf5.5_py3.12_env/bin/python' '/esp/esp-idf/tools/idf.py' '-p' '/dev/ttyUSB0'
+[0;33m--- esp-idf-monitor 1.9.0 on /dev/ttyUSB0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32m/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080644: [0;33mcall_start_cpu0[0m[0m at [0;32m/esp/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x400d7b6a: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400d7f2c: [0;33mtask_wdt_isr[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40082931: [0;33m_xt_lowint1[0m[0m at [0;32m/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400d40d0: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/esp/esp-idf/components/hal/esp32/include/hal/uart_ll.h[0m[0m:[1;31m439[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x400d47d8: [0;33muart_write[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m245[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000182a: [0;33mwrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400d5155: [0;33mconsole_write[0m[0m at [0;32m/esp/esp-idf/components/esp_vfs_console/vfs_console.c[0m[0m:[1;31m83[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000117d: [0;33m__swrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400592fe: [0;33m__sflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4005937a: [0;33m_fflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x400d9f79: [0;33m__sfvwrite_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c[0m[0m:[1;31m251[0m
+[0m--- 0x400dd79b: [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m429[0m
+[0m--- (inlined by) [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m399[0m
+[0m--- 0x400dd692: [0;33m_vfprintf_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m1774[0m
+[0m--- 0x400d9fcf: [0;33mprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/printf.c[0m[0m:[1;31m56[0m
+[0m--- 0x400d62db: [0;33mdrainage_vent_print_dataset[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/drainage_vent/drainage_vent.c[0m[0m:[1;31m62[0m
+[0m--- 0x400d6217: [0;33mapp_main[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/main/motion_main.c[0m[0m:[1;31m64[0m
+[0m--- 0x400e0655: [0;33mmain_task[0m[0m at [0;32m/esp/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x40085d7d: [0;33mvPortTaskWrapper[0m[0m at [0;32m/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400d7b6a: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400d7f2c: [0;33mtask_wdt_isr[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40082931: [0;33m_xt_lowint1[0m[0m at [0;32m/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400d40c1: [0;33muart_tx_char[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m188[0m
+[0m--- 0x400d47d8: [0;33muart_write[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m245[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000182a: [0;33mwrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400d5155: [0;33mconsole_write[0m[0m at [0;32m/esp/esp-idf/components/esp_vfs_console/vfs_console.c[0m[0m:[1;31m83[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000117d: [0;33m__swrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400592fe: [0;33m__sflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4005937a: [0;33m_fflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x400d9f79: [0;33m__sfvwrite_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c[0m[0m:[1;31m251[0m
+[0m--- 0x400dd79b: [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m429[0m
+[0m--- (inlined by) [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m399[0m
+[0m--- 0x400dd692: [0;33m_vfprintf_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m1774[0m
+[0m--- 0x400d9fcf: [0;33mprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/printf.c[0m[0m:[1;31m56[0m
+[0m--- 0x400d62e4: [0;33mdrainage_vent_print_dataset[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/drainage_vent/drainage_vent.c[0m[0m:[1;31m64[0m
+[0m--- 0x400d6217: [0;33mapp_main[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/main/motion_main.c[0m[0m:[1;31m64[0m
+[0m--- 0x400e0655: [0;33mmain_task[0m[0m at [0;32m/esp/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x40085d7d: [0;33mvPortTaskWrapper[0m[0m at [0;32m/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400d7b6a: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400d7f2c: [0;33mtask_wdt_isr[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40082931: [0;33m_xt_lowint1[0m[0m at [0;32m/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400d40c9: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/esp/esp-idf/components/hal/esp32/include/hal/uart_ll.h[0m[0m:[1;31m439[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x400d47d8: [0;33muart_write[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m245[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000182a: [0;33mwrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400d5155: [0;33mconsole_write[0m[0m at [0;32m/esp/esp-idf/components/esp_vfs_console/vfs_console.c[0m[0m:[1;31m83[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000117d: [0;33m__swrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400592fe: [0;33m__sflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4005937a: [0;33m_fflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x400d9f79: [0;33m__sfvwrite_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c[0m[0m:[1;31m251[0m
+[0m--- 0x400dd79b: [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m429[0m
+[0m--- (inlined by) [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m399[0m
+[0m--- 0x400dd692: [0;33m_vfprintf_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m1774[0m
+[0m--- 0x400d9fcf: [0;33mprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/printf.c[0m[0m:[1;31m56[0m
+[0m--- 0x400d62ed: [0;33mdrainage_vent_print_dataset[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/drainage_vent/drainage_vent.c[0m[0m:[1;31m65[0m
+[0m--- 0x400d6217: [0;33mapp_main[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/main/motion_main.c[0m[0m:[1;31m64[0m
+[0m--- 0x400e0655: [0;33mmain_task[0m[0m at [0;32m/esp/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x40085d7d: [0;33mvPortTaskWrapper[0m[0m at [0;32m/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400d7b6a: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400d7f2c: [0;33mtask_wdt_isr[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40082931: [0;33m_xt_lowint1[0m[0m at [0;32m/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400d40cb: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/esp/esp-idf/components/hal/esp32/include/hal/uart_ll.h[0m[0m:[1;31m439[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x400d47d8: [0;33muart_write[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m245[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000182a: [0;33mwrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400d5155: [0;33mconsole_write[0m[0m at [0;32m/esp/esp-idf/components/esp_vfs_console/vfs_console.c[0m[0m:[1;31m83[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000117d: [0;33m__swrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400592fe: [0;33m__sflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4005937a: [0;33m_fflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x400d9f79: [0;33m__sfvwrite_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c[0m[0m:[1;31m251[0m
+[0m--- 0x400dd79b: [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m429[0m
+[0m--- (inlined by) [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m399[0m
+[0m--- 0x400dd692: [0;33m_vfprintf_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m1774[0m
+[0m--- 0x400d9fcf: [0;33mprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/printf.c[0m[0m:[1;31m56[0m
+[0m--- 0x400d62f5: [0;33mdrainage_vent_print_dataset[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/drainage_vent/drainage_vent.c[0m[0m:[1;31m66[0m
+[0m--- 0x400d6217: [0;33mapp_main[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/main/motion_main.c[0m[0m:[1;31m64[0m
+[0m--- 0x400e0655: [0;33mmain_task[0m[0m at [0;32m/esp/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x40085d7d: [0;33mvPortTaskWrapper[0m[0m at [0;32m/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400d7b6a: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400d7f2c: [0;33mtask_wdt_isr[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40082931: [0;33m_xt_lowint1[0m[0m at [0;32m/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400d40c9: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/esp/esp-idf/components/hal/esp32/include/hal/uart_ll.h[0m[0m:[1;31m439[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x400d47d8: [0;33muart_write[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m245[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000182a: [0;33mwrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400d5155: [0;33mconsole_write[0m[0m at [0;32m/esp/esp-idf/components/esp_vfs_console/vfs_console.c[0m[0m:[1;31m83[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000117d: [0;33m__swrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400592fe: [0;33m__sflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4005937a: [0;33m_fflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x400d9f79: [0;33m__sfvwrite_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c[0m[0m:[1;31m251[0m
+[0m--- 0x400dd79b: [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m429[0m
+[0m--- (inlined by) [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m399[0m
+[0m--- 0x400dd692: [0;33m_vfprintf_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m1774[0m
+[0m--- 0x400d9fcf: [0;33mprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/printf.c[0m[0m:[1;31m56[0m
+[0m--- 0x400d62f5: [0;33mdrainage_vent_print_dataset[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/drainage_vent/drainage_vent.c[0m[0m:[1;31m66[0m
+[0m--- 0x400d6217: [0;33mapp_main[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/main/motion_main.c[0m[0m:[1;31m64[0m
+[0m--- 0x400e0655: [0;33mmain_task[0m[0m at [0;32m/esp/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x40085d7d: [0;33mvPortTaskWrapper[0m[0m at [0;32m/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400d7b6a: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400d7f2c: [0;33mtask_wdt_isr[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40082931: [0;33m_xt_lowint1[0m[0m at [0;32m/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400d40d0: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/esp/esp-idf/components/hal/esp32/include/hal/uart_ll.h[0m[0m:[1;31m439[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x400d47d8: [0;33muart_write[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m245[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000182a: [0;33mwrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400d5155: [0;33mconsole_write[0m[0m at [0;32m/esp/esp-idf/components/esp_vfs_console/vfs_console.c[0m[0m:[1;31m83[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000117d: [0;33m__swrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400592fe: [0;33m__sflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4005937a: [0;33m_fflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x400d9f79: [0;33m__sfvwrite_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c[0m[0m:[1;31m251[0m
+[0m--- 0x400dd79b: [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m429[0m
+[0m--- (inlined by) [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m399[0m
+[0m--- 0x400dd692: [0;33m_vfprintf_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m1774[0m
+[0m--- 0x400d9fcf: [0;33mprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/printf.c[0m[0m:[1;31m56[0m
+[0m--- 0x400d62fd: [0;33mdrainage_vent_print_dataset[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/drainage_vent/drainage_vent.c[0m[0m:[1;31m67[0m
+[0m--- 0x400d6217: [0;33mapp_main[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/main/motion_main.c[0m[0m:[1;31m64[0m
+[0m--- 0x400e0655: [0;33mmain_task[0m[0m at [0;32m/esp/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x40085d7d: [0;33mvPortTaskWrapper[0m[0m at [0;32m/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400d7b6a: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400d7f2c: [0;33mtask_wdt_isr[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40082931: [0;33m_xt_lowint1[0m[0m at [0;32m/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400d40d9: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/esp/esp-idf/components/hal/esp32/include/hal/uart_ll.h[0m[0m:[1;31m439[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x400d47d8: [0;33muart_write[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m245[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000182a: [0;33mwrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400d5155: [0;33mconsole_write[0m[0m at [0;32m/esp/esp-idf/components/esp_vfs_console/vfs_console.c[0m[0m:[1;31m83[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000117d: [0;33m__swrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400592fe: [0;33m__sflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4005937a: [0;33m_fflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x400d9f79: [0;33m__sfvwrite_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c[0m[0m:[1;31m251[0m
+[0m--- 0x400dd79b: [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m429[0m
+[0m--- (inlined by) [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m399[0m
+[0m--- 0x400dd692: [0;33m_vfprintf_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m1774[0m
+[0m--- 0x400d9fcf: [0;33mprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/printf.c[0m[0m:[1;31m56[0m
+[0m--- 0x400d6306: [0;33mdrainage_vent_print_dataset[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/drainage_vent/drainage_vent.c[0m[0m:[1;31m69[0m
+[0m--- 0x400d6217: [0;33mapp_main[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/main/motion_main.c[0m[0m:[1;31m64[0m
+[0m--- 0x400e0655: [0;33mmain_task[0m[0m at [0;32m/esp/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x40085d7d: [0;33mvPortTaskWrapper[0m[0m at [0;32m/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400d7b6a: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400d7f2c: [0;33mtask_wdt_isr[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40082931: [0;33m_xt_lowint1[0m[0m at [0;32m/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400d40d0: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/esp/esp-idf/components/hal/esp32/include/hal/uart_ll.h[0m[0m:[1;31m439[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x400d47d8: [0;33muart_write[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m245[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000182a: [0;33mwrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400d5155: [0;33mconsole_write[0m[0m at [0;32m/esp/esp-idf/components/esp_vfs_console/vfs_console.c[0m[0m:[1;31m83[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000117d: [0;33m__swrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400592fe: [0;33m__sflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4005937a: [0;33m_fflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x400d9f79: [0;33m__sfvwrite_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c[0m[0m:[1;31m251[0m
+[0m--- 0x400dd79b: [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m429[0m
+[0m--- (inlined by) [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m399[0m
+[0m--- 0x400dd692: [0;33m_vfprintf_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m1774[0m
+[0m--- 0x400d9fcf: [0;33mprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/printf.c[0m[0m:[1;31m56[0m
+[0m--- 0x400d6306: [0;33mdrainage_vent_print_dataset[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/drainage_vent/drainage_vent.c[0m[0m:[1;31m69[0m
+[0m--- 0x400d6217: [0;33mapp_main[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/main/motion_main.c[0m[0m:[1;31m64[0m
+[0m--- 0x400e0655: [0;33mmain_task[0m[0m at [0;32m/esp/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x40085d7d: [0;33mvPortTaskWrapper[0m[0m at [0;32m/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400d7b6a: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400d7f2c: [0;33mtask_wdt_isr[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40082931: [0;33m_xt_lowint1[0m[0m at [0;32m/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400d40ce: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/esp/esp-idf/components/hal/esp32/include/hal/uart_ll.h[0m[0m:[1;31m439[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x400d47d8: [0;33muart_write[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m245[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000182a: [0;33mwrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400d5155: [0;33mconsole_write[0m[0m at [0;32m/esp/esp-idf/components/esp_vfs_console/vfs_console.c[0m[0m:[1;31m83[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000117d: [0;33m__swrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400592fe: [0;33m__sflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4005937a: [0;33m_fflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x400d9f79: [0;33m__sfvwrite_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c[0m[0m:[1;31m251[0m
+[0m--- 0x400dd79b: [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m429[0m
+[0m--- (inlined by) [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m399[0m
+[0m--- 0x400dd692: [0;33m_vfprintf_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m1774[0m
+[0m--- 0x400d9fcf: [0;33mprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/printf.c[0m[0m:[1;31m56[0m
+[0m--- 0x400d630f: [0;33mdrainage_vent_print_dataset[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/drainage_vent/drainage_vent.c[0m[0m:[1;31m70[0m
+[0m--- 0x400d6217: [0;33mapp_main[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/main/motion_main.c[0m[0m:[1;31m64[0m
+[0m--- 0x400e0655: [0;33mmain_task[0m[0m at [0;32m/esp/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x40085d7d: [0;33mvPortTaskWrapper[0m[0m at [0;32m/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400d7b6a: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400d7f2c: [0;33mtask_wdt_isr[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40082931: [0;33m_xt_lowint1[0m[0m at [0;32m/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400d40c1: [0;33muart_tx_char[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m188[0m
+[0m--- 0x400d47d8: [0;33muart_write[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m245[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000182a: [0;33mwrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400d5155: [0;33mconsole_write[0m[0m at [0;32m/esp/esp-idf/components/esp_vfs_console/vfs_console.c[0m[0m:[1;31m83[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000117d: [0;33m__swrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400592fe: [0;33m__sflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4005937a: [0;33m_fflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x400d9f79: [0;33m__sfvwrite_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c[0m[0m:[1;31m251[0m
+[0m--- 0x400dd79b: [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m429[0m
+[0m--- (inlined by) [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m399[0m
+[0m--- 0x400dd692: [0;33m_vfprintf_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m1774[0m
+[0m--- 0x400d9fcf: [0;33mprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/printf.c[0m[0m:[1;31m56[0m
+[0m--- 0x400d6318: [0;33mdrainage_vent_print_dataset[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/drainage_vent/drainage_vent.c[0m[0m:[1;31m71[0m
+[0m--- 0x400d6217: [0;33mapp_main[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/main/motion_main.c[0m[0m:[1;31m64[0m
+[0m--- 0x400e0655: [0;33mmain_task[0m[0m at [0;32m/esp/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x40085d7d: [0;33mvPortTaskWrapper[0m[0m at [0;32m/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400d7b6a: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400d7f2c: [0;33mtask_wdt_isr[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40082931: [0;33m_xt_lowint1[0m[0m at [0;32m/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400d40c1: [0;33muart_tx_char[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m188[0m
+[0m--- 0x400d47d8: [0;33muart_write[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m245[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000182a: [0;33mwrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400d5155: [0;33mconsole_write[0m[0m at [0;32m/esp/esp-idf/components/esp_vfs_console/vfs_console.c[0m[0m:[1;31m83[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000117d: [0;33m__swrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400592fe: [0;33m__sflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4005937a: [0;33m_fflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x400d9f79: [0;33m__sfvwrite_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c[0m[0m:[1;31m251[0m
+[0m--- 0x400dd79b: [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m429[0m
+[0m--- (inlined by) [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m399[0m
+[0m--- 0x400dd692: [0;33m_vfprintf_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m1774[0m
+[0m--- 0x400d9fcf: [0;33mprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/printf.c[0m[0m:[1;31m56[0m
+[0m--- 0x400d6318: [0;33mdrainage_vent_print_dataset[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/drainage_vent/drainage_vent.c[0m[0m:[1;31m71[0m
+[0m--- 0x400d6217: [0;33mapp_main[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/main/motion_main.c[0m[0m:[1;31m64[0m
+[0m--- 0x400e0655: [0;33mmain_task[0m[0m at [0;32m/esp/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x40085d7d: [0;33mvPortTaskWrapper[0m[0m at [0;32m/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400d7b6a: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400d7f2c: [0;33mtask_wdt_isr[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40082931: [0;33m_xt_lowint1[0m[0m at [0;32m/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400d40c1: [0;33muart_tx_char[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m188[0m
+[0m--- 0x400d47d8: [0;33muart_write[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m245[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000182a: [0;33mwrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400d5155: [0;33mconsole_write[0m[0m at [0;32m/esp/esp-idf/components/esp_vfs_console/vfs_console.c[0m[0m:[1;31m83[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000117d: [0;33m__swrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400592fe: [0;33m__sflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4005937a: [0;33m_fflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x400d9f79: [0;33m__sfvwrite_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c[0m[0m:[1;31m251[0m
+[0m--- 0x400da0b1: [0;33m_puts_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/puts.c[0m[0m:[1;31m91[0m
+[0m--- 0x400da0e2: [0;33mputs[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/puts.c[0m[0m:[1;31m129[0m
+[0m--- 0x400d631d: [0;33mdrainage_vent_print_dataset[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/drainage_vent/drainage_vent.c[0m[0m:[1;31m73[0m
+[0m--- 0x400d6217: [0;33mapp_main[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/main/motion_main.c[0m[0m:[1;31m64[0m
+[0m--- 0x400e0655: [0;33mmain_task[0m[0m at [0;32m/esp/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x40085d7d: [0;33mvPortTaskWrapper[0m[0m at [0;32m/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400d7b6a: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400d7f2c: [0;33mtask_wdt_isr[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40082931: [0;33m_xt_lowint1[0m[0m at [0;32m/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400d40c1: [0;33muart_tx_char[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m188[0m
+[0m--- 0x400d47d8: [0;33muart_write[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m245[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000182a: [0;33mwrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400d5155: [0;33mconsole_write[0m[0m at [0;32m/esp/esp-idf/components/esp_vfs_console/vfs_console.c[0m[0m:[1;31m83[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000117d: [0;33m__swrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400592fe: [0;33m__sflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4005937a: [0;33m_fflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x400d9f79: [0;33m__sfvwrite_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c[0m[0m:[1;31m251[0m
+[0m--- 0x400da0b1: [0;33m_puts_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/puts.c[0m[0m:[1;31m91[0m
+[0m--- 0x400da0e2: [0;33mputs[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/puts.c[0m[0m:[1;31m129[0m
+[0m--- 0x400d62a8: [0;33mdrainage_vent_print_dataset[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/drainage_vent/drainage_vent.c[0m[0m:[1;31m53[0m
+[0m--- 0x400d6217: [0;33mapp_main[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/main/motion_main.c[0m[0m:[1;31m64[0m
+[0m--- 0x400e0655: [0;33mmain_task[0m[0m at [0;32m/esp/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x40085d7d: [0;33mvPortTaskWrapper[0m[0m at [0;32m/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400d7b6a: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400d7f2c: [0;33mtask_wdt_isr[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40082931: [0;33m_xt_lowint1[0m[0m at [0;32m/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400d40d9: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/esp/esp-idf/components/hal/esp32/include/hal/uart_ll.h[0m[0m:[1;31m439[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x400d47d8: [0;33muart_write[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m245[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000182a: [0;33mwrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400d5155: [0;33mconsole_write[0m[0m at [0;32m/esp/esp-idf/components/esp_vfs_console/vfs_console.c[0m[0m:[1;31m83[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000117d: [0;33m__swrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400592fe: [0;33m__sflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4005937a: [0;33m_fflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x400d9f79: [0;33m__sfvwrite_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c[0m[0m:[1;31m251[0m
+[0m--- 0x400da0b1: [0;33m_puts_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/puts.c[0m[0m:[1;31m91[0m
+[0m--- 0x400da0e2: [0;33mputs[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/puts.c[0m[0m:[1;31m129[0m
+[0m--- 0x400d62a8: [0;33mdrainage_vent_print_dataset[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/drainage_vent/drainage_vent.c[0m[0m:[1;31m53[0m
+[0m--- 0x400d6217: [0;33mapp_main[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/main/motion_main.c[0m[0m:[1;31m64[0m
+[0m--- 0x400e0655: [0;33mmain_task[0m[0m at [0;32m/esp/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x40085d7d: [0;33mvPortTaskWrapper[0m[0m at [0;32m/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400d7b6a: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400d7f2c: [0;33mtask_wdt_isr[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40082931: [0;33m_xt_lowint1[0m[0m at [0;32m/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400d40c4: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/esp/esp-idf/components/hal/esp32/include/hal/uart_ll.h[0m[0m:[1;31m439[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x400d47d8: [0;33muart_write[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m245[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000182a: [0;33mwrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400d5155: [0;33mconsole_write[0m[0m at [0;32m/esp/esp-idf/components/esp_vfs_console/vfs_console.c[0m[0m:[1;31m83[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000117d: [0;33m__swrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400592fe: [0;33m__sflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4005937a: [0;33m_fflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x400d9f79: [0;33m__sfvwrite_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c[0m[0m:[1;31m251[0m
+[0m--- 0x400da0b1: [0;33m_puts_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/puts.c[0m[0m:[1;31m91[0m
+[0m--- 0x400da0e2: [0;33mputs[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/puts.c[0m[0m:[1;31m129[0m
+[0m--- 0x400d62b3: [0;33mdrainage_vent_print_dataset[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/drainage_vent/drainage_vent.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d6217: [0;33mapp_main[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/main/motion_main.c[0m[0m:[1;31m64[0m
+[0m--- 0x400e0655: [0;33mmain_task[0m[0m at [0;32m/esp/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x40085d7d: [0;33mvPortTaskWrapper[0m[0m at [0;32m/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400d7b6a: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400d7f2c: [0;33mtask_wdt_isr[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40082931: [0;33m_xt_lowint1[0m[0m at [0;32m/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400d40d0: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/esp/esp-idf/components/hal/esp32/include/hal/uart_ll.h[0m[0m:[1;31m439[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x400d47d8: [0;33muart_write[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m245[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000182a: [0;33mwrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400d5155: [0;33mconsole_write[0m[0m at [0;32m/esp/esp-idf/components/esp_vfs_console/vfs_console.c[0m[0m:[1;31m83[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000117d: [0;33m__swrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400592fe: [0;33m__sflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4005937a: [0;33m_fflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x400d9f79: [0;33m__sfvwrite_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c[0m[0m:[1;31m251[0m
+[0m--- 0x400dd79b: [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m429[0m
+[0m--- (inlined by) [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m399[0m
+[0m--- 0x400dd692: [0;33m_vfprintf_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m1774[0m
+[0m--- 0x400d9fcf: [0;33mprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/printf.c[0m[0m:[1;31m56[0m
+[0m--- 0x400d62bb: [0;33mdrainage_vent_print_dataset[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/drainage_vent/drainage_vent.c[0m[0m:[1;31m57[0m
+[0m--- 0x400d6217: [0;33mapp_main[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/main/motion_main.c[0m[0m:[1;31m64[0m
+[0m--- 0x400e0655: [0;33mmain_task[0m[0m at [0;32m/esp/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x40085d7d: [0;33mvPortTaskWrapper[0m[0m at [0;32m/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400d7b6a: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400d7f2c: [0;33mtask_wdt_isr[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40082931: [0;33m_xt_lowint1[0m[0m at [0;32m/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400d40cb: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/esp/esp-idf/components/hal/esp32/include/hal/uart_ll.h[0m[0m:[1;31m439[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x400d47d8: [0;33muart_write[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m245[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000182a: [0;33mwrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400d5155: [0;33mconsole_write[0m[0m at [0;32m/esp/esp-idf/components/esp_vfs_console/vfs_console.c[0m[0m:[1;31m83[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000117d: [0;33m__swrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400592fe: [0;33m__sflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4005937a: [0;33m_fflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x400d9f79: [0;33m__sfvwrite_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c[0m[0m:[1;31m251[0m
+[0m--- 0x400dd79b: [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m429[0m
+[0m--- (inlined by) [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m399[0m
+[0m--- 0x400dd692: [0;33m_vfprintf_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m1774[0m
+[0m--- 0x400d9fcf: [0;33mprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/printf.c[0m[0m:[1;31m56[0m
+[0m--- 0x400d62c3: [0;33mdrainage_vent_print_dataset[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/drainage_vent/drainage_vent.c[0m[0m:[1;31m59[0m
+[0m--- 0x400d6217: [0;33mapp_main[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/main/motion_main.c[0m[0m:[1;31m64[0m
+[0m--- 0x400e0655: [0;33mmain_task[0m[0m at [0;32m/esp/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x40085d7d: [0;33mvPortTaskWrapper[0m[0m at [0;32m/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400d7b6a: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400d7f2c: [0;33mtask_wdt_isr[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40082931: [0;33m_xt_lowint1[0m[0m at [0;32m/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400d40c1: [0;33muart_tx_char[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m188[0m
+[0m--- 0x400d47d8: [0;33muart_write[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m245[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000182a: [0;33mwrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400d5155: [0;33mconsole_write[0m[0m at [0;32m/esp/esp-idf/components/esp_vfs_console/vfs_console.c[0m[0m:[1;31m83[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000117d: [0;33m__swrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400592fe: [0;33m__sflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4005937a: [0;33m_fflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x400d9f79: [0;33m__sfvwrite_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c[0m[0m:[1;31m251[0m
+[0m--- 0x400dd79b: [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m429[0m
+[0m--- (inlined by) [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m399[0m
+[0m--- 0x400dd692: [0;33m_vfprintf_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m1774[0m
+[0m--- 0x400d9fcf: [0;33mprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/printf.c[0m[0m:[1;31m56[0m
+[0m--- 0x400d62c3: [0;33mdrainage_vent_print_dataset[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/drainage_vent/drainage_vent.c[0m[0m:[1;31m59[0m
+[0m--- 0x400d6217: [0;33mapp_main[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/main/motion_main.c[0m[0m:[1;31m64[0m
+[0m--- 0x400e0655: [0;33mmain_task[0m[0m at [0;32m/esp/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x40085d7d: [0;33mvPortTaskWrapper[0m[0m at [0;32m/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400d7b6a: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400d7f2c: [0;33mtask_wdt_isr[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40082931: [0;33m_xt_lowint1[0m[0m at [0;32m/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400d40c1: [0;33muart_tx_char[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m188[0m
+[0m--- 0x400d47d8: [0;33muart_write[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m245[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000182a: [0;33mwrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400d5155: [0;33mconsole_write[0m[0m at [0;32m/esp/esp-idf/components/esp_vfs_console/vfs_console.c[0m[0m:[1;31m83[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000117d: [0;33m__swrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400592fe: [0;33m__sflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4005937a: [0;33m_fflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x400d9f79: [0;33m__sfvwrite_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c[0m[0m:[1;31m251[0m
+[0m--- 0x400dd79b: [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m429[0m
+[0m--- (inlined by) [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m399[0m
+[0m--- 0x400dd692: [0;33m_vfprintf_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m1774[0m
+[0m--- 0x400d9fcf: [0;33mprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/printf.c[0m[0m:[1;31m56[0m
+[0m--- 0x400d62cb: [0;33mdrainage_vent_print_dataset[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/drainage_vent/drainage_vent.c[0m[0m:[1;31m60[0m
+[0m--- 0x400d6217: [0;33mapp_main[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/main/motion_main.c[0m[0m:[1;31m64[0m
+[0m--- 0x400e0655: [0;33mmain_task[0m[0m at [0;32m/esp/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x40085d7d: [0;33mvPortTaskWrapper[0m[0m at [0;32m/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400d7b6a: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400d7f2c: [0;33mtask_wdt_isr[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40082931: [0;33m_xt_lowint1[0m[0m at [0;32m/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400d40c9: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/esp/esp-idf/components/hal/esp32/include/hal/uart_ll.h[0m[0m:[1;31m439[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x400d47d8: [0;33muart_write[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m245[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000182a: [0;33mwrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400d5155: [0;33mconsole_write[0m[0m at [0;32m/esp/esp-idf/components/esp_vfs_console/vfs_console.c[0m[0m:[1;31m83[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000117d: [0;33m__swrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400592fe: [0;33m__sflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4005937a: [0;33m_fflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x400d9f79: [0;33m__sfvwrite_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c[0m[0m:[1;31m251[0m
+[0m--- 0x400dd79b: [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m429[0m
+[0m--- (inlined by) [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m399[0m
+[0m--- 0x400dd692: [0;33m_vfprintf_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m1774[0m
+[0m--- 0x400d9fcf: [0;33mprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/printf.c[0m[0m:[1;31m56[0m
+[0m--- 0x400d62d3: [0;33mdrainage_vent_print_dataset[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/drainage_vent/drainage_vent.c[0m[0m:[1;31m61[0m
+[0m--- 0x400d6217: [0;33mapp_main[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/main/motion_main.c[0m[0m:[1;31m64[0m
+[0m--- 0x400e0655: [0;33mmain_task[0m[0m at [0;32m/esp/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x40085d7d: [0;33mvPortTaskWrapper[0m[0m at [0;32m/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400d7b6a: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400d7f2c: [0;33mtask_wdt_isr[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40082931: [0;33m_xt_lowint1[0m[0m at [0;32m/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400d40d9: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/esp/esp-idf/components/hal/esp32/include/hal/uart_ll.h[0m[0m:[1;31m439[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x400d47d8: [0;33muart_write[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m245[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000182a: [0;33mwrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400d5155: [0;33mconsole_write[0m[0m at [0;32m/esp/esp-idf/components/esp_vfs_console/vfs_console.c[0m[0m:[1;31m83[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000117d: [0;33m__swrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400592fe: [0;33m__sflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4005937a: [0;33m_fflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x400d9f79: [0;33m__sfvwrite_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c[0m[0m:[1;31m251[0m
+[0m--- 0x400dd79b: [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m429[0m
+[0m--- (inlined by) [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m399[0m
+[0m--- 0x400dd692: [0;33m_vfprintf_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m1774[0m
+[0m--- 0x400d9fcf: [0;33mprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/printf.c[0m[0m:[1;31m56[0m
+[0m--- 0x400d62d3: [0;33mdrainage_vent_print_dataset[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/drainage_vent/drainage_vent.c[0m[0m:[1;31m61[0m
+[0m--- 0x400d6217: [0;33mapp_main[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/main/motion_main.c[0m[0m:[1;31m64[0m
+[0m--- 0x400e0655: [0;33mmain_task[0m[0m at [0;32m/esp/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x40085d7d: [0;33mvPortTaskWrapper[0m[0m at [0;32m/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400d7b6a: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400d7f2c: [0;33mtask_wdt_isr[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40082931: [0;33m_xt_lowint1[0m[0m at [0;32m/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400d40ce: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/esp/esp-idf/components/hal/esp32/include/hal/uart_ll.h[0m[0m:[1;31m439[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x400d47d8: [0;33muart_write[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m245[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000182a: [0;33mwrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400d5155: [0;33mconsole_write[0m[0m at [0;32m/esp/esp-idf/components/esp_vfs_console/vfs_console.c[0m[0m:[1;31m83[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000117d: [0;33m__swrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400592fe: [0;33m__sflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4005937a: [0;33m_fflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x400d9f79: [0;33m__sfvwrite_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c[0m[0m:[1;31m251[0m
+[0m--- 0x400dd79b: [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m429[0m
+[0m--- (inlined by) [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m399[0m
+[0m--- 0x400dd692: [0;33m_vfprintf_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m1774[0m
+[0m--- 0x400d9fcf: [0;33mprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/printf.c[0m[0m:[1;31m56[0m
+[0m--- 0x400d62db: [0;33mdrainage_vent_print_dataset[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/drainage_vent/drainage_vent.c[0m[0m:[1;31m62[0m
+[0m--- 0x400d6217: [0;33mapp_main[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/main/motion_main.c[0m[0m:[1;31m64[0m
+[0m--- 0x400e0655: [0;33mmain_task[0m[0m at [0;32m/esp/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x40085d7d: [0;33mvPortTaskWrapper[0m[0m at [0;32m/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400d7b6a: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400d7f2c: [0;33mtask_wdt_isr[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40082931: [0;33m_xt_lowint1[0m[0m at [0;32m/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400d40c1: [0;33muart_tx_char[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m188[0m
+[0m--- 0x400d47d8: [0;33muart_write[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m245[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000182a: [0;33mwrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400d5155: [0;33mconsole_write[0m[0m at [0;32m/esp/esp-idf/components/esp_vfs_console/vfs_console.c[0m[0m:[1;31m83[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000117d: [0;33m__swrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400592fe: [0;33m__sflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4005937a: [0;33m_fflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x400d9f79: [0;33m__sfvwrite_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c[0m[0m:[1;31m251[0m
+[0m--- 0x400dd79b: [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m429[0m
+[0m--- (inlined by) [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m399[0m
+[0m--- 0x400dd692: [0;33m_vfprintf_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m1774[0m
+[0m--- 0x400d9fcf: [0;33mprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/printf.c[0m[0m:[1;31m56[0m
+[0m--- 0x400d62db: [0;33mdrainage_vent_print_dataset[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/drainage_vent/drainage_vent.c[0m[0m:[1;31m62[0m
+[0m--- 0x400d6217: [0;33mapp_main[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/main/motion_main.c[0m[0m:[1;31m64[0m
+[0m--- 0x400e0655: [0;33mmain_task[0m[0m at [0;32m/esp/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x40085d7d: [0;33mvPortTaskWrapper[0m[0m at [0;32m/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400d7b6a: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400d7f2c: [0;33mtask_wdt_isr[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40082931: [0;33m_xt_lowint1[0m[0m at [0;32m/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400d40d3: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/esp/esp-idf/components/hal/esp32/include/hal/uart_ll.h[0m[0m:[1;31m439[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x400d47d8: [0;33muart_write[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m245[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000182a: [0;33mwrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400d5155: [0;33mconsole_write[0m[0m at [0;32m/esp/esp-idf/components/esp_vfs_console/vfs_console.c[0m[0m:[1;31m83[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000117d: [0;33m__swrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400592fe: [0;33m__sflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4005937a: [0;33m_fflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x400d9f79: [0;33m__sfvwrite_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c[0m[0m:[1;31m251[0m
+[0m--- 0x400dd79b: [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m429[0m
+[0m--- (inlined by) [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m399[0m
+[0m--- 0x400dd692: [0;33m_vfprintf_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m1774[0m
+[0m--- 0x400d9fcf: [0;33mprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/printf.c[0m[0m:[1;31m56[0m
+[0m--- 0x400d62e4: [0;33mdrainage_vent_print_dataset[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/drainage_vent/drainage_vent.c[0m[0m:[1;31m64[0m
+[0m--- 0x400d6217: [0;33mapp_main[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/main/motion_main.c[0m[0m:[1;31m64[0m
+[0m--- 0x400e0655: [0;33mmain_task[0m[0m at [0;32m/esp/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x40085d7d: [0;33mvPortTaskWrapper[0m[0m at [0;32m/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400d7b6a: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400d7f2c: [0;33mtask_wdt_isr[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40082931: [0;33m_xt_lowint1[0m[0m at [0;32m/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400d40cb: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/esp/esp-idf/components/hal/esp32/include/hal/uart_ll.h[0m[0m:[1;31m439[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x400d47d8: [0;33muart_write[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m245[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000182a: [0;33mwrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400d5155: [0;33mconsole_write[0m[0m at [0;32m/esp/esp-idf/components/esp_vfs_console/vfs_console.c[0m[0m:[1;31m83[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000117d: [0;33m__swrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400592fe: [0;33m__sflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4005937a: [0;33m_fflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x400d9f79: [0;33m__sfvwrite_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c[0m[0m:[1;31m251[0m
+[0m--- 0x400dd79b: [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m429[0m
+[0m--- (inlined by) [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m399[0m
+[0m--- 0x400dd692: [0;33m_vfprintf_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m1774[0m
+[0m--- 0x400d9fcf: [0;33mprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/printf.c[0m[0m:[1;31m56[0m
+[0m--- 0x400d62e4: [0;33mdrainage_vent_print_dataset[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/drainage_vent/drainage_vent.c[0m[0m:[1;31m64[0m
+[0m--- 0x400d6217: [0;33mapp_main[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/main/motion_main.c[0m[0m:[1;31m64[0m
+[0m--- 0x400e0655: [0;33mmain_task[0m[0m at [0;32m/esp/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x40085d7d: [0;33mvPortTaskWrapper[0m[0m at [0;32m/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400d7b6a: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400d7f2c: [0;33mtask_wdt_isr[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40082931: [0;33m_xt_lowint1[0m[0m at [0;32m/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400d40d3: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/esp/esp-idf/components/hal/esp32/include/hal/uart_ll.h[0m[0m:[1;31m439[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x400d47ce: [0;33muart_write[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m240[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000182a: [0;33mwrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400d5155: [0;33mconsole_write[0m[0m at [0;32m/esp/esp-idf/components/esp_vfs_console/vfs_console.c[0m[0m:[1;31m83[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000117d: [0;33m__swrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400592fe: [0;33m__sflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4005937a: [0;33m_fflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x400d9f79: [0;33m__sfvwrite_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c[0m[0m:[1;31m251[0m
+[0m--- 0x400dd79b: [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m429[0m
+[0m--- (inlined by) [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m399[0m
+[0m--- 0x400dd692: [0;33m_vfprintf_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m1774[0m
+[0m--- 0x400d9fcf: [0;33mprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/printf.c[0m[0m:[1;31m56[0m
+[0m--- 0x400d62e4: [0;33mdrainage_vent_print_dataset[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/drainage_vent/drainage_vent.c[0m[0m:[1;31m64[0m
+[0m--- 0x400d6217: [0;33mapp_main[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/main/motion_main.c[0m[0m:[1;31m64[0m
+[0m--- 0x400e0655: [0;33mmain_task[0m[0m at [0;32m/esp/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x40085d7d: [0;33mvPortTaskWrapper[0m[0m at [0;32m/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400d7b6a: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400d7f2c: [0;33mtask_wdt_isr[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40082931: [0;33m_xt_lowint1[0m[0m at [0;32m/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400d40c9: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/esp/esp-idf/components/hal/esp32/include/hal/uart_ll.h[0m[0m:[1;31m439[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x400d47d8: [0;33muart_write[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m245[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000182a: [0;33mwrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400d5155: [0;33mconsole_write[0m[0m at [0;32m/esp/esp-idf/components/esp_vfs_console/vfs_console.c[0m[0m:[1;31m83[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000117d: [0;33m__swrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400592fe: [0;33m__sflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4005937a: [0;33m_fflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x400d9f79: [0;33m__sfvwrite_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c[0m[0m:[1;31m251[0m
+[0m--- 0x400dd79b: [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m429[0m
+[0m--- (inlined by) [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m399[0m
+[0m--- 0x400dd692: [0;33m_vfprintf_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m1774[0m
+[0m--- 0x400d9fcf: [0;33mprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/printf.c[0m[0m:[1;31m56[0m
+[0m--- 0x400d62ed: [0;33mdrainage_vent_print_dataset[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/drainage_vent/drainage_vent.c[0m[0m:[1;31m65[0m
+[0m--- 0x400d6217: [0;33mapp_main[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/main/motion_main.c[0m[0m:[1;31m64[0m
+[0m--- 0x400e0655: [0;33mmain_task[0m[0m at [0;32m/esp/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x40085d7d: [0;33mvPortTaskWrapper[0m[0m at [0;32m/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400d7b6a: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400d7f2c: [0;33mtask_wdt_isr[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40082931: [0;33m_xt_lowint1[0m[0m at [0;32m/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400d40d9: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/esp/esp-idf/components/hal/esp32/include/hal/uart_ll.h[0m[0m:[1;31m439[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x400d47d8: [0;33muart_write[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m245[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000182a: [0;33mwrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400d5155: [0;33mconsole_write[0m[0m at [0;32m/esp/esp-idf/components/esp_vfs_console/vfs_console.c[0m[0m:[1;31m83[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000117d: [0;33m__swrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400592fe: [0;33m__sflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4005937a: [0;33m_fflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x400d9f79: [0;33m__sfvwrite_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c[0m[0m:[1;31m251[0m
+[0m--- 0x400dd79b: [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m429[0m
+[0m--- (inlined by) [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m399[0m
+[0m--- 0x400dd692: [0;33m_vfprintf_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m1774[0m
+[0m--- 0x400d9fcf: [0;33mprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/printf.c[0m[0m:[1;31m56[0m
+[0m--- 0x400d62ed: [0;33mdrainage_vent_print_dataset[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/drainage_vent/drainage_vent.c[0m[0m:[1;31m65[0m
+[0m--- 0x400d6217: [0;33mapp_main[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/main/motion_main.c[0m[0m:[1;31m64[0m
+[0m--- 0x400e0655: [0;33mmain_task[0m[0m at [0;32m/esp/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x40085d7d: [0;33mvPortTaskWrapper[0m[0m at [0;32m/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400d7b6a: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400d7f2c: [0;33mtask_wdt_isr[0m[0m at [0;32m/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40082931: [0;33m_xt_lowint1[0m[0m at [0;32m/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400d40c4: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/esp/esp-idf/components/hal/esp32/include/hal/uart_ll.h[0m[0m:[1;31m439[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x400d47d8: [0;33muart_write[0m[0m at [0;32m/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m245[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000182a: [0;33mwrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400d5155: [0;33mconsole_write[0m[0m at [0;32m/esp/esp-idf/components/esp_vfs_console/vfs_console.c[0m[0m:[1;31m83[0m
+[0m--- 0x400d5732: [0;33mesp_vfs_write[0m[0m at [0;32m/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m982[0m
+[0m--- 0x4000bd83: [0;33m_write_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4000117d: [0;33m__swrite[0m[0m in [0;32mROM[0m
+[0m--- 0x400592fe: [0;33m__sflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x4005937a: [0;33m_fflush_r[0m[0m in [0;32mROM[0m
+[0m--- 0x400d9f79: [0;33m__sfvwrite_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c[0m[0m:[1;31m251[0m
+[0m--- 0x400dd79b: [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m429[0m
+[0m--- (inlined by) [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m399[0m
+[0m--- 0x400dd692: [0;33m_vfprintf_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m1774[0m
+[0m--- 0x400d9fcf: [0;33mprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/printf.c[0m[0m:[1;31m56[0m
+[0m--- 0x400d62f5: [0;33mdrainage_vent_print_dataset[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/drainage_vent/drainage_vent.c[0m[0m:[1;31m66[0m
+[0m--- 0x400d6217: [0;33mapp_main[0m[0m at [0;32m/media/warezoid/Storage drive1/warezoid/work/projects/smart_flowerpot/code/src/esp-idf/smart_flowerpot/esp32/drivers/motion/main/motion_main.c[0m[0m:[1;31m64[0m
+[0m--- 0x400e0655: [0;33mmain_task[0m[0m at [0;32m/esp/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x40085d7d: [0;33mvPortTaskWrapper[0m[0m at [0;32m/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m
