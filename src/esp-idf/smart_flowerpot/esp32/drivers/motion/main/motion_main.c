@@ -33,8 +33,6 @@ drainage_vent_dataset_t drainage_vent_sys = drainage_vent_init_dataset();
     roulette_init(&roulette_sys);
 */
 
-
-
 //loop
     while(1){
         /*************** START of temp code - ROULETTE and VENT testing */
@@ -52,15 +50,20 @@ drainage_vent_dataset_t drainage_vent_sys = drainage_vent_init_dataset();
 
         if(gpio_get_level(TMP_ROULETTE_OPEN)){
             printf("R-LOG:\topen request!\n");
+            //roulette_opn(&roulette_sys);
         }
 
         if(gpio_get_level(TMP_ROULETTE_CLOSE)){
             printf("R-LOG:\tclose request!\n");
+            //roulette_opn(&roulette_sys);
         }
         /*************** END of temp code - ROULETTE and VENT testing */
-
-
-
+/*
+        printf("ESO1: %d\n", gpio_get_level(IN_DRAIN_VENT_ESO1));
+        printf("ESC1: %d\n", gpio_get_level(IN_DRAIN_VENT_ESC1));
+        printf("ESO2: %d\n", gpio_get_level(IN_DRAIN_VENT_ESO2));
+        printf("ESC2: %d\n", gpio_get_level(IN_DRAIN_VENT_ESC2));
+*/
         drainage_vent_print_dataset(&drainage_vent_sys);
         drainage_vent_fsm(&drainage_vent_sys);
 
@@ -71,6 +74,6 @@ drainage_vent_dataset_t drainage_vent_sys = drainage_vent_init_dataset();
 
 
         //vTaskDelay(pdMS_TO_TICKS(1));
-        vTaskDelay(pdMS_TO_TICKS(25));
+        vTaskDelay(pdMS_TO_TICKS(100));
     }
 }

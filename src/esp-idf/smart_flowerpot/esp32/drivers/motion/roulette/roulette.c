@@ -36,7 +36,7 @@ void roulette_init(roulette_dataset_t *roulette_sys){
 void roulette_cls(roulette_dataset_t *roulette_sys){
     if(!roulette_sys->event_start_tick){
         if(roulette_sys->control_flags & 0x04){
-            printf("STATE:\tCLOSING\n");
+            printf("STATE:\tCLOSING\n"); printf("STATE:\tCLOSING\n");
 
             gpio_set_level(OUT_ROULETTE_DIR1, 1);
             gpio_set_level(OUT_ROULETTE_DIR2, 0);

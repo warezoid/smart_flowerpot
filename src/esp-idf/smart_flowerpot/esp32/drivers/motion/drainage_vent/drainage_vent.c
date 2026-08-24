@@ -34,9 +34,9 @@ drainage_vent_dataset_t drainage_vent_init_dataset(){
         .v2_cls_ms = 50,
 
         .v1_opn_duty = 200,
-        .v1_cls_duty = 600,
+        .v1_cls_duty = 700,
         .v2_opn_duty = 200,
-        .v2_cls_duty = 600,
+        .v2_cls_duty = 700,
 
         .err_word = 0x0000,
         .io_byte = 0x30,
