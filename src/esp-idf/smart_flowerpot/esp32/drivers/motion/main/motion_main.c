@@ -24,14 +24,14 @@ void app_main(void){
 drainage_vent_init();
 drainage_vent_dataset_t drainage_vent_sys = drainage_vent_init_dataset();
 
-/*
+
     roulette_dataset_t roulette_sys = {
         .power_cut_off_timer = NULL,
         .event_start_tick = 0,
         .control_flags = 0b00000100
     };
     roulette_init(&roulette_sys);
-*/
+
 
 //loop
     while(1){
@@ -50,12 +50,12 @@ drainage_vent_dataset_t drainage_vent_sys = drainage_vent_init_dataset();
 
         if(gpio_get_level(TMP_ROULETTE_OPEN)){
             printf("R-LOG:\topen request!\n");
-            //roulette_opn(&roulette_sys);
+            roulette_opn(&roulette_sys);
         }
 
         if(gpio_get_level(TMP_ROULETTE_CLOSE)){
             printf("R-LOG:\tclose request!\n");
-            //roulette_opn(&roulette_sys);
+            roulette_cls(&roulette_sys);
         }
         /*************** END of temp code - ROULETTE and VENT testing */
 /*
@@ -69,7 +69,7 @@ drainage_vent_dataset_t drainage_vent_sys = drainage_vent_init_dataset();
 
 
 
-        //roulette_ack(&roulette_sys);
+        roulette_ack(&roulette_sys);
 
 
 

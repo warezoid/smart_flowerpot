@@ -83,12 +83,23 @@ This document is overview of progress and TODOs on smart flowerpot project.
     - Do needed recalibration.
     - Test everything nicely and properly.
 
+- Check driver schematics with real circuit and update it if needed.
+- Put descriptions on circuit.
+
 - Upgrade Excel table.
     - Separate MOTION to diferent lists, ....
 - Create bill of material table for all drivers.
 
+- Do some last testing of circuit before epoxy cover.
+- Cover circuit in epoxy resin to prevent shorts and add some protection.
+
+
+
 ### Drainage vent
 - Electronics:
+    - Debug new vent driver code.
+    - Calibrate vent system.
+
     - Update drainage_vent code:
         - DONT USE TIMERS or DELAY or some different sort of WAITING. Use tick systems instead.
         - Use folowing state machine:
@@ -119,21 +130,10 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
         - Default state: both vents are unblocked, state machine is set to 0 (waiting), PWM channel 0, ...
 
-    - Update schematics:
-        - Check schemtics with real circuit.
-
 ### Roulette
 - Final works:
-    - Recalibrate TOP Hall sensor - TOP GREEN probably.
-    
-    - Check driver schematics with real circuit and update it if needed.
-    - Put descriptions on circuit.
-    
+    - Recalibrate TOP Hall sensor - TOP GREEN probably.    
     - Update CAD files of roulette guides and winge rod gear.
-
-    - Do some last testing of circuit before epoxy cover.
-    - Cover circuit in epoxy resin to prevent shorts and add some protection.
-
     - Maybe solve some better system for holding hall sensors than hot glue - easier calibration.
 
 
