@@ -97,8 +97,8 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 ### Drainage vent
 - Electronics:
-    - Debug new vent driver code.
     - Calibrate vent system.
+    - Debug vent system properly.
 
     - Update drainage_vent code:
         - DONT USE TIMERS or DELAY or some different sort of WAITING. Use tick systems instead.

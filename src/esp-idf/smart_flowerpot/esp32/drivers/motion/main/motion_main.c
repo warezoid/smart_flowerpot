@@ -25,12 +25,21 @@ drainage_vent_init();
 drainage_vent_dataset_t drainage_vent_sys = drainage_vent_init_dataset();
 
 
-    roulette_dataset_t roulette_sys = {
-        .power_cut_off_timer = NULL,
-        .event_start_tick = 0,
-        .control_flags = 0b00000100
-    };
-    roulette_init(&roulette_sys);
+roulette_dataset_t roulette_sys = {
+    .power_cut_off_timer = NULL,
+    .event_start_tick = 0,
+    .control_flags = 0b00000100
+};
+roulette_init(&roulette_sys);
+
+
+
+/*
+gpio_set_level(OUT_DRAIN_VENT_SPM1, 1);
+gpio_set_level(OUT_DRAIN_VENT_SPM2, 1);
+int i = 0;
+*/
+
 
 
 //loop
@@ -58,20 +67,18 @@ drainage_vent_dataset_t drainage_vent_sys = drainage_vent_init_dataset();
             roulette_cls(&roulette_sys);
         }
         /*************** END of temp code - ROULETTE and VENT testing */
-/*
+
         printf("ESO1: %d\n", gpio_get_level(IN_DRAIN_VENT_ESO1));
         printf("ESC1: %d\n", gpio_get_level(IN_DRAIN_VENT_ESC1));
         printf("ESO2: %d\n", gpio_get_level(IN_DRAIN_VENT_ESO2));
         printf("ESC2: %d\n", gpio_get_level(IN_DRAIN_VENT_ESC2));
-*/
+
         drainage_vent_print_dataset(&drainage_vent_sys);
         drainage_vent_fsm(&drainage_vent_sys);
 
 
 
         roulette_ack(&roulette_sys);
-
-
 
         //vTaskDelay(pdMS_TO_TICKS(1));
         vTaskDelay(pdMS_TO_TICKS(100));
