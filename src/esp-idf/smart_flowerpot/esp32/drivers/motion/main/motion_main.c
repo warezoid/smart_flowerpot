@@ -54,7 +54,7 @@ int i = 0;
 
         if(gpio_get_level(TMP_VENT_CLOSE)){
             printf("V-LOG:\tclose request!\n");
-            drainage_vent_sys.io_byte = (drainage_vent_sys.io_byte & 0xFC) | 0x02;          
+            drainage_vent_sys.io_byte = (drainage_vent_sys.io_byte & 0xFC) | 0x02;
         }
 
         if(gpio_get_level(TMP_ROULETTE_OPEN)){

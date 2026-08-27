@@ -78,12 +78,13 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 
 ## ESP32 / DRIVERs / MOTION
-- Final testing:
+- Final testing (**30. Aug 2026**):
     - Write nice testing code for both: vent and roulette.
     - Do needed recalibration.
     - Test everything nicely and properly.
 
 - Check driver schematics with real circuit and update it if needed.
+- Check CAD files if they are same as reality.
 - Put descriptions on circuit.
 
 - Upgrade Excel table.
@@ -96,41 +97,18 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 
 ### Drainage vent
-- Electronics:
-    - Calibrate vent system.
-    - Debug vent system properly.
-
-    - Update drainage_vent code:
-        - DONT USE TIMERS or DELAY or some different sort of WAITING. Use tick systems instead.
-        - Use folowing state machine:
-            - IDLE (0):
-                - Scan for process code. If process code (in control byte) is 00 then break. If not, then copy&paste control byte process code to temporary byte process code. Set state machine to 1 and breake.
-                - Commands will be set by process code bits: 00 non active, 01 opening, 10 closing, 11 spare, in future maybe calibration.
-                - Program will read only from temporary process code, which can be set only in IDLE, so overriding should be solved.
-            
-            - Start 1 (1):
-                - If vent 1 is enabled then set action_start_ticks, set power mosfet 1 to ON, and set PWM for given operation for vent 1. Then set state machine to 2 and break.
-                - Otherwise set state machine to 3 and break.
-
-            - Moving 1 (2):
-                - Check for given limit switch and if switch is active then switch off PWM, set power mosfet 1 to OFF and null action_start_ticks. Set state machine bit to 3 and break.
-                - If limit switch is not active, then check if current_ticks - action_start_ticks are bellow given time interval. If yes, just break. If no, then  switch off PWM, set power mosfet 1 to OFF and null action_start_ticks and block vent 1 - set vent 1 enable bit to 0. Then set state machine bit to 3 and break.
-
-            - Start 2 (3):
-                - If vent 2 is enabled then set action_start_ticks, set power mosfet 2 to ON, and set PWM for given operation for vent 2. Then set state machine to 4 and break.
-                - Otherwise set state machine to 5 and break.
-
-            - Moving 2 (4):
-                - Check for given limit switch and if switch is active then switch off PWM, set power mosfet 2 to OFF and null action_start_ticks. Then acknowledge - set vent 2 enable bit to 1. Set state machine bit to 5 and break.
-                - If limit switch is not active, then check if current_ticks - action_start_ticks are bellow given time interval. If yes, just break. If no, then  switch off PWM, set power mosfet 2 to OFF and null action_start_ticks and block vent 2 - set vent 2 enable bit to 0. Then set state machine bit to 5 and break.
-            
-            - Finish (5):
-                - Null control byte process code, temporary process code.
-                - Set state machine bit to 0 and breake.
-
-        - Default state: both vents are unblocked, state machine is set to 0 (waiting), PWM channel 0, ...
+- Final works:
+    - Update CAD: add edge to grid slider gear rack end.
 
 ### Roulette
+- Updates (**30. Aug 2026**):
+    - Change electronics:
+        - Replace NOR with NOT, both signals wires will be connected to ESP32.
+        - Update schematics: replace NOR with NOT, add 2 new GPIO pins (TOP1, TOP2, BOT1, BOT2), add 2 new signal filtering circuits (3 resistors).
+        - Resolder NOR gate to NOT gate, solder signal filtering circuits different, connect it to new ESP32 GPIO pins.
+    - Rewrite current code to FSM code:
+        - Think about FSM, create states, states shift, default states and more, ...
+
 - Final works:
     - Recalibrate TOP Hall sensor - TOP GREEN probably.    
     - Update CAD files of roulette guides and winge rod gear.
@@ -169,3 +147,35 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 - Making stage help:
     - Honzajs
+
+
+
+
+## Notes
+
+### Drivers/MOTION/Drainage vent
+- FSM:
+    - IDLE (0):
+        - Scan for process code. If process code (in control byte) is 00 then break. If not, then copy&paste control byte process code to temporary byte process code. Set state machine to 1 and breake.
+        - Commands will be set by process code bits: 00 non active, 01 opening, 10 closing, 11 spare, in future maybe calibration.
+        - Program will read only from temporary process code, which can be set only in IDLE, so overriding should be solved.
+    
+    - Start 1 (1):
+        - If vent 1 is enabled then set action_start_ticks, set power mosfet 1 to ON, and set PWM for given operation for vent 1. Then set state machine to 2 and break.
+        - Otherwise set state machine to 3 and break.
+
+    - Moving 1 (2):
+        - Check for given limit switch and if switch is active then switch off PWM, set power mosfet 1 to OFF and null action_start_ticks. Set state machine bit to 3 and break.
+        - If limit switch is not active, then check if current_ticks - action_start_ticks are bellow given time interval. If yes, just break. If no, then  switch off PWM, set power mosfet 1 to OFF and null action_start_ticks and block vent 1 - set vent 1 enable bit to 0. Then set state machine bit to 3 and break.
+
+    - Start 2 (3):
+        - If vent 2 is enabled then set action_start_ticks, set power mosfet 2 to ON, and set PWM for given operation for vent 2. Then set state machine to 4 and break.
+        - Otherwise set state machine to 5 and break.
+
+    - Moving 2 (4):
+        - Check for given limit switch and if switch is active then switch off PWM, set power mosfet 2 to OFF and null action_start_ticks. Then acknowledge - set vent 2 enable bit to 1. Set state machine bit to 5 and break.
+        - If limit switch is not active, then check if current_ticks - action_start_ticks are bellow given time interval. If yes, just break. If no, then  switch off PWM, set power mosfet 2 to OFF and null action_start_ticks and block vent 2 - set vent 2 enable bit to 0. Then set state machine bit to 5 and break.
+    
+    - Finish (5):
+        - Null control byte process code, temporary process code.
+        - Set state machine bit to 0 and breake.
