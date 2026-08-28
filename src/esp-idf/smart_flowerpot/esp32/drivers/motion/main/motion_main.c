@@ -4,8 +4,8 @@
 
 
 /*************** START of temp code - ROULETTE and VENT testing */
-#define TMP_VENT_OPEN GPIO_NUM_17
-#define TMP_VENT_CLOSE GPIO_NUM_21
+//#define TMP_VENT_OPEN GPIO_NUM_17     //GPIO_NUM_04
+//#define TMP_VENT_CLOSE GPIO_NUM_21    //GPIO_NUM_27
 #define TMP_ROULETTE_OPEN GPIO_NUM_25 
 #define TMP_ROULETTE_CLOSE GPIO_NUM_26
 /*************** END of temp code - ROULETTE and VENT testing */
