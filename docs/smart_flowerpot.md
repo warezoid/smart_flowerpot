@@ -103,11 +103,14 @@ This document is overview of progress and TODOs on smart flowerpot project.
 ### Roulette
 - Updates (**30. Aug 2026**):
     - Change electronics:
-        - Replace NOR with NOT, both signals wires will be connected to ESP32.
-        - Update schematics: replace NOR with NOT, add 2 new GPIO pins (TOP1, TOP2, BOT1, BOT2), add 2 new signal filtering circuits (3 resistors).
-        - Resolder NOR gate to NOT gate, solder signal filtering circuits different, connect it to new ESP32 GPIO pins.
+        - Check new soldered circuit.
+        - Test new soldered circuit.
     - Rewrite current code to FSM code:
         - Think about FSM, create states, states shift, default states and more, ...
+            - IDLE (0): wait for command to control by.
+            - START (1): start OPEN or CLOSE movement
+            - MOVING (2): check for end switches, or ticks...
+            - FINISH (3): acknowledge and null everythink, check if both sensors are active, if not, then alarm.
 
 - Final works:
     - Recalibrate TOP Hall sensor - TOP GREEN probably.    
