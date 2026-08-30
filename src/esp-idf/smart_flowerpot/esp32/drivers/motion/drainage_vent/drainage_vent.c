@@ -46,7 +46,7 @@ drainage_vent_dataset_t drainage_vent_init_dataset(){
     return res;
 }
 
-void drainage_vent_print_dataset(const drainage_vent_dataset_t *vent_sys){
+void drainage_vent_print(const drainage_vent_dataset_t *vent_sys){
     if(vent_sys == NULL) return;
 
     printf("\n");
@@ -56,10 +56,10 @@ void drainage_vent_print_dataset(const drainage_vent_dataset_t *vent_sys){
 
     printf("\taction_start_tick : %lu\n", (unsigned long)vent_sys->action_start_tick);
 
-    printf("\tv1_opn_ms       : %lu\n", (unsigned long)vent_sys->v1_opn_ms);
-    printf("\tv1_cls_ms       : %lu\n", (unsigned long)vent_sys->v1_cls_ms);
-    printf("\tv2_opn_ms       : %lu\n", (unsigned long)vent_sys->v2_opn_ms);
-    printf("\tv2_cls_ms       : %lu\n", (unsigned long)vent_sys->v2_cls_ms);
+    printf("\tv1_opn_ms         : %lu\n", (unsigned long)vent_sys->v1_opn_ms);
+    printf("\tv1_cls_ms         : %lu\n", (unsigned long)vent_sys->v1_cls_ms);
+    printf("\tv2_opn_ms         : %lu\n", (unsigned long)vent_sys->v2_opn_ms);
+    printf("\tv2_cls_ms         : %lu\n", (unsigned long)vent_sys->v2_cls_ms);
 
     printf("\tv1_opn_duty       : %lu\n", (unsigned long)vent_sys->v1_opn_duty);
     printf("\tv1_cls_duty       : %lu\n", (unsigned long)vent_sys->v1_cls_duty);
@@ -69,6 +69,15 @@ void drainage_vent_print_dataset(const drainage_vent_dataset_t *vent_sys){
     printf("\terr_word          : 0x%04X\n", vent_sys->err_word);
     printf("\tio_byte           : 0x%02X\n", vent_sys->io_byte);
     printf("\tctrl_byte         : 0x%02X\n", vent_sys->ctrl_byte);
+
+    printf("========================================\n");
+    printf("Drainage vent end switches:\n");
+    printf("========================================\n");
+
+    printf("\tesc1:             : %d\n", gpio_get_level(IN_DRAIN_VENT_ESO1));
+    printf("\tesc1:             : %d\n", gpio_get_level(IN_DRAIN_VENT_ESC1));
+    printf("\teso2:             : %d\n", gpio_get_level(IN_DRAIN_VENT_ESO2));
+    printf("\teso2:             : %d\n", gpio_get_level(IN_DRAIN_VENT_ESC2));
 
     printf("========================================\n");
 }

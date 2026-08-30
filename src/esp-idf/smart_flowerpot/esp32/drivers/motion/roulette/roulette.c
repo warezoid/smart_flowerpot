@@ -1,13 +1,13 @@
+/*
+
+#define ROULETTE_MOVE_CLOSE_DELAY_MS    60000
+#define ROULETTE_MOVE_OPEN_DELAY_MS     72000
+
+*/
+
 #include "roulette.h"
-#include <stdio.h>
 
-static void power_cut_off_callback(void *arg){
-    gpio_set_level(OUT_ROULETTE_EN1, 0);
-    gpio_set_level(OUT_ROULETTE_DIR1, 0);
-    gpio_set_level(OUT_ROULETTE_DIR2, 0);
-}
-
-void roulette_init(roulette_dataset_t *roulette_sys){
+void roulette_init(){
 //init out gpio
     gpio_set_direction(OUT_ROULETTE_EN1, GPIO_MODE_OUTPUT);
     gpio_set_direction(OUT_ROULETTE_DIR1, GPIO_MODE_OUTPUT);
@@ -17,82 +17,151 @@ void roulette_init(roulette_dataset_t *roulette_sys){
     gpio_set_level(OUT_ROULETTE_DIR2, 0);
     
 //init in gpio
-    gpio_set_direction(IN_ROULETTE_ESO1, GPIO_MODE_INPUT);
-    gpio_set_direction(IN_ROULETTE_ESC1, GPIO_MODE_INPUT);
+    gpio_set_direction(IN_ROULETTE_TOP1, GPIO_MODE_INPUT);
+    gpio_set_direction(IN_ROULETTE_TOP2, GPIO_MODE_INPUT);
+    gpio_set_direction(IN_ROULETTE_BOT1, GPIO_MODE_INPUT);
+    gpio_set_direction(IN_ROULETTE_BOT2, GPIO_MODE_INPUT);
+}
 
-//init power_cut_off_timer
-    esp_timer_create_args_t pwr_cut_off_cfg = {
-        .callback = power_cut_off_callback,
-        .arg = NULL,
-        .dispatch_method = ESP_TIMER_TASK,
-        .name = "power_cut_off_timer"
+roulette_dataset_t roulette_init_dataset(){
+    roulette_dataset_t res = {
+        .action_start_tick = 0,
+
+        .r1_opn_ms = 720,
+        .r1_cls_ms = 600,
+
+        .err_word = 0x0000,
+        .io_byte = 0x10,
+        .ctrl_byte = 0x00
     };
-    esp_timer_create(&pwr_cut_off_cfg, &(roulette_sys->power_cut_off_timer));
+
+    return res;
 }
 
-void roulette_cls(roulette_dataset_t *roulette_sys){
-    if(!roulette_sys->event_start_tick){
-        if(roulette_sys->control_flags & 0x04){
-            gpio_set_level(OUT_ROULETTE_DIR1, 1);
-            gpio_set_level(OUT_ROULETTE_DIR2, 0);
+void roulette_print(const roulette_dataset_t *roulette_sys){
+    if(roulette_sys == NULL) return;
 
-            gpio_set_level(OUT_ROULETTE_EN1, 1);
+    printf("\n");
+    printf("========================================\n");
+    printf("Roulette dataset:\n");
+    printf("========================================\n");
 
-            if(!esp_timer_is_active(roulette_sys->power_cut_off_timer)) esp_timer_start_once(roulette_sys->power_cut_off_timer, ROULETTE_MOVE_CLOSE_DELAY_MS * 1000);
-            roulette_sys->event_start_tick = xTaskGetTickCount();
+    printf("\taction_start_tick : %lu\n", (unsigned long)roulette_sys->action_start_tick);
 
-            roulette_sys->control_flags &= 0x04;
-            roulette_sys->control_flags |= 0x01;
-        }
-    }
+    printf("\tr1_opn_ms         : %lu\n", (unsigned long)roulette_sys->r1_opn_ms);
+    printf("\tr1_cls_ms         : %lu\n", (unsigned long)roulette_sys->r1_cls_ms);
+
+    printf("\terr_word          : 0x%04X\n", roulette_sys->err_word);
+    printf("\tio_byte           : 0x%02X\n", roulette_sys->io_byte);
+    printf("\tctrl_byte         : 0x%02X\n", roulette_sys->ctrl_byte);
+
+    printf("========================================\n");
+    printf("Roulette end switches:\n");
+    printf("========================================\n");
+
+    printf("\ttop1:             : %d\n", gpio_get_level(IN_ROULETTE_TOP1));
+    printf("\ttop2:             : %d\n", gpio_get_level(IN_ROULETTE_TOP2));
+    printf("\tbot1:             : %d\n", gpio_get_level(IN_ROULETTE_BOT1));
+    printf("\tbot2:             : %d\n", gpio_get_level(IN_ROULETTE_BOT2));
+
+    printf("========================================\n");
 }
 
-void roulette_opn(roulette_dataset_t *roulette_sys){
-    if(!roulette_sys->event_start_tick){
-        if(roulette_sys->control_flags & 0x04){
-            gpio_set_level(OUT_ROULETTE_DIR1, 0);
-            gpio_set_level(OUT_ROULETTE_DIR2, 1);
-
-            gpio_set_level(OUT_ROULETTE_EN1, 1);
-
-            if(!esp_timer_is_active(roulette_sys->power_cut_off_timer)) esp_timer_start_once(roulette_sys->power_cut_off_timer, ROULETTE_MOVE_OPEN_DELAY_MS * 1000);
-            roulette_sys->event_start_tick = xTaskGetTickCount();
-
-            roulette_sys->control_flags &= 0x04;
-            roulette_sys->control_flags |= 0x02;
-        }
-    }
+static inline void r1_switch_off(uint32_t *ticks){
+    gpio_set_level(OUT_ROULETTE_DIR1, 0);
+    gpio_set_level(OUT_ROULETTE_DIR2, 0);
+    gpio_set_level(OUT_ROULETTE_EN1, 0);
+    *ticks = 0;
 }
 
-void roulette_ack(roulette_dataset_t *roulette_sys){
-    if(roulette_sys->event_start_tick){
-        uint32_t move_delay = ((roulette_sys->control_flags & 0x03) == 1) ? ROULETTE_MOVE_CLOSE_DELAY_MS : ROULETTE_MOVE_OPEN_DELAY_MS;
-        if((xTaskGetTickCount() - roulette_sys->event_start_tick) >= pdMS_TO_TICKS(move_delay + 500)){
-            gpio_set_level(OUT_ROULETTE_EN1, 0);
-            gpio_set_level(OUT_ROULETTE_DIR1, 0);
-            gpio_set_level(OUT_ROULETTE_DIR2, 0);
-            roulette_sys->event_start_tick = 0;
+void roulette_fsm(roulette_dataset_t *roulette_sys){
+    switch(roulette_sys->ctrl_byte & 0x0F){
+        case 0:
+            if(roulette_sys->io_byte & 0x03){
+                roulette_sys->ctrl_byte = ((roulette_sys->io_byte & 0x03) << 4) | 0x01;
+            }
+        break;
+        
+        case 1:
+            if(roulette_sys->io_byte & 0x10){
+                roulette_sys->action_start_tick = xTaskGetTickCount();
+                
+                uint8_t dir_byte = (roulette_sys->ctrl_byte & 0x30) >> 4;
+                if(dir_byte == 1){
+                    gpio_set_level(OUT_ROULETTE_DIR1, 0);
+                    gpio_set_level(OUT_ROULETTE_DIR2, 1);
+                }
+                else if(dir_byte == 2){
+                    gpio_set_level(OUT_ROULETTE_DIR1, 1);
+                    gpio_set_level(OUT_ROULETTE_DIR2, 0);
+                }
+                
+                gpio_set_level(OUT_ROULETTE_EN1, 1);
 
-            switch(roulette_sys->control_flags & 0x03){
-                case 1:
-                    if(roulette_sys->control_flags & 0x04){
-                        if(!gpio_get_level(IN_ROULETTE_ESC1)){
-                            roulette_sys->control_flags &= 0xFB;
-                            //v1 error
-                        }
+                roulette_sys->ctrl_byte = (roulette_sys->ctrl_byte & 0xF0) | 0x02;
+            }
+            else{
+                roulette_sys->ctrl_byte = (roulette_sys->ctrl_byte & 0xF0) | 0x04;
+            }
+        break;
+        
+        case 2:
+        {
+            uint8_t dir_byte = (roulette_sys->ctrl_byte & 0x30) >> 4;
+            if(dir_byte == 1){
+                if(gpio_get_level(IN_ROULETTE_TOP1) || gpio_get_level(IN_ROULETTE_TOP2)){
+                    //here I can add some acknowledge for user that roulette1 is opened
+                    r1_switch_off(&roulette_sys->action_start_tick);
+                    roulette_sys->ctrl_byte = (roulette_sys->ctrl_byte & 0xF0) | 0x03;
+                }
+                else{
+                    if(pdMS_TO_TICKS(xTaskGetTickCount() - roulette_sys->action_start_tick) > roulette_sys->r1_opn_ms){
+                        //here I can add some alarm (NOT OPEN) that emergency switch off timer was activated
+                        r1_switch_off(&roulette_sys->action_start_tick);
+                        roulette_sys->io_byte &= 0xEF;
+                        roulette_sys->ctrl_byte = (roulette_sys->ctrl_byte & 0xF0) | 0x04;
                     }
-                    break;
-                case 2:
-                    if(roulette_sys->control_flags & 0x04){
-                        if(!gpio_get_level(IN_ROULETTE_ESO1)){
-                            roulette_sys->control_flags &= 0xFB;
-                            //v1 error
-                        }
+                }
+            }
+            else if(dir_byte == 2){
+                if(gpio_get_level(IN_ROULETTE_BOT1) || gpio_get_level(IN_ROULETTE_BOT2)){
+                    //here I can add some acknowledge for user that roulette1 is closed
+                    r1_switch_off(&roulette_sys->action_start_tick);
+                    roulette_sys->ctrl_byte = (roulette_sys->ctrl_byte & 0xF0) | 0x03;
+                }
+                else{
+                    if(pdMS_TO_TICKS(xTaskGetTickCount() - roulette_sys->action_start_tick) > roulette_sys->r1_cls_ms){
+                        //here I can add some alarm (NOT CLOSE) that emergency switch off timer was activated
+                        r1_switch_off(&roulette_sys->action_start_tick);
+                        roulette_sys->io_byte &= 0xEF;
+                        roulette_sys->ctrl_byte = (roulette_sys->ctrl_byte & 0xF0) | 0x04;
                     }
-                    break;
+                }
+            }
+        }
+        break;
+
+        case 3:
+        {
+            uint8_t dir_byte = (roulette_sys->ctrl_byte & 0x30) >> 4;
+            if(dir_byte == 1){
+                if(!(gpio_get_level(IN_ROULETTE_TOP1) && gpio_get_level(IN_ROULETTE_TOP2))){
+                    //here I can add some alarm for user that one of limit switch is not active while second is
+                }
+            }
+            else if(dir_byte == 2){
+                if(gpio_get_level(IN_ROULETTE_BOT1) || gpio_get_level(IN_ROULETTE_BOT2)){
+                    //here I can add some alarm for user that one of limit switch is not active while second is
+                }
             }
 
-            roulette_sys->control_flags &= 0x04;
+            roulette_sys->ctrl_byte = (roulette_sys->ctrl_byte & 0xF0) | 0x04;
         }
+        break;
+
+        case 4:
+            roulette_sys->io_byte &= 0xFC;
+            roulette_sys->ctrl_byte &= 0xC0;
+        break;
     }
 }

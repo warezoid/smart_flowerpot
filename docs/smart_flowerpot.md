@@ -45,7 +45,8 @@ This document is overview of progress and TODOs on smart flowerpot project.
         - Drivers will reply with action status and process is done.
         - Update GUI to more profesional form - overviews, logs, ...
 
-- Version 1.1: fix bugs. Write potentional future improvements. See if second roulette is needed. Think about driving vents independently (first drive Vent 1, then vent 2) -> better for instalation, new code should be written. Harder calibration.
+- Version 1.1: fix bugs. Write potentional future improvements. See if second roulette is needed.
+    - Solve some better system for holding hall sensors than hot glue - easier calibration.
 
 - Version 2: add IR camera and add some machine vision. Pests monitoring.
 
@@ -78,14 +79,14 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 
 ## ESP32 / DRIVERs / MOTION
-- Final testing (**30. Aug 2026**):
-    - Write nice testing code for both: vent and roulette.
-    - Do needed recalibration.
-    - Test everything nicely and properly.
+- **31. Aug 2026**:
+    - Add some SPARE pins to GPIO table.
+    - Put descriptions on circuit.
+
+- Solder some wires to unused useful GPIO pins.
 
 - Check driver schematics with real circuit and update it if needed.
 - Check CAD files if they are same as reality.
-- Put descriptions on circuit.
 
 - Upgrade Excel table.
     - Separate MOTION to diferent lists, ....
@@ -94,28 +95,8 @@ This document is overview of progress and TODOs on smart flowerpot project.
 - Do some last testing of circuit before epoxy cover.
 - Cover circuit in epoxy resin to prevent shorts and add some protection.
 
-
-
-### Drainage vent
-- Final works:
-    - Update CAD: add edge to grid slider gear rack end.
-
 ### Roulette
-- Updates (**30. Aug 2026**):
-    - Change electronics:
-        - Check new soldered circuit.
-        - Test new soldered circuit.
-    - Rewrite current code to FSM code:
-        - Think about FSM, create states, states shift, default states and more, ...
-            - IDLE (0): wait for command to control by.
-            - START (1): start OPEN or CLOSE movement
-            - MOVING (2): check for end switches, or ticks...
-            - FINISH (3): acknowledge and null everythink, check if both sensors are active, if not, then alarm.
-
-- Final works:
-    - Recalibrate TOP Hall sensor - TOP GREEN probably.    
-    - Update CAD files of roulette guides and winge rod gear.
-    - Maybe solve some better system for holding hall sensors than hot glue - easier calibration.
+- Recalibrate TOP Hall sensor - TOP GREEN probably.
 
 
 
@@ -129,7 +110,6 @@ This document is overview of progress and TODOs on smart flowerpot project.
 - Roadmap.
 - DOCs.
 - Download links.
-
 
 ### Documentation
 - Construction: steele frame, OSB, polycarbonate, FEM.
@@ -150,6 +130,7 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 - Making stage help:
     - Honzajs
+
 
 
 
@@ -181,4 +162,26 @@ This document is overview of progress and TODOs on smart flowerpot project.
     
     - Finish (5):
         - Null control byte process code, temporary process code.
+        - Set state machine bit to 0 and breake.
+
+### Drivers/MOTION/Roulette
+- FSM:
+    - IDLE (0):
+        - Scan for process code. If process code (in io_byte) is 00 then break. If not, then copy&paste io_byte process code to temporary byte process code. Set state machine to 1 and breake.
+        - Commands will be set by process code bits: 00 non active, 01 opening, 10 closing, 11 spare, in future maybe calibration.
+        - Program will read only from temporary process code, which can be set only in IDLE, so overriding should be solved.
+    
+    - Start 1 (1):
+        - If roulette is enabled then set action_start_ticks, set direction pins and enable to ON. Then set state machine to 2 and break.
+        - Otherwise set state machine to 4 and break.
+
+    - Moving 1 (2):
+        - Check for given limit switch and if one of them is active then switch off enable pin, null action_start_ticks and set direction pins to 0. Set state machine bit to 3 and break.
+        - If limit switch is not active, then check if current_ticks - action_start_ticks are bellow given time interval. If yes, just break. If no, then switch off enable pin, set direction pins to 0, null action_start_ticks and block roulette 1 - set roulette 1 enable bit to 0. Then set state machine bit to 4 and break.
+
+    - Acknowledge (3):
+        - Check if both limit switch for given movement are active, if not then alarm user but not block the code. If yes just ignore it. Set it to 4 and break.
+
+    - Finish (4):
+        - Null control byte and io_byte process code, temporary process code.
         - Set state machine bit to 0 and breake.

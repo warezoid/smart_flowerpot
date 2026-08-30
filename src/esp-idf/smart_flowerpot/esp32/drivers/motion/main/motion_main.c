@@ -4,7 +4,7 @@
 
 
 /*************** START of temp code - ROULETTE and VENT testing */
-#define TMP_VENT_OPEN GPIO_NUM_04
+#define TMP_VENT_OPEN GPIO_NUM_4
 #define TMP_VENT_CLOSE GPIO_NUM_27
 #define TMP_ROULETTE_OPEN GPIO_NUM_25 
 #define TMP_ROULETTE_CLOSE GPIO_NUM_26
@@ -24,21 +24,9 @@ void app_main(void){
 drainage_vent_init();
 drainage_vent_dataset_t drainage_vent_sys = drainage_vent_init_dataset();
 
+roulette_init();
+roulette_dataset_t roulette_sys = roulette_init_dataset();
 
-roulette_dataset_t roulette_sys = {
-    .power_cut_off_timer = NULL,
-    .event_start_tick = 0,
-    .control_flags = 0b00000100
-};
-roulette_init(&roulette_sys);
-
-
-
-/*
-gpio_set_level(OUT_DRAIN_VENT_SPM1, 1);
-gpio_set_level(OUT_DRAIN_VENT_SPM2, 1);
-int i = 0;
-*/
 
 
 
@@ -59,26 +47,23 @@ int i = 0;
 
         if(gpio_get_level(TMP_ROULETTE_OPEN)){
             printf("R-LOG:\topen request!\n");
-            roulette_opn(&roulette_sys);
+            roulette_sys.io_byte = (roulette_sys.io_byte & 0xFC) | 0x01;
         }
 
         if(gpio_get_level(TMP_ROULETTE_CLOSE)){
             printf("R-LOG:\tclose request!\n");
-            roulette_cls(&roulette_sys);
+            roulette_sys.io_byte = (roulette_sys.io_byte & 0xFC) | 0x02;
         }
         /*************** END of temp code - ROULETTE and VENT testing */
 
-        printf("ESO1: %d\n", gpio_get_level(IN_DRAIN_VENT_ESO1));
-        printf("ESC1: %d\n", gpio_get_level(IN_DRAIN_VENT_ESC1));
-        printf("ESO2: %d\n", gpio_get_level(IN_DRAIN_VENT_ESO2));
-        printf("ESC2: %d\n", gpio_get_level(IN_DRAIN_VENT_ESC2));
 
-        drainage_vent_print_dataset(&drainage_vent_sys);
+
+        //drainage_vent_print(&drainage_vent_sys);
         drainage_vent_fsm(&drainage_vent_sys);
 
 
-
-        roulette_ack(&roulette_sys);
+        roulette_print(&roulette_sys);
+        roulette_fsm(&roulette_sys);
 
         //vTaskDelay(pdMS_TO_TICKS(1));
         vTaskDelay(pdMS_TO_TICKS(100));
