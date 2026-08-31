@@ -79,10 +79,7 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 
 ## ESP32 / DRIVERs / MOTION
-- **31. Aug 2026**:
-    - Add some SPARE pins to GPIO table.
-    - Put descriptions on circuit.
-
+- **1. Sep 2026**
 - Solder some wires to unused useful GPIO pins.
 
 - Check driver schematics with real circuit and update it if needed.
