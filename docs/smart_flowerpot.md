@@ -79,11 +79,9 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 
 ## ESP32 / DRIVERs / MOTION
-- **1. Sep 2026**
-- Solder some wires to unused useful GPIO pins.
-
-- Check driver schematics with real circuit and update it if needed.
-- Check CAD files if they are same as reality.
+- **4. Sep 2026**:
+    - Check driver schematics with real circuit and update it if needed.
+    - Check CAD files if they are same as reality.
 
 - Upgrade Excel table.
     - Separate MOTION to diferent lists, ....
