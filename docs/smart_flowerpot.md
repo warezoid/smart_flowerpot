@@ -14,18 +14,19 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 ## Project roadmap
 - Version 1: create functional sample of smart flowerpot.
-    - Mechanical phase:
-        - Create and make smartflowerpot structure.
-        - Steel frame, OSB, polycarbonate, 3d printing.
-        - CAD, FEM, 3d printing.
-        - Output should be physical structure of smartflowerpot without drivers, sensors and electronics.
+    - Current phase:
+        - Mechanical phase:
+            - Create and make smartflowerpot structure.
+            - Steel frame, OSB, polycarbonate, 3d printing.
+            - CAD, FEM, 3d printing.
+            - Output should be physical structure of smartflowerpot without drivers, sensors and electronics.
 
-    - Driver phase:
-        - Create hardware and software drivers for smart flowerpot.
-        - Drainage vent, roulette, flower vent, roof vent.
-        - Water circuit driver, solar power recharge.
-        - Software, hardware, electronics.
-        - Output should be functional drivers.
+        - Driver phase:
+            - Create hardware and software drivers for smart flowerpot.
+            - Drainage vent, roulette, flower vent & roof vent.
+            - Water circuit driver, solar power recharge.
+            - Software, hardware, electronics.
+            - Output should be functional drivers.
 
     - Sensor phase:
         - Place sensors for watering, overview, ventilation, ...
@@ -78,10 +79,21 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 
 
+## ESP32 / DRIVERs / FLOWER VENT
+- Create some ventilation system for flowers:
+    - Add big holes to bottom section of side OSBs with some simple ventilation - OPEN, CLOSE states.
+    - Also add smaller holes to top of sided OSBs, also with some simple ventilation.
+    - At top holes add fans, to create some wind channel.
+
+- TOP vent:
+    - Solve construction of top vent.
+    - Solve fan system.
+- BOTTOM vent:
+    - Solve construction of bottom vent.
+
 ## ESP32 / DRIVERs / MOTION
-- **4. Sep 2026**:
-    - Check driver schematics with real circuit and update it if needed.
-    - Check CAD files if they are same as reality.
+- Check driver schematics with real circuit and update it if needed.
+- Check CAD files if they are same as reality.
 
 - Upgrade Excel table.
     - Separate MOTION to diferent lists, ....
