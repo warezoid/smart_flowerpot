@@ -89,7 +89,13 @@ This document is overview of progress and TODOs on smart flowerpot project.
     - Solve construction of top vent.
     - Solve fan system.
 - BOTTOM vent:
-    - Solve construction of bottom vent.
+    - Use construction of two trapezoidal screws.
+    - One motor through shaft will be rotating with screw rod. Slider will be attached to desk.
+    - At top will be some flange and belt transfering rotation to second pair of rods.
+    - At bottom position and top position will be limit switches.
+    - I also want to add some linear position measurement, for future use - some PID regulation of position. For example vent will be open to 50 %, 20 %, 75 %, ...
+    - I would buy trapezoidal screws with slider, shaft, motor (if needed also with driver), LS, linear position measurement, belt, ball bearings.
+    - I would print flanges, maybe belt holders, desk holders, other holders, ...
 
 ## ESP32 / DRIVERs / MOTION
 - Check driver schematics with real circuit and update it if needed.
