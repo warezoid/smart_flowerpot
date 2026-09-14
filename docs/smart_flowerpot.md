@@ -9,7 +9,16 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 
 ## To buy
-
+- Flower vent:
+    - BOTTOM VENT (only one piece):
+        - MOTOR (1 pcs / 258 CZK): https://www.laskakit.cz/motor-jgy-370-12v-s-prevodovkou/
+        - SHAFT (1 pcs / 44 CZK): https://www.laskakit.cz/pruzna-spojka-hlinikova-sviraci-5x8mm/
+        - PULLEY (2 pcs / 112 CZK): http://www.snailshop.cz/remenice-gt2-oble-zuby/2354-remenice-gt2-20-zubu-dira-8mm.html
+        - BELT (1 pcs / 76 CZK): http://www.snailshop.cz/remeny-gt2-oble-zuby/2586-ozubeny-remen-gt2-160-zubu-320mm.html
+        - SCREW (1 pcs / 322 CZK): http://www.snailshop.cz/t8/2832-pohybovy-sroub-t8-500mm.html
+        - NUT (2 pcs / 144 CZK): http://www.snailshop.cz/t8/2375-matice-s-prirubou-t8-mosaz.html
+        
+        + bearing, sensors, motor driver, ...
 
 
 ## Project roadmap
