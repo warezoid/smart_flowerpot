@@ -17,8 +17,10 @@ This document is overview of progress and TODOs on smart flowerpot project.
         - BELT (1 pcs / 76 CZK): http://www.snailshop.cz/remeny-gt2-oble-zuby/2586-ozubeny-remen-gt2-160-zubu-320mm.html
         - SCREW (1 pcs / 322 CZK): http://www.snailshop.cz/t8/2832-pohybovy-sroub-t8-500mm.html
         - NUT (2 pcs / 144 CZK): http://www.snailshop.cz/t8/2375-matice-s-prirubou-t8-mosaz.html
+        - WORM SCREW (3 packs / 24 CZK): http://www.snailshop.cz/m3/1992-sroub-staveci-m3x5-4ks.html
+        - BEARING (10 pcs / 200 CZK): http://www.snailshop.cz/bez-priruby/2826-688-lozisko-8x16x5.html
         
-        + bearing, sensors, motor driver, ...
+        + sensors, motor driver, ...
 
 
 ## Project roadmap
