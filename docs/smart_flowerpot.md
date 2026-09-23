@@ -10,9 +10,7 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 ## To buy
 - Flower vent:
-    - BOTTOM VENT (only one piece):           
-        - WORM SCREW: https://www.hornbach.cz/s/%C4%8Derv%C3%ADk
-        
+    - BOTTOM VENT:                   
         - MOTOR DRIVERS: https://botland.cz/ovladace-motoru-moduly/22594-mp6550-jednokanalovy-ovladac-motoru-22v-17a-pololu-4733.html
 
 
@@ -92,7 +90,15 @@ This document is overview of progress and TODOs on smart flowerpot project.
 - TOP vent:
     - Solve construction of top vent.
     - Solve fan system.
+
 - BOTTOM vent:
+    - *TODOs*:
+        - Make hole in both shafts bigger on motor side - from 5 mm to 6 mm.
+        - Think about ideal screw rod length. Cut it and file it.
+        - Print motor holder, rod holder and flange, to future test.
+        - Try to build some test stand - without doors.
+        - Create doors.
+
     - Use construction of two trapezoidal screws.
     - One motor through shaft will be rotating with screw rod. Slider will be attached to desk.
     - At top will be some flange and belt transfering rotation to second pair of rods.
