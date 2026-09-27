@@ -93,11 +93,16 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 - BOTTOM vent:
     - *TODOs*:
-        - Make hole in both shafts bigger on motor side - from 5 mm to 6 mm.
-        - Think about ideal screw rod length. Cut it and file it.
-        - Print motor holder, rod holder and flange, to future test.
-        - Try to build some test stand - without doors.
-        - Create doors.
+        - Update CAD models:
+            - Motor holder holes are not perfect, will need to be rapaired.
+            - Rod flange bearing hole need to be slightly bigger => +- 0.2 mm.
+            - Rod holder rod hole need to be bigger, also hole for worm scres is not ideal, it would be fine, if it was from metal.
+        - Buy some short M3 screws for motor.
+        - Rod screw have to be modified -> ground it to semi-circle shape.
+        - Hole for motor-rod shaft is wrong, and it is hard to center motor shaft.
+
+        - Think about vent hole size.
+        - Create some door holder.
 
     - Use construction of two trapezoidal screws.
     - One motor through shaft will be rotating with screw rod. Slider will be attached to desk.
@@ -161,19 +166,7 @@ This document is overview of progress and TODOs on smart flowerpot project.
 ## Notes
 
 ### Drivers/FLOWER VENT
-- Flower vent:
-    - BOTTOM VENT (only one piece):
-        - MOTOR (1 pcs / 258 CZK): https://www.laskakit.cz/motor-jgy-370-12v-s-prevodovkou/
-        - SHAFT (1 pcs / 44 CZK): https://www.laskakit.cz/pruzna-spojka-hlinikova-sviraci-5x8mm/
-        - SCREW (1 pcs / 322 CZK): http://www.snailshop.cz/t8/2832-pohybovy-sroub-t8-500mm.html
-        - NUT (2 pcs / 144 CZK): http://www.snailshop.cz/t8/2375-matice-s-prirubou-t8-mosaz.html
-        
-        - PULLEY (2 pcs / 112 CZK): http://www.snailshop.cz/remenice-gt2-oble-zuby/2354-remenice-gt2-20-zubu-dira-8mm.html
-        - BELT (1 pcs / 76 CZK): http://www.snailshop.cz/remeny-gt2-oble-zuby/2586-ozubeny-remen-gt2-160-zubu-320mm.html
-        - WORM SCREW (3 packs / 24 CZK): http://www.snailshop.cz/m3/1992-sroub-staveci-m3x5-4ks.html
-        - BEARING (10 pcs / 200 CZK): http://www.snailshop.cz/bez-priruby/2826-688-lozisko-8x16x5.html
-            
-        - MOTOR DRIVERS: https://botland.cz/ovladace-motoru-moduly/22594-mp6550-jednokanalovy-ovladac-motoru-22v-17a-pololu-4733.html
+
 
 ### Drivers/MOTION/Drainage vent
 - FSM:
