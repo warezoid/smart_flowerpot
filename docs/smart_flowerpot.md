@@ -93,16 +93,9 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 - BOTTOM vent:
     - *TODOs*:
-        - Update CAD models:
-            - Motor holder holes are not perfect, will need to be rapaired.
-            - Rod flange bearing hole need to be slightly bigger => +- 0.2 mm.
-            - Rod holder rod hole need to be bigger, also hole for worm scres is not ideal, it would be fine, if it was from metal.
-        - Buy some short M3 screws for motor.
-        - Rod screw have to be modified -> ground it to semi-circle shape.
-        - Hole for motor-rod shaft is wrong, and it is hard to center motor shaft.
-
-        - Think about vent hole size.
-        - Create some door holder.
+        - Door holder-lead screw M4 screws have to be changed or modified. Find screws with smaller head or add some padding washer/s.
+        - Door holder have to be redesigned. It has to be taller - 50 mm. Holes for doors joint have to be separated by larger space.
+        - OSB doors have to be longer for better screw joint. I have to create new pair of bigger doors.
 
     - Use construction of two trapezoidal screws.
     - One motor through shaft will be rotating with screw rod. Slider will be attached to desk.
