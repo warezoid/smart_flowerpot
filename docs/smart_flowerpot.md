@@ -93,9 +93,12 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 - BOTTOM vent:
     - *TODOs*:
-        - Door holder-lead screw M4 screws have to be changed or modified. Find screws with smaller head or add some padding washer/s.
-        - Door holder have to be redesigned. It has to be taller - 50 mm. Holes for doors joint have to be separated by larger space.
-        - OSB doors have to be longer for better screw joint. I have to create new pair of bigger doors.
+        - Print and mount new end switch holder.
+        - Connect breadboard circuit to power supplies.
+        - Write some testing code and dry doors.
+        
+        - Rename motion ESPs - come up with some new names.
+        - Design FSM and code for BOTTOM flower vent and write code for it.
 
     - Use construction of two trapezoidal screws.
     - One motor through shaft will be rotating with screw rod. Slider will be attached to desk.
