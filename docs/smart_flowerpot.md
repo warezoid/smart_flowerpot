@@ -3,20 +3,9 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 
 
-## TODOs
-- Add some RPI web server notes - MAN/AUTO mode, ...
-
-
-
-## To buy
-- Flower vent:
-    - BOTTOM VENT:                   
-        - MOTOR DRIVERS: https://botland.cz/ovladace-motoru-moduly/22594-mp6550-jednokanalovy-ovladac-motoru-22v-17a-pololu-4733.html
-
-
 ## Project roadmap
 - Version 1: create functional sample of smart flowerpot.
-    - Current phase:
+    - Current phase (version 0.1):
         - Mechanical phase:
             - Create and make smartflowerpot structure.
             - Steel frame, OSB, polycarbonate, 3d printing.
@@ -30,19 +19,19 @@ This document is overview of progress and TODOs on smart flowerpot project.
             - Software, hardware, electronics.
             - Output should be functional drivers.
 
-    - Sensor phase:
+    - Sensor phase (version 0.2):
         - Place sensors for watering, overview, ventilation, ...
         - Create some algorithms for data procesing.
         - Output should be updated table with sensor data.
         - Coding, electronics, logic, simple table database.
 
-    - Master-slave phase:
+    - Master-slave phase (version 0.3):
         - Create communication between MASTER (RPi) and multiple slaves (ESP32).
         - Send commands from MASTER to SLAVE, which will reply.
         - Start self-hosting webserver on RPi.
         - Create simple web GUI which will serve as commands IO.
 
-    - Advanced master-slave phase:
+    - Advanced master-slave phase (version 0.4):
         - RPi will get data from sensor ESP32 and store them in some local copy for overviews and commands.
         - Data will be checked and if needed drivers will be called to do some action.
         - Drivers will reply with action status and process is done.
@@ -52,6 +41,12 @@ This document is overview of progress and TODOs on smart flowerpot project.
     - Solve some better system for holding hall sensors than hot glue - easier calibration.
 
 - Version 2: add IR camera and add some machine vision. Pests monitoring.
+
+
+
+## To buy
+- Flower vent:               
+    - MOTOR DRIVERS: https://botland.cz/ovladace-motoru-moduly/22594-mp6550-jednokanalovy-ovladac-motoru-22v-17a-pololu-4733.html
 
 
 
@@ -82,31 +77,20 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 
 ## ESP32 / DRIVERs / FLOWER VENT
-- Create some ventilation system for flowers:
-    - Add big holes to bottom section of side OSBs with some simple ventilation - OPEN, CLOSE states.
-    - Also add smaller holes to top of sided OSBs, also with some simple ventilation.
-    - At top holes add fans, to create some wind channel.
-
 - TOP vent:
-    - Solve construction of top vent.
-    - Solve fan system.
+    - Construction:
+        - Solve construction of top vent.
+        - Solve fan system.
+    - Electro:
+    - Programming:
 
 - BOTTOM vent:
     - *TODOs*:
         - Print and mount new end switch holder.
-        - Connect breadboard circuit to power supplies.
         - Write some testing code and dry doors.
-        
-        - Rename motion ESPs - come up with some new names.
         - Design FSM and code for BOTTOM flower vent and write code for it.
 
-    - Use construction of two trapezoidal screws.
-    - One motor through shaft will be rotating with screw rod. Slider will be attached to desk.
-    - At top will be some flange and belt transfering rotation to second pair of rods.
-    - At bottom position and top position will be limit switches.
-    - I also want to add some linear position measurement, for future use - some PID regulation of position. For example vent will be open to 50 %, 20 %, 75 %, ...
-    - I would buy trapezoidal screws with slider, shaft, motor (if needed also with driver), LS, linear position measurement, belt, ball bearings.
-    - I would print flanges, maybe belt holders, desk holders, other holders, ...
+
 
 ## ESP32 / DRIVERs / MOTION
 - Check driver schematics with real circuit and update it if needed.
@@ -118,6 +102,7 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 - Do some last testing of circuit before epoxy cover.
 - Cover circuit in epoxy resin to prevent shorts and add some protection.
+
 
 ### Roulette
 - Recalibrate TOP Hall sensor - TOP GREEN probably.
@@ -134,6 +119,7 @@ This document is overview of progress and TODOs on smart flowerpot project.
 - Roadmap.
 - DOCs.
 - Download links.
+
 
 ### Documentation
 - Construction: steele frame, OSB, polycarbonate, FEM.
@@ -157,11 +143,13 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 
 
-
-
 ## Notes
 
 ### Drivers/FLOWER VENT
+- Create some ventilation system for flowers:
+    - Add big holes to bottom section of side OSBs with some simple ventilation - OPEN, CLOSE states.
+    - Also add smaller holes to top of sided OSBs, also with some simple ventilation.
+    - At top holes add fans, to create some wind channel.
 
 
 ### Drivers/MOTION/Drainage vent
@@ -190,6 +178,7 @@ This document is overview of progress and TODOs on smart flowerpot project.
     - Finish (5):
         - Null control byte process code, temporary process code.
         - Set state machine bit to 0 and breake.
+
 
 ### Drivers/MOTION/Roulette
 - FSM:
