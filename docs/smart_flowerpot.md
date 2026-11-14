@@ -86,10 +86,9 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 - BOTTOM vent:
     - *TODOs*:
-        - Reconnect GPIO pins - new layout is in the DB excel.
-        - Design FSM and code for BOTTOM flower vent and write code for it.
         - Change format of DB excel - split different parts to different lists, change directory tree, ...
         - Add motor power mosfet to circuit.
+        - Debug electronic circiut - motor driver get some wierd signals.
 
 
 

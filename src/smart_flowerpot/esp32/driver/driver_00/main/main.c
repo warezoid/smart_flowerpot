@@ -21,14 +21,11 @@ void app_main(void){
 /*************** END of temp code - ROULETTE and VENT testing */
 
 //init
-drainage_vent_init();
-drainage_vent_dataset_t drainage_vent_sys = drainage_vent_init_dataset();
+    drainage_vent_init();
+    drainage_vent_dataset_t drainage_vent_sys = drainage_vent_init_dataset();
 
-roulette_init();
-roulette_dataset_t roulette_sys = roulette_init_dataset();
-
-
-
+    roulette_init();
+    roulette_dataset_t roulette_sys = roulette_init_dataset();
 
 //loop
     while(1){

@@ -68,9 +68,9 @@ void roulette_print(const roulette_dataset_t *roulette_sys){
 }
 
 static inline void r1_switch_off(uint32_t *ticks){
+    gpio_set_level(OUT_ROULETTE_EN1, 0);
     gpio_set_level(OUT_ROULETTE_DIR1, 0);
     gpio_set_level(OUT_ROULETTE_DIR2, 0);
-    gpio_set_level(OUT_ROULETTE_EN1, 0);
     *ticks = 0;
 }
 

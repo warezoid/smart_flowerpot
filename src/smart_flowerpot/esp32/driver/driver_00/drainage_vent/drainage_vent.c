@@ -74,10 +74,10 @@ void drainage_vent_print(const drainage_vent_dataset_t *vent_sys){
     printf("Drainage vent end switches:\n");
     printf("========================================\n");
 
-    printf("\tesc1:             : %d\n", gpio_get_level(IN_DRAIN_VENT_ESO1));
+    printf("\teso1:             : %d\n", gpio_get_level(IN_DRAIN_VENT_ESO1));
     printf("\tesc1:             : %d\n", gpio_get_level(IN_DRAIN_VENT_ESC1));
     printf("\teso2:             : %d\n", gpio_get_level(IN_DRAIN_VENT_ESO2));
-    printf("\teso2:             : %d\n", gpio_get_level(IN_DRAIN_VENT_ESC2));
+    printf("\tesc2:             : %d\n", gpio_get_level(IN_DRAIN_VENT_ESC2));
 
     printf("========================================\n");
 }
