@@ -86,9 +86,7 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 - BOTTOM vent:
     - *TODOs*:
-        - Change format of DB excel - split different parts to different lists, change directory tree, ...
-        - Add motor power mosfet to circuit.
-        - Debug electronic circiut - motor driver get some wierd signals.
+        - Design driver circuit in KiCad - add motor power mosfets, add some protection for signal wires on lines ESP32-MP6550.
 
 
 
