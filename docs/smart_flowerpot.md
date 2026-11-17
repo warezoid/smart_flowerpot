@@ -45,8 +45,10 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 
 ## To buy
-- Flower vent:               
+- Flower vent:
     - MOTOR DRIVERS: https://botland.cz/ovladace-motoru-moduly/22594-mp6550-jednokanalovy-ovladac-motoru-22v-17a-pololu-4733.html
+    - RELAYS: https://www.tme.eu/cz/details/rm84-2022-35-1012/elektromagneticka-rele-miniaturni/relpol/
+    - REZISTORS: https://www.hadex.cz/p/h537g-680r-0207-rezistor-0-25w-metaloxid-1-baleni-100ks?searchLogID=4253921
 
 
 
@@ -86,12 +88,15 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 - BOTTOM vent:
     - *TODOs*:
-        - Design driver circuit in KiCad - add motor power mosfets, add some protection for signal wires on lines ESP32-MP6550.
+        - Finish KiCAD drawings of bottom vent driver.
+        - Order parts and try to test new circuit on breadboard.
+        - Build second vent and try setup with two vents.
 
 
 
 ## ESP32 / DRIVERs / MOTION
-- Check driver schematics with real circuit and update it if needed.
+- Change format of KiCAD drawings.
+    - Check driver schematics with real circuit and update it if needed.
 - Check CAD files if they are same as reality.
 
 - Upgrade Excel table.

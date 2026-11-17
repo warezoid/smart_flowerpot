@@ -2,13 +2,13 @@
 
 void bottom_vent_init(){
 //init out gpio
-    gpio_set_direction(OUT_BOTTOM_VENT_MPM1, GPIO_MODE_OUTPUT);
-    gpio_set_direction(OUT_BOTTOM_VENT_MPM2, GPIO_MODE_OUTPUT);
+    gpio_set_direction(OUT_BOTTOM_VENT_MPR1, GPIO_MODE_OUTPUT);
+    gpio_set_direction(OUT_BOTTOM_VENT_MPR2, GPIO_MODE_OUTPUT);
     gpio_set_direction(OUT_BOTTOM_VENT_EN1, GPIO_MODE_OUTPUT);
     gpio_set_direction(OUT_BOTTOM_VENT_DIR1, GPIO_MODE_OUTPUT);
     gpio_set_direction(OUT_BOTTOM_VENT_DIR2, GPIO_MODE_OUTPUT);
-    gpio_set_level(OUT_BOTTOM_VENT_MPM1, 0);
-    gpio_set_level(OUT_BOTTOM_VENT_MPM2, 0);
+    gpio_set_level(OUT_BOTTOM_VENT_MPR1, 0);
+    gpio_set_level(OUT_BOTTOM_VENT_MPR2, 0);
     gpio_set_level(OUT_BOTTOM_VENT_EN1, 0);
     gpio_set_level(OUT_BOTTOM_VENT_DIR1, 0);
     gpio_set_level(OUT_BOTTOM_VENT_DIR2, 0);
@@ -69,7 +69,7 @@ void bottom_vent_print(const bottom_vent_dataset_t *vent_sys){
 }
 
 static inline void v1_switch_off(uint32_t *ticks){
-    gpio_set_level(OUT_BOTTOM_VENT_MPM1, 0);
+    gpio_set_level(OUT_BOTTOM_VENT_MPR1, 0);
     gpio_set_level(OUT_BOTTOM_VENT_EN1, 0);
     gpio_set_level(OUT_BOTTOM_VENT_DIR1, 0);
     gpio_set_level(OUT_BOTTOM_VENT_DIR2, 0);
@@ -77,7 +77,7 @@ static inline void v1_switch_off(uint32_t *ticks){
 }
 
 static inline void v2_switch_off(uint32_t *ticks){
-    gpio_set_level(OUT_BOTTOM_VENT_MPM2, 0);
+    gpio_set_level(OUT_BOTTOM_VENT_MPR2, 0);
     gpio_set_level(OUT_BOTTOM_VENT_EN1, 0);
     gpio_set_level(OUT_BOTTOM_VENT_DIR1, 0);
     gpio_set_level(OUT_BOTTOM_VENT_DIR2, 0);
@@ -95,7 +95,7 @@ void bottom_vent_fsm(bottom_vent_dataset_t *vent_sys){
         case 1:
             if(vent_sys->io_byte & 0x10){
                 vent_sys->action_start_tick = xTaskGetTickCount();
-                gpio_set_level(OUT_BOTTOM_VENT_MPM1, 1);
+                gpio_set_level(OUT_BOTTOM_VENT_MPR1, 1);
                 
                 uint8_t dir_byte = (vent_sys->ctrl_byte & 0x30) >> 4;
                 if(dir_byte == 1){
@@ -155,7 +155,7 @@ void bottom_vent_fsm(bottom_vent_dataset_t *vent_sys){
         case 3:
             if(vent_sys->io_byte & 0x20){
                 vent_sys->action_start_tick = xTaskGetTickCount();
-                gpio_set_level(OUT_BOTTOM_VENT_MPM1, 1);
+                gpio_set_level(OUT_BOTTOM_VENT_MPR1, 1);
                 
                 uint8_t dir_byte = (vent_sys->ctrl_byte & 0x30) >> 4;
                 if(dir_byte == 1){
