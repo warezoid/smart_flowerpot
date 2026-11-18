@@ -88,8 +88,7 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 - BOTTOM vent:
     - *TODOs*:
-        - Finish KiCAD drawings of bottom vent driver.
-        - Order parts and try to test new circuit on breadboard.
+        - Test new circuit on breadboard.
         - Build second vent and try setup with two vents.
 
 
