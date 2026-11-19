@@ -78,7 +78,7 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 
 
-## ESP32 / DRIVERs / FLOWER VENT
+## ESP32 / DRIVER / 01
 - TOP vent:
     - Construction:
         - Solve construction of top vent.
@@ -93,14 +93,10 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 
 
-## ESP32 / DRIVERs / MOTION
+## ESP32 / DRIVER / 00
 - Change format of KiCAD drawings.
-    - Check driver schematics with real circuit and update it if needed.
+- Check driver schematics with real circuit and update it if needed.
 - Check CAD files if they are same as reality.
-
-- Upgrade Excel table.
-    - Separate MOTION to diferent lists, ....
-- Create bill of material table for all drivers.
 
 - Do some last testing of circuit before epoxy cover.
 - Cover circuit in epoxy resin to prevent shorts and add some protection.
