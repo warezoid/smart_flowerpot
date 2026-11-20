@@ -94,7 +94,6 @@ This document is overview of progress and TODOs on smart flowerpot project.
 
 
 ## ESP32 / DRIVER / 00
-- Change format of KiCAD drawings.
 - Check driver schematics with real circuit and update it if needed.
 - Check CAD files if they are same as reality.
 
